@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Restauration & CHR — Actualités, Formations, Management | Evolia Institut</title>
+  <meta name="description" content="Blog Evolia Institut : actualités restauration CHR, conseils management, financement formations, tendances secteur. Insights experts par les professionnels du terrain.">
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/header-footer.css">
+  <style>
+    .filter-btn { padding:8px 20px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--color-border);border-radius:2px;background:white;color:var(--color-mid);cursor:pointer;transition:all .2s; }
+    .filter-btn.active,.filter-btn:hover { background:var(--color-teal);color:white;border-color:var(--color-teal); }
+    .pagination { display:flex;gap:8px;justify-content:center;margin-top:48px; }
+    .page-btn { width:40px;height:40px;border:1.5px solid var(--color-border);border-radius:2px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;background:white;color:var(--color-dark); }
+    .page-btn.active { background:var(--color-teal);color:white;border-color:var(--color-teal); }
+    .page-btn:hover:not(.active) { border-color:var(--color-teal);color:var(--color-teal); }
+  </style>
+</head>
+<body>
+<div id="site-header" role="banner"></div>
+<main>
+
+  <!-- HERO -->
+  <div class="page-hero page-hero--dark">
+    <div class="container">
+      <div class="breadcrumb"><a href="../index.html">Accueil</a><span class="breadcrumb-sep">›</span><span>Blog</span></div>
+      <h1 style="color:white;max-width:680px;">Actualités Restauration & CHR</h1>
+      <p style="color:rgba(255,255,255,.8);margin-top:16px;max-width:560px;font-size:17px;line-height:1.7;">Insights, conseils pratiques et tendances du secteur par les experts Evolia Institut. Formation · Management · Financement · Ouverture.</p>
+    </div>
+  </div>
+
+  <!-- FILTRES -->
+  <section style="background:white;border-bottom:1px solid var(--color-border);padding:28px 0;">
+    <div class="container">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+        <span style="font-size:13px;font-weight:600;color:var(--color-mid);">Catégories :</span>
+        <button class="filter-btn active" data-filter="tous" onclick="filterBlog('tous',this)">Tous (9)</button>
+        <button class="filter-btn" data-filter="formations" onclick="filterBlog('formations',this)">Formations (3)</button>
+        <button class="filter-btn" data-filter="management" onclick="filterBlog('management',this)">Management (2)</button>
+        <button class="filter-btn" data-filter="financement" onclick="filterBlog('financement',this)">Financement (2)</button>
+        <button class="filter-btn" data-filter="tendances" onclick="filterBlog('tendances',this)">Tendances (2)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE EN VEDETTE -->
+  <section class="section--white" style="padding:48px 0 0;">
+    <div class="container">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;background:var(--color-light);border-radius:4px;overflow:hidden;margin-bottom:64px;">
+        <img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Financement formation restauration 2025" style="width:100%;height:340px;object-fit:cover;" loading="lazy">
+        <div style="padding:40px 40px 40px 0;">
+          <div style="display:flex;gap:10px;margin-bottom:16px;align-items:center;">
+            <span class="badge badge--cat" style="background:var(--color-teal);color:white;">À la une</span>
+            <span class="badge badge--cat">Financement</span>
+            <span style="font-size:12px;color:var(--color-mid);">14 mai 2025</span>
+          </div>
+          <h2 style="font-size:28px;margin-bottom:12px;line-height:1.2;"><a href="articles/financement-formation-restauration.html" style="color:var(--color-dark);">Comment financer sa formation en restauration en 2025 ?</a></h2>
+          <p style="font-size:14px;color:var(--color-mid);line-height:1.7;margin-bottom:24px;">OPCO, CPF, POEI, France Travail… les dispositifs de financement pour la restauration sont nombreux mais méconnus. Notre guide complet pour ne pas laisser passer ces opportunités et former vos équipes gratuitement.</p>
+          <a href="articles/financement-formation-restauration.html" class="btn btn-primary">Lire l'article →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRILLE ARTICLES -->
+  <section class="section section--white" style="padding-top:0;">
+    <div class="container">
+      <div id="blog-grid" class="grid-3" style="gap:28px;">
+
+        <article class="blog-card aos" data-category="management">
+          <a href="articles/management-equipe-restaurant.html"><img src="https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Management équipe restaurant" loading="lazy"></a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span class="cat">Management</span><span>7 mai 2025</span></div>
+            <h3><a href="articles/management-equipe-restaurant.html">5 clés pour fidéliser son équipe en restauration</a></h3>
+            <p>Le turnover en CHR est un fléau. Découvrez les leviers managériaux concrets pour garder vos meilleurs éléments et construire une équipe solide sur le long terme.</p>
+            <a href="articles/management-equipe-restaurant.html" class="read-more">Lire l'article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card aos" data-delay="1" data-category="formations">
+          <a href="articles/poei-restauration-guide.html"><img src="https://images.pexels.com/photos/2398220/pexels-photo-2398220.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Guide POEI restauration" loading="lazy"></a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span class="cat">Formations</span><span>28 avr. 2025</span></div>
+            <h3><a href="articles/poei-restauration-guide.html">POEI restauration : le guide complet 2025</a></h3>
+            <p>Recrutez et formez sans avancer les frais grâce au dispositif POEI. Notre guide détaille les conditions d'éligibilité, les étapes et les économies réalisables.</p>
+            <a href="articles/poei-restauration-guide.html" class="read-more">Lire l'article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card aos" data-delay="2" data-category="tendances">
+          <a href="articles/tendances-restauration-2025.html"><img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Tendances restauration 2025" loading="lazy"></a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span class="cat">Tendances</span><span>20 avr. 2025</span></div>
+            <h3><a href="articles/tendances-restauration-2025.html">Les 5 grandes tendances de la restauration en 2025</a></h3>
+            <p>Éco-responsabilité, digitalisation, recrutement, dark kitchen… Le secteur CHR se transforme. Quelles sont les tendances à anticiper pour rester compétitif ?</p>
+            <a href="articles/tendances-restauration-2025.html" class="read-more">Lire l'article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card aos" data-category="formations">
+          <a href="articles/titre-professionnel-employe-polyvalent.html"><img src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Titre professionnel employé polyvalent" loading="lazy"></a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span class="cat">Formations</span><span>12 avr. 2025</span></div>
+            <h3><a href="articles/titre-professionnel-employe-polyvalent.html">Titre professionnel Employé Polyvalent : tout savoir sur le RNCP #38663</a></h3>
+            <p>Qui peut préparer ce titre ? Comment se déroule la formation ? Quels sont les débouchés ? On répond à toutes vos questions sur ce diplôme clé du secteur CHR.</p>
+            <a href="articles/titre-professionnel-employe-polyvalent.html" class="read-more">Lire l'article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card aos" data-delay="1" data-category="management">
+          <a href="articles/gestion-conflits-cuisine.html"><img src="https://images.pexels.com/photos/3775168/pexels-photo-3775168.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gestion conflits en cuisine" loading="lazy"></a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span class="cat">Management</span><span>5 avr. 2025</span></div>
+            <h3><a href="articles/gestion-conflits-cuisine.html">Comment gérer les conflits en brigade de cuisine ?</a></h3>
+            <p>La pression du service, la fatigue, les egos — les cuisines sont des environnements à haute tension. Voici les techniques concrètes pour désamorcer et prévenir les conflits.</p>
+            <a href="articles/gestion-conflits-cuisine.html" class="read-more">Lire l'article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card aos" data-delay="2" data-category="financement">
+          <a href="articles/opco-akto-restauration.html"><img src="https://images.pexels.com/photos/2506990/pexels-photo-2506990.jpeg?auto=compress&cs=tinysrgb&w=600" alt="OPCO AKTO restauration" loading="lazy"></a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span class="cat">Financement</span><span>28 mars 2025</span></div>
+            <h3><a href="articles/opco-akto-restauration.html">OPCO AKTO : comment financer vos formations CHR en 2025 ?</a></h3>
+            <p>AKTO est l'OPCO de la branche hôtellerie-restauration. Découvrez comment mobiliser vos droits pour financer jusqu'à 100% de vos formations en 2025.</p>
+            <a href="articles/opco-akto-restauration.html" class="read-more">Lire l'article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card aos" data-category="tendances">
+          <a href="articles/eco-responsable-restaurant.html"><img src="https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Restaurant éco-responsable" loading="lazy"></a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span class="cat">Tendances</span><span>20 mars 2025</span></div>
+            <h3><a href="articles/eco-responsable-restaurant.html">Devenir un restaurant éco-responsable : par où commencer ?</a></h3>
+            <p>Anti-gaspillage, énergie, approvisionnement local, déchets — la transition éco-responsable est un levier de différenciation fort. Voici un plan d'action en 5 étapes.</p>
+            <a href="articles/eco-responsable-restaurant.html" class="read-more">Lire l'article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card aos" data-delay="1" data-category="formations">
+          <a href="articles/ouvrir-restaurant-checklist.html"><img src="https://images.pexels.com/photos/2398220/pexels-photo-2398220.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ouvrir un restaurant checklist" loading="lazy"></a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span class="cat">Formations</span><span>10 mars 2025</span></div>
+            <h3><a href="articles/ouvrir-restaurant-checklist.html">Ouvrir un restaurant : la checklist complète 2025</a></h3>
+            <p>De la recherche du local aux premiers services, en passant par le recrutement et les formations obligatoires. Notre checklist exhaustive pour une ouverture réussie.</p>
+            <a href="articles/ouvrir-restaurant-checklist.html" class="read-more">Lire l'article →</a>
+          </div>
+        </article>
+
+        <article class="blog-card aos" data-delay="2" data-category="financement">
+          <a href="articles/qualiopi-avantages-restaurant.html"><img src="https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Qualiopi avantages" loading="lazy"></a>
+          <div class="blog-card-body">
+            <div class="blog-card-meta"><span class="cat">Financement</span><span>1 mars 2025</span></div>
+            <h3><a href="articles/qualiopi-avantages-restaurant.html">Qualiopi : pourquoi choisir un organisme certifié pour former vos équipes ?</a></h3>
+            <p>La certification Qualiopi garantit la qualité des formations et l'éligibilité aux financements publics. Ce qu'elle change concrètement pour vous en tant qu'employeur CHR.</p>
+            <a href="articles/qualiopi-avantages-restaurant.html" class="read-more">Lire l'article →</a>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination">
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn" style="width:auto;padding:0 16px;">Suivant →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section section--teal">
+    <div class="container" style="max-width:600px;margin:0 auto;text-align:center;">
+      <h2 style="color:white;margin-bottom:12px;">Restez informé des tendances CHR</h2>
+      <p style="color:rgba(255,255,255,.85);margin-bottom:28px;">Recevez nos articles et conseils exclusifs chaque semaine. Pas de spam, que de la valeur.</p>
+      <form id="newsletter-form" style="display:flex;gap:12px;max-width:480px;margin:0 auto;">
+        <input type="email" placeholder="Votre adresse email" required style="flex:1;padding:14px 18px;border:none;border-radius:2px;font-family:var(--font-body);font-size:15px;">
+        <button type="submit" class="btn btn-white" style="flex-shrink:0;">S'inscrire</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+<div id="site-footer"></div>
+<script>
+function filterBlog(cat, btn) {
+  document.querySelectorAll('#blog-grid article').forEach(function(a){
+    a.style.display = (cat==='tous'||a.getAttribute('data-category')===cat)?'':'none';
+  });
+  document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+</script>
+<script src="../js/header.js" defer></script>
+<script src="../js/animations.js" defer></script>
+<script src="../js/forms.js" defer></script>
+</body>
+</html>
