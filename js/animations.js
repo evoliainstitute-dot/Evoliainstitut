@@ -70,17 +70,31 @@
   function initStickyHeader() {
     var header = document.querySelector('.site-header');
     if (!header) return;
-    var lastScrollY = window.scrollY;
 
     window.addEventListener('scroll', function() {
       var currentScrollY = window.scrollY;
       if (currentScrollY > 80) {
-        header.style.boxShadow = '0 4px 24px rgba(0,0,0,.1)';
+        header.style.boxShadow = '0 4px 24px rgba(8,145,178,.3)';
       } else {
-        header.style.boxShadow = '0 2px 16px rgba(0,0,0,.07)';
+        header.style.boxShadow = '0 2px 20px rgba(8,145,178,.35)';
       }
-      lastScrollY = currentScrollY;
     }, { passive: true });
+  }
+
+  /* ── Section transition arrows ── */
+  function initSectionArrows() {
+    var main = document.querySelector('main');
+    if (!main) return;
+    var sections = main.querySelectorAll('section.section, .section--white, .section--alt, .section--dark');
+    sections.forEach(function(section, i) {
+      if (i < sections.length - 1) {
+        var arrow = document.createElement('div');
+        arrow.className = 'section-arrow';
+        arrow.setAttribute('aria-hidden', 'true');
+        arrow.innerHTML = '<span class="section-arrow-chevron"></span>';
+        section.appendChild(arrow);
+      }
+    });
   }
 
   /* ── Parallax hero image (subtle) ── */
@@ -133,5 +147,6 @@
     initStickyHeader();
     initParallax();
     initBlogFilter();
+    initSectionArrows();
   });
 })();

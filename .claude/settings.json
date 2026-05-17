@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -Command \"Set-Location 'C:\\Users\\havac\\evolia-institut'; $status = git status --porcelain; if ($status) { git add -A; git commit -m 'Auto-commit Evolia Institut changes'; git push origin master }\"",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -179,9 +179,9 @@ p { line-height: 1.75; }
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  background: white;
-  border: 1.5px solid var(--color-teal);
-  color: var(--color-teal);
+  background: rgba(255,255,255,.15);
+  border: 1.5px solid rgba(255,255,255,.5);
+  color: white;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: .12em;
@@ -212,6 +212,29 @@ p { line-height: 1.75; }
 .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
 .grid-2 { display: grid; grid-template-columns: repeat(2,1fr); gap: 32px; }
+
+/* ── Section transition arrows ── */
+.section-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 0 0;
+  pointer-events: none;
+}
+.section-arrow-chevron {
+  display: block;
+  width: 14px;
+  height: 14px;
+  border-right: 2.5px solid var(--color-teal);
+  border-bottom: 2.5px solid var(--color-teal);
+  transform: rotate(45deg);
+  animation: section-arrow-bounce 1.8s ease-in-out infinite;
+  opacity: .55;
+}
+@keyframes section-arrow-bounce {
+  0%, 100% { transform: rotate(45deg) translateY(0); opacity: .45; }
+  50%       { transform: rotate(45deg) translateY(6px); opacity: .9; }
+}
 
 /* ── Divider ── */
 .divider-orange {

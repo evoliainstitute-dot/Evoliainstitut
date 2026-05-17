@@ -96,6 +96,7 @@
           <li><a href="/evolia-institut/notre-ecole/index.html">Notre école</a></li>
           <li><a href="/evolia-institut/blog/index.html">Blog</a></li>
           <li><a href="/evolia-institut/contact/index.html">Contact</a></li>
+          <li><a href="/evolia-institut/accessibilite/index.html">Accessibilité & PSH</a></li>
         </ul>
       </div>
       <div class="footer-col">
