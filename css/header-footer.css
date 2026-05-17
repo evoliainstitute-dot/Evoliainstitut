@@ -25,8 +25,9 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #0891b2;
-  box-shadow: 0 2px 20px rgba(8,145,178,.35);
+  background: white;
+  box-shadow: 0 2px 16px rgba(0,0,0,.07);
+  transition: box-shadow .3s ease;
 }
 .navbar {
   padding: 0;
@@ -77,7 +78,7 @@
   font-family: var(--font-display);
   font-size: 20px;
   font-weight: 600;
-  color: white;
+  color: var(--color-dark);
   line-height: 1.1;
 }
 .nav-logo-sub {
@@ -86,7 +87,7 @@
   font-weight: 400;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.7);
+  color: var(--color-mid);
 }
 
 /* Nav links */
@@ -105,12 +106,12 @@
   padding: 8px 14px;
   font-size: 14px;
   font-weight: 500;
-  color: white;
+  color: var(--color-dark);
   border-radius: 4px;
   transition: var(--transition);
   white-space: nowrap;
 }
-.nav-links > li > a:hover { background: rgba(255,255,255,.18); color: white; }
+.nav-links > li > a:hover { background: var(--color-light); color: var(--color-teal); }
 .nav-links > li > a .caret {
   font-size: 10px;
   opacity: .5;
@@ -182,7 +183,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: white;
+  background: var(--color-dark);
   border-radius: 2px;
   transition: var(--transition);
 }

@@ -58,7 +58,14 @@
           <a href="/evolia-institut/financement/index.html">Financement & OPCO</a>
         </div>
       </li>
-      <li><a href="/evolia-institut/notre-ecole/index.html">Notre école</a></li>
+      <li>
+        <a href="/evolia-institut/notre-ecole/index.html" aria-haspopup="true">Notre école <span class="caret">▾</span></a>
+        <div class="dropdown" role="menu">
+          <div class="dropdown-label">L'Institut</div>
+          <a href="/evolia-institut/notre-ecole/index.html">Notre école</a>
+          <a href="/evolia-institut/accessibilite/index.html">♿ Accessibilité & PSH</a>
+        </div>
+      </li>
       <li><a href="/evolia-institut/blog/index.html">Blog</a></li>
       <li><a href="/evolia-institut/contact/index.html">Contact</a></li>
     </ul>
@@ -85,7 +92,7 @@
           <div class="footer-logo-text">Evolia Institut</div>
         </div>
         <p class="footer-tagline">Former mieux. Performer durablement.<br>Spécialiste formation CHR depuis 20 ans.</p>
-        <span class="badge-qualiopi badge-qualiopi--inverted">✓ Certification Qualiopi</span>
+        <a href="/evolia-institut/documents/certificat-qualiopi-evolia-institut.pdf" target="_blank" rel="noopener" class="badge-qualiopi badge-qualiopi--inverted" style="cursor:pointer;text-decoration:none;" title="Télécharger le certificat Qualiopi">✓ Certification Qualiopi · PDF</a>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>

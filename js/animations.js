@@ -72,11 +72,14 @@
     if (!header) return;
 
     window.addEventListener('scroll', function() {
-      var currentScrollY = window.scrollY;
-      if (currentScrollY > 80) {
-        header.style.boxShadow = '0 4px 24px rgba(8,145,178,.3)';
+      if (window.scrollY > 60) {
+        header.style.boxShadow = '0 4px 24px rgba(0,0,0,.12)';
+        header.style.background = 'rgba(255,255,255,.97)';
+        header.style.backdropFilter = 'blur(8px)';
       } else {
-        header.style.boxShadow = '0 2px 20px rgba(8,145,178,.35)';
+        header.style.boxShadow = '0 2px 16px rgba(0,0,0,.07)';
+        header.style.background = 'white';
+        header.style.backdropFilter = '';
       }
     }, { passive: true });
   }
