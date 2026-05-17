@@ -15,7 +15,7 @@
     <span>·</span>
     <a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a>
     <span>·</span>
-    <span>Réponse sous 24h garantie</span>
+    <span>Réponse garantie sous 48h</span>
   </div>
 </div>
 <nav class="navbar" role="navigation" aria-label="Navigation principale">
@@ -106,7 +106,7 @@
         <h4>Contact</h4>
         <div class="footer-contact-item">📞 <span>06 XX XX XX XX</span></div>
         <div class="footer-contact-item">📧 <a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a></div>
-        <div class="footer-contact-item" style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.4);">Lun–Ven · 9h–18h<br>Réponse sous 24h</div>
+        <div class="footer-contact-item" style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.4);">Lun–Ven · 9h–18h<br>Réponse garantie sous 48h</div>
         <div style="margin-top:16px;">
           <a href="/evolia-institut/contact/index.html" class="btn btn-white" style="font-size:12px;padding:10px 20px;">Demander un devis</a>
         </div>
@@ -115,8 +115,11 @@
   </div>
   <div class="container">
     <div class="footer-bottom">
-      <span>© 2025 Evolia Institut · Organisme de formation certifié Qualiopi</span>
-      <span>Numéro de déclaration d'activité : XX XX XX XXXXX</span>
+      <span>© 2026 Evolia Institut · Organisme de formation certifié Qualiopi · Déclaration d'activité : 11757542775</span>
+      <span>
+        <a href="https://linkedin.com/company/evolia-institut" target="_blank" style="color:rgba(255,255,255,.35);">🔗 LinkedIn</a> ·
+        <a href="https://instagram.com/evoliainstitut" target="_blank" style="color:rgba(255,255,255,.35);">📷 Instagram</a>
+      </span>
       <span>
         <a href="#" style="color:rgba(255,255,255,.35);">Mentions légales</a> ·
         <a href="#" style="color:rgba(255,255,255,.35);">Politique de confidentialité</a>
