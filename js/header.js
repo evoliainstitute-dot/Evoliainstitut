@@ -43,8 +43,16 @@
           <a href="/evolia-institut/formations/eco-responsable.html">Démarche Éco-Responsable</a>
           <a href="/evolia-institut/formations/intra-entreprise.html">Formation Intra-Entreprise</a>
           <div class="dropdown-divider"></div>
-          <div class="dropdown-label">Programmes spéciaux</div>
-          <a href="/evolia-institut/financement/poei.html">Dispositif POEI — + 30k€ économie</a>
+          <a href="/evolia-institut/financement/index.html">Financement & OPCO</a>
+        </div>
+      </li>
+      <li>
+        <a href="/evolia-institut/financement/poei.html" aria-haspopup="true">
+          Programmes Spéciaux <span class="caret">▾</span>
+        </a>
+        <div class="dropdown" role="menu">
+          <div class="dropdown-label">Programmes Spéciaux</div>
+          <a href="/evolia-institut/financement/poei.html">Dispositif POEI — jusqu'à 30 000 € économie</a>
           <a href="/evolia-institut/consulting-ouverture/index.html">Consulting Ouverture</a>
           <div class="dropdown-divider"></div>
           <a href="/evolia-institut/financement/index.html">Financement & OPCO</a>
