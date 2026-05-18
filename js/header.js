@@ -120,6 +120,7 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
+        <div class="footer-contact-item">📍 <span>26 rue du Maroc, 75019 Paris</span></div>
         <div class="footer-contact-item">📞 <span>[PLACEHOLDER_TEL]</span></div>
         <div class="footer-contact-item">📧 <a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a></div>
         <div class="footer-contact-item" style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.4);">Lun–Ven · 9h–18h<br>Réponse garantie sous 48h</div>
