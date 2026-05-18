@@ -11,7 +11,7 @@
     return `
 <div class="site-topbar">
   <div class="container">
-    <span>📞 06 XX XX XX XX</span>
+    <span>📞 [PLACEHOLDER_TEL]</span>
     <span>·</span>
     <a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a>
     <span>·</span>
@@ -91,7 +91,7 @@
           <div class="footer-logo-mark">EI</div>
           <div class="footer-logo-text">Evolia Institut</div>
         </div>
-        <p class="footer-tagline">Former mieux. Performer durablement.<br>Spécialiste formation CHR depuis 20 ans.</p>
+        <p class="footer-tagline">Former mieux. Performer durablement.<br>Spécialiste formation CHR.</p>
         <a href="/evolia-institut/documents/certificat-qualiopi-evolia-institut.pdf" target="_blank" rel="noopener" class="badge-qualiopi badge-qualiopi--inverted" style="cursor:pointer;text-decoration:none;" title="Télécharger le certificat Qualiopi">✓ Certification Qualiopi · PDF</a>
       </div>
       <div class="footer-col">
@@ -120,7 +120,7 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
-        <div class="footer-contact-item">📞 <span>06 XX XX XX XX</span></div>
+        <div class="footer-contact-item">📞 <span>[PLACEHOLDER_TEL]</span></div>
         <div class="footer-contact-item">📧 <a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a></div>
         <div class="footer-contact-item" style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.4);">Lun–Ven · 9h–18h<br>Réponse garantie sous 48h</div>
         <div style="margin-top:16px;">
@@ -131,14 +131,14 @@
   </div>
   <div class="container">
     <div class="footer-bottom">
-      <span>© 2026 Evolia Institut · Organisme de formation certifié Qualiopi · Déclaration d'activité : 11757542775</span>
+      <span>© 2026 Evolia Institut · NDA&nbsp;: 11757542775 · SIRET&nbsp;: 99918809700011 · Qualiopi n°QNW0211</span>
       <span>
         <a href="https://linkedin.com/company/evolia-institut" target="_blank" style="color:rgba(255,255,255,.35);">🔗 LinkedIn</a> ·
         <a href="https://instagram.com/evoliainstitut" target="_blank" style="color:rgba(255,255,255,.35);">📷 Instagram</a>
       </span>
       <span>
-        <a href="#" style="color:rgba(255,255,255,.35);">Mentions légales</a> ·
-        <a href="#" style="color:rgba(255,255,255,.35);">Politique de confidentialité</a>
+        <a href="/evolia-institut/mentions-legales/index.html" style="color:rgba(255,255,255,.35);">Mentions légales</a> ·
+        <a href="/evolia-institut/politique-confidentialite/index.html" style="color:rgba(255,255,255,.35);">Politique de confidentialité</a> · <a href="/evolia-institut/cgf/index.html" style="color:rgba(255,255,255,.35);">CGF</a> · <a href="/evolia-institut/accessibilite/index.html" style="color:rgba(255,255,255,.35);">Accessibilité</a>
       </span>
     </div>
   </div>
