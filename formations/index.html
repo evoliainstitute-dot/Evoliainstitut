@@ -3,24 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>7 Formations Certifiantes & Diplômantes Restauration CHR | Evolia Institut</title>
-  <meta name="description" content="Catalogue complet : 7 formations certifiantes et diplômantes en restauration CHR. RNCP #38663, RNCP #38575, Gestion Conflits, Gestes Postures, Harcèlement, Éco-Responsable. Qualiopi.">
+  <title>Nos Formations — Alternance, Certifiantes & Conseil | Evolia Institut</title>
+  <meta name="description" content="Evolia Institut : 4 formations diplômantes en alternance (RNCP), formations certifiantes POEI et HACCP pour CHR, et conseil en ouverture. Financement OPCO et France Travail. Certifié Qualiopi.">
   <link rel="canonical" href="https://www.evoliainstitut.com/formations/">
   <link rel="stylesheet" href="../css/design-system.css">
   <link rel="stylesheet" href="../css/header-footer.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Evolia Institut",
-    "url": "https://www.evoliainstitut.com",
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Catalogue formations restauration CHR",
-      "numberOfItems": 7
+  <style>
+    /* ── ONGLETS ── */
+    .ftabs-nav {
+      display: flex;
+      border-bottom: 2px solid var(--color-border);
+      margin-bottom: 48px;
+      background: white;
+      border-radius: 4px 4px 0 0;
+      overflow: hidden;
     }
-  }
-  </script>
+    .ftab-btn {
+      flex: 1;
+      background: none;
+      border: none;
+      padding: 18px 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--color-mid);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all .2s;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .ftab-btn:hover { color: var(--color-teal); background: var(--color-light); }
+    .ftab-btn.ftab-active { color: var(--color-teal); border-bottom-color: var(--color-teal); background: var(--color-light); }
+    .ftab-panel { display: none; }
+    .ftab-panel.ftab-active { display: block; }
+
+    /* ── POEI BADGE ── */
+    .badge--poei {
+      background: #E6F1FB; color: #0C447C;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: .05em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 2px;
+      display: inline-block;
+    }
+    .card-poei-accent { border-left: 3px solid #378ADD !important; }
+
+    /* ── SUBTITLE SEPARATOR ── */
+    .tab-subtitle {
+      font-size: 11px; font-weight: 700;
+      letter-spacing: .12em; text-transform: uppercase;
+      color: var(--color-mid);
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 28px; margin-top: 0;
+    }
+    .tab-subtitle::after { content: ''; flex: 1; height: 1px; background: var(--color-border); }
+
+    /* ── TAB FOOTER BAR ── */
+    .tab-footer-bar {
+      border-radius: 4px;
+      padding: 20px 28px;
+      display: flex; align-items: center;
+      justify-content: space-between;
+      margin-top: 40px; flex-wrap: wrap; gap: 16px;
+    }
+    .tab-footer-bar p { font-size: 14px; font-weight: 600; margin: 0; }
+
+    /* ── POEI INFO BOX ── */
+    .poei-info-box {
+      background: #E6F1FB;
+      border: 1px solid #B5D4F4;
+      border-left: 4px solid #378ADD;
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+    }
+    .poei-info-box h4 { color: #0C447C; font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+    .poei-info-box p { font-size: 13px; color: #2a5080; line-height: 1.75; margin: 0; }
+
+    /* ── ACCESS CONDITIONS BOX ── */
+    .access-conditions-box {
+      background: rgba(26,155,151,.05);
+      border: 1px solid rgba(26,155,151,.2);
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-bottom: 36px;
+      font-size: 13px;
+      color: var(--color-mid);
+      line-height: 1.7;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .access-conditions-box strong { color: var(--color-dark); }
+
+    /* ── CONSEIL CARD HEADER ── */
+    .conseil-card-header {
+      padding: 28px 24px 20px;
+      position: relative; overflow: hidden;
+    }
+    .conseil-card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.5rem; font-weight: 700;
+      color: rgba(255,255,255,.15);
+      line-height: 1; margin-bottom: 6px;
+    }
+    .conseil-card-sector {
+      font-size: 9px; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: rgba(255,255,255,.65); margin-bottom: 8px;
+    }
+    .conseil-card-title {
+      font-size: 19px; font-weight: 700;
+      color: white; margin-bottom: 6px; line-height: 1.3;
+    }
+    .conseil-card-desc { font-size: 12px; color: rgba(255,255,255,.7); line-height: 1.6; }
+    .conseil-card-body { padding: 20px 24px; }
+    .conseil-card-points {
+      list-style: none; display: flex; flex-direction: column;
+      gap: 7px; margin-bottom: 16px;
+      font-size: 13px; color: var(--color-mid);
+    }
+
+    @media (max-width: 768px) {
+      .ftab-btn { font-size: 11px; padding: 14px 8px; gap: 4px; }
+      .tab-footer-bar { flex-direction: column; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 <div id="site-header" role="banner"></div>
@@ -34,206 +144,484 @@
         <span class="breadcrumb-sep">›</span>
         <span>Formations</span>
       </div>
-      <div class="badge-qualiopi" style="margin-bottom: 20px; border-color: rgba(255,255,255,.4); color: white; background: rgba(255,255,255,.12);">✓ Certification Qualiopi · Financement 100% possible</div>
-      <h1 style="color: white; max-width: 700px;">7 formations pour transformer vos équipes CHR</h1>
-      <p style="color: rgba(255,255,255,.85); margin-top: 16px; max-width: 560px; font-size: 17px;">Diplômantes ou certifiantes, nos formations sont conçues par des professionnels terrain et reconnues par l'État.</p>
-      <div style="display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
-        <a href="../contact/index.html" class="btn btn-white">Demander un devis</a>
+      <div class="badge-qualiopi" style="margin-bottom:20px;border-color:rgba(255,255,255,.4);color:white;background:rgba(255,255,255,.12);">✓ Certification Qualiopi · Financement 100% possible</div>
+      <h1 style="color:white;max-width:720px;">Alternance · Formation · Conseil</h1>
+      <p style="color:rgba(255,255,255,.85);margin-top:16px;max-width:600px;font-size:17px;">4 formations diplômantes en alternance, certifiantes courtes pour les équipes CHR, et conseil en ouverture — financées par OPCO et France Travail.</p>
+      <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap;">
+        <a href="../contact/index.html" class="btn btn-white">Candidater</a>
         <a href="../financement/index.html" class="btn btn-outline-white">Voir les financements</a>
       </div>
     </div>
   </div>
 
-  <!-- FILTRES -->
-  <section class="section--white" style="padding: 40px 0; border-bottom: 1px solid var(--color-border);">
+  <!-- TABS -->
+  <section class="section section--white">
     <div class="container">
-      <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
-        <span style="font-size: 13px; font-weight: 600; color: var(--color-mid);">Filtrer :</span>
-        <button data-filter="tous" class="btn btn-secondary active" onclick="filterFormations('tous', this)" style="padding: 8px 20px; font-size: 12px;">Toutes (7)</button>
-        <button data-filter="diplomante" class="btn" onclick="filterFormations('diplomante', this)" style="padding: 8px 20px; font-size: 12px; background: transparent; border: 1.5px solid var(--color-border); color: var(--color-mid);">Diplômantes (2)</button>
-        <button data-filter="certifiante" class="btn" onclick="filterFormations('certifiante', this)" style="padding: 8px 20px; font-size: 12px; background: transparent; border: 1.5px solid var(--color-border); color: var(--color-mid);">Certifiantes (5)</button>
-        <button data-filter="management" class="btn" onclick="filterFormations('management', this)" style="padding: 8px 20px; font-size: 12px; background: transparent; border: 1.5px solid var(--color-border); color: var(--color-mid);">Management</button>
-        <button data-filter="securite" class="btn" onclick="filterFormations('securite', this)" style="padding: 8px 20px; font-size: 12px; background: transparent; border: 1.5px solid var(--color-border); color: var(--color-mid);">Sécurité & Bien-être</button>
+
+      <div class="ftabs-nav" id="ftabs-nav">
+        <button class="ftab-btn ftab-active" onclick="switchFTab('alternance', this)">🎓 Alternance</button>
+        <button class="ftab-btn" onclick="switchFTab('formation', this)">📋 Formation professionnelle</button>
+        <button class="ftab-btn" onclick="switchFTab('conseil', this)">🏪 Conseil &amp; Audit</button>
       </div>
-    </div>
-  </section>
 
-  <!-- GRILLE FORMATIONS -->
-  <section class="section">
-    <div class="container">
-      <div id="formations-grid" class="grid-3" style="gap: 28px;">
+      <!-- ═══════════════════════════════════════
+           TAB 1 : ALTERNANCE
+      ════════════════════════════════════════ -->
+      <div id="ftab-alternance" class="ftab-panel ftab-active">
 
-        <!-- 1. Employé Polyvalent -->
-        <article class="card aos" data-type="diplomante" style="padding: 0; overflow: hidden;">
-          <div style="position: relative; overflow: hidden; height: 180px;">
-            <img src="https://images.pexels.com/photos/2231168/pexels-photo-2231168.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation Employé Polyvalent en restauration" style="width: 100%; height: 100%; object-fit: cover; transition: transform .4s;">
-            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(26,155,151,.8)); display: flex; align-items: flex-end; padding: 16px;">
-              <span class="badge" style="background: var(--color-teal); color: white;">✦ Diplômante · RNCP</span>
-            </div>
-          </div>
-          <div style="padding: 24px;">
-            <h3 style="font-size: 20px; margin-bottom: 8px;">Employé Polyvalent en Restauration</h3>
-            <p style="font-size: 13px; color: var(--color-mid); margin-bottom: 16px; line-height: 1.7;">Titre professionnel niveau 3 · Hygiène HACCP · Service en salle · Préparations froides et chaudes · Caisse et accueil</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
-              <span class="badge badge--diplome">RNCP #38663</span>
-              <span class="badge badge--cat">3 mois</span>
-              <span class="badge badge--cat">Présentiel</span>
-            </div>
-            <div style="border-top: 1px solid var(--color-border); padding-top: 16px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 13px; color: var(--color-teal); font-weight: 600;">Financement OPCO / POEI</span>
-              <a href="employe-polyvalent.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 12px;">Voir la fiche →</a>
-            </div>
-          </div>
-        </article>
+        <div class="tab-subtitle">4 formations diplômantes · Titre Professionnel reconnu par l'État · Financement OPCO 100%</div>
 
-        <!-- 2. Responsable PME -->
-        <article class="card aos" data-delay="1" data-type="diplomante management" style="padding: 0; overflow: hidden;">
-          <div style="position: relative; overflow: hidden; height: 180px;">
-            <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation Responsable PME restauration" style="width: 100%; height: 100%; object-fit: cover; transition: transform .4s;">
-            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(219,86,14,.8)); display: flex; align-items: flex-end; padding: 16px;">
-              <span class="badge" style="background: var(--color-orange); color: white;">✦ Diplômante · RNCP</span>
-            </div>
+        <div class="access-conditions-box">
+          <span style="font-size:20px;flex-shrink:0;">ℹ️</span>
+          <div>
+            <strong>Conditions d'accès générales :</strong> avoir au minimum <strong>18 ans</strong> (dérogation possible à 16 ans), <strong>maîtriser la lecture, l'écriture et l'expression orale en français</strong>. Un entretien individuel de positionnement est réalisé avant toute entrée en formation.
           </div>
-          <div style="padding: 24px;">
-            <h3 style="font-size: 20px; margin-bottom: 8px;">Responsable PME/PMI</h3>
-            <p style="font-size: 13px; color: var(--color-mid); margin-bottom: 16px; line-height: 1.7;">Titre professionnel niveau 5 · Management · RH · Gestion financière · Administration · Leadership petites structures</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
-              <span class="badge badge--certif">RNCP #38575</span>
-              <span class="badge badge--cat">4 mois</span>
-              <span class="badge badge--cat">Hybride</span>
-            </div>
-            <div style="border-top: 1px solid var(--color-border); padding-top: 16px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 13px; color: var(--color-orange); font-weight: 600;">Financement OPCO / POEI</span>
-              <a href="responsable-pme.html" class="btn" style="padding: 10px 20px; font-size: 12px; background: var(--color-orange); color: white; border-color: var(--color-orange); border-radius: 2px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;">Voir la fiche →</a>
-            </div>
-          </div>
-        </article>
+        </div>
 
-        <!-- 3. Gestion Conflits -->
-        <article class="card aos" data-delay="2" data-type="certifiante management" style="padding: 0; overflow: hidden;">
-          <div style="position: relative; overflow: hidden; height: 180px;">
-            <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation gestion des conflits" style="width: 100%; height: 100%; object-fit: cover;">
-            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(45,106,79,.85)); display: flex; align-items: flex-end; padding: 16px;">
-              <span class="badge" style="background: #2d6a4f; color: white;">Certifiante</span>
-            </div>
-          </div>
-          <div style="padding: 24px;">
-            <h3 style="font-size: 20px; margin-bottom: 8px;">Gestion des Conflits</h3>
-            <p style="font-size: 13px; color: var(--color-mid); margin-bottom: 16px; line-height: 1.7;">Médiation · Communication non-violente · Gestion du stress · Cohésion d'équipe · Cas pratiques CHR</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
-              <span class="badge badge--diplome">Certifiante</span>
-              <span class="badge badge--cat">2 jours</span>
-              <span class="badge badge--cat">Intra / Inter</span>
-            </div>
-            <div style="border-top: 1px solid var(--color-border); padding-top: 16px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 13px; color: var(--color-teal); font-weight: 600;">Financement OPCO</span>
-              <a href="gestion-conflits.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 12px;">Voir la fiche →</a>
-            </div>
-          </div>
-        </article>
+        <div class="grid-3" style="gap:28px;">
 
-        <!-- 4. Gestes Postures -->
-        <article class="card aos" data-type="certifiante securite" style="padding: 0; overflow: hidden;">
-          <div style="position: relative; overflow: hidden; height: 180px;">
-            <img src="https://images.pexels.com/photos/2506990/pexels-photo-2506990.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation gestes et postures cuisine" style="width: 100%; height: 100%; object-fit: cover;">
-            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(92,64,51,.85)); display: flex; align-items: flex-end; padding: 16px;">
-              <span class="badge" style="background: #5c4033; color: white;">Certifiante · SST</span>
+          <!-- 1. Employé Polyvalent -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:180px;">
+              <img src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Employé Polyvalent en Restauration" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(26,155,151,.85));display:flex;align-items:flex-end;padding:16px;">
+                <span class="badge" style="background:var(--color-teal);color:white;">✦ Diplômante · RNCP</span>
+              </div>
             </div>
-          </div>
-          <div style="padding: 24px;">
-            <h3 style="font-size: 20px; margin-bottom: 8px;">Gestes et Postures</h3>
-            <p style="font-size: 13px; color: var(--color-mid); margin-bottom: 16px; line-height: 1.7;">Prévention TMS · Manutention sécurisée · Ergonomie en cuisine et en salle · Sécurité au travail</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
-              <span class="badge badge--diplome">Certifiante</span>
-              <span class="badge badge--cat">1 jour</span>
-              <span class="badge badge--cat">Présentiel</span>
+            <div style="padding:24px;">
+              <h3 style="font-size:18px;margin-bottom:6px;">Employé Polyvalent en Restauration</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:14px;line-height:1.7;">Service en salle · Préparations culinaires · Hygiène HACCP · Accueil client · Caisse</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+                <span class="badge badge--diplome">RNCP #38663</span>
+                <span class="badge badge--cat">455h</span>
+                <span class="badge badge--cat">Alternance</span>
+              </div>
+              <div style="font-size:12px;color:var(--color-mid);padding:10px 14px;background:var(--color-light);border-radius:4px;margin-bottom:16px;">
+                🏫 Niveau 3 · Débouchés : restaurants, hôtels, traiteurs, fast food
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:14px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:12px;color:var(--color-teal);font-weight:700;">OPCO 100%</span>
+                <a href="employe-polyvalent.html" class="btn btn-secondary" style="padding:8px 18px;font-size:12px;">Voir la fiche →</a>
+              </div>
             </div>
-            <div style="border-top: 1px solid var(--color-border); padding-top: 16px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 13px; color: var(--color-teal); font-weight: 600;">Financement OPCO</span>
-              <a href="gestes-postures.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 12px;">Voir la fiche →</a>
-            </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- 5. Prévention Harcèlement -->
-        <article class="card aos" data-delay="1" data-type="certifiante securite management" style="padding: 0; overflow: hidden;">
-          <div style="position: relative; overflow: hidden; height: 180px;">
-            <img src="https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation prévention harcèlement" style="width: 100%; height: 100%; object-fit: cover;">
-            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(123,45,139,.85)); display: flex; align-items: flex-end; padding: 16px;">
-              <span class="badge" style="background: #7b2d8b; color: white;">Certifiante</span>
+          <!-- 2. Responsable PME -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:180px;">
+              <img src="https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Responsable PME" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(219,86,14,.85));display:flex;align-items:flex-end;padding:16px;">
+                <span class="badge" style="background:var(--color-orange);color:white;">✦ Diplômante · RNCP</span>
+              </div>
             </div>
-          </div>
-          <div style="padding: 24px;">
-            <h3 style="font-size: 20px; margin-bottom: 8px;">Prévention du Harcèlement</h3>
-            <p style="font-size: 13px; color: var(--color-mid); margin-bottom: 16px; line-height: 1.7;">Identification · Prévention · Protocoles · Obligations légales pour managers et dirigeants CHR</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
-              <span class="badge badge--diplome">Certifiante</span>
-              <span class="badge badge--cat">1 jour</span>
-              <span class="badge badge--cat">Intra / Inter</span>
+            <div style="padding:24px;">
+              <h3 style="font-size:18px;margin-bottom:6px;">Responsable de Petite ou Moyenne Structure</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:14px;line-height:1.7;">Management · RH · Gestion financière · Administration · Leadership</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+                <span class="badge badge--certif">RNCP #38575</span>
+                <span class="badge badge--cat">554h</span>
+                <span class="badge badge--cat">Alternance</span>
+              </div>
+              <div style="font-size:12px;color:var(--color-mid);padding:10px 14px;background:var(--color-light);border-radius:4px;margin-bottom:16px;">
+                🏫 Niveau 5 · Débouchés : gérant, directeur adjoint, chef d'équipe
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:14px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:12px;color:var(--color-orange);font-weight:700;">OPCO 100%</span>
+                <a href="responsable-pme.html" class="btn" style="padding:8px 18px;font-size:12px;background:var(--color-orange);color:white;border-radius:2px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;">Voir la fiche →</a>
+              </div>
             </div>
-            <div style="border-top: 1px solid var(--color-border); padding-top: 16px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 13px; color: var(--color-teal); font-weight: 600;">Financement OPCO</span>
-              <a href="prevention-harcelement.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 12px;">Voir la fiche →</a>
-            </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- 6. Éco-Responsable -->
-        <article class="card aos" data-delay="2" data-type="certifiante" style="padding: 0; overflow: hidden;">
-          <div style="position: relative; overflow: hidden; height: 180px;">
-            <img src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation éco-responsable restaurant" style="width: 100%; height: 100%; object-fit: cover;">
-            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(45,106,79,.85)); display: flex; align-items: flex-end; padding: 16px;">
-              <span class="badge" style="background: #2d6a4f; color: white;">Certifiante</span>
+          <!-- 3. Community Manager -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:180px;">
+              <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Community Manager" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(26,155,151,.85));display:flex;align-items:flex-end;padding:16px;">
+                <span class="badge" style="background:var(--color-teal);color:white;">✦ Diplômante · RNCP</span>
+              </div>
             </div>
-          </div>
-          <div style="padding: 24px;">
-            <h3 style="font-size: 20px; margin-bottom: 8px;">Démarche Éco-Responsable</h3>
-            <p style="font-size: 13px; color: var(--color-mid); margin-bottom: 16px; line-height: 1.7;">Anti-gaspillage · Énergie · Approvisionnement local · Bilan carbone · Certification éco-label restaurant</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
-              <span class="badge badge--diplome">Certifiante</span>
-              <span class="badge badge--cat">2 jours</span>
-              <span class="badge badge--cat">Intra / Inter</span>
+            <div style="padding:24px;">
+              <h3 style="font-size:18px;margin-bottom:6px;">Community Manager</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:14px;line-height:1.7;">Stratégie réseaux sociaux · Création de contenu · Storytelling · Analyse & reporting digital</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+                <span class="badge badge--diplome">RNCP #40907</span>
+                <span class="badge badge--cat">400h</span>
+                <span class="badge badge--cat">Alternance</span>
+              </div>
+              <div style="font-size:12px;color:var(--color-mid);padding:10px 14px;background:var(--color-light);border-radius:4px;margin-bottom:16px;">
+                🏫 Niveau 5 · Débouchés : agences, établissements CHR, marques
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:14px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:12px;color:var(--color-teal);font-weight:700;">OPCO 100%</span>
+                <a href="community-manager.html" class="btn btn-secondary" style="padding:8px 18px;font-size:12px;">Voir la fiche →</a>
+              </div>
             </div>
-            <div style="border-top: 1px solid var(--color-border); padding-top: 16px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 13px; color: var(--color-teal); font-weight: 600;">Financement OPCO</span>
-              <a href="eco-responsable.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 12px;">Voir la fiche →</a>
-            </div>
-          </div>
-        </article>
+          </article>
 
-        <!-- 7. Intra-entreprise -->
-        <article class="card aos" data-type="certifiante management" style="padding: 0; overflow: hidden; grid-column: span 1;">
-          <div style="position: relative; overflow: hidden; height: 180px;">
-            <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation intra-entreprise sur mesure" style="width: 100%; height: 100%; object-fit: cover;">
-            <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(28,28,28,.85)); display: flex; align-items: flex-end; padding: 16px;">
-              <span class="badge" style="background: var(--color-dark); color: white;">Sur mesure</span>
+          <!-- 4. Conseiller Commercial -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:180px;">
+              <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Conseiller Commercial" style="width:100%;height:100%;object-fit:cover;transition:transform .4s;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(219,86,14,.85));display:flex;align-items:flex-end;padding:16px;">
+                <span class="badge" style="background:var(--color-orange);color:white;">✦ Diplômante · RNCP</span>
+              </div>
             </div>
-          </div>
-          <div style="padding: 24px;">
-            <h3 style="font-size: 20px; margin-bottom: 8px;">Formation Intra-Entreprise</h3>
-            <p style="font-size: 13px; color: var(--color-mid); margin-bottom: 16px; line-height: 1.7;">Programme 100% personnalisé à vos besoins · Formation dans vos locaux · Contenus adaptés à votre enseigne</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px;">
-              <span class="badge badge--cat">Sur mesure</span>
-              <span class="badge badge--cat">En vos locaux</span>
-              <span class="badge badge--cat">Tous niveaux</span>
+            <div style="padding:24px;">
+              <h3 style="font-size:18px;margin-bottom:6px;">Conseiller Commercial</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:14px;line-height:1.7;">Prospection · Techniques de vente · Fidélisation client · CRM · Outils numériques</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+                <span class="badge badge--certif">RNCP #37717</span>
+                <span class="badge badge--cat">406h</span>
+                <span class="badge badge--cat">Alternance</span>
+              </div>
+              <div style="font-size:12px;color:var(--color-mid);padding:10px 14px;background:var(--color-light);border-radius:4px;margin-bottom:16px;">
+                🏫 Niveau 4 · Débouchés : commercial terrain, chargé clientèle, attaché commercial
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:14px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:12px;color:var(--color-orange);font-weight:700;">OPCO 100%</span>
+                <a href="conseiller-commercial.html" class="btn" style="padding:8px 18px;font-size:12px;background:var(--color-orange);color:white;border-radius:2px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;">Voir la fiche →</a>
+              </div>
             </div>
-            <div style="border-top: 1px solid var(--color-border); padding-top: 16px; display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 13px; color: var(--color-mid); font-weight: 600;">Devis sur demande</span>
-              <a href="intra-entreprise.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 12px;">En savoir plus →</a>
-            </div>
-          </div>
-        </article>
+          </article>
 
+        </div>
+
+        <div class="tab-footer-bar" style="background:var(--color-teal);">
+          <p style="color:white;">🎓 Financement 100% OPCO · Accompagnement dans la recherche d'entreprise d'accueil · Aucun reste à charge</p>
+          <a href="../contact/index.html" class="btn btn-white" style="font-size:12px;">Candidater maintenant</a>
+        </div>
       </div>
+
+
+      <!-- ═══════════════════════════════════════
+           TAB 2 : FORMATION PROFESSIONNELLE
+      ════════════════════════════════════════ -->
+      <div id="ftab-formation" class="ftab-panel">
+
+        <!-- POEI -->
+        <div class="tab-subtitle">Dispositif POEI — France Travail</div>
+
+        <div class="poei-info-box">
+          <h4>📋 Qu'est-ce que le dispositif POEI ?</h4>
+          <p>La <strong>Préparation Opérationnelle à l'Emploi Individuelle (POEI)</strong> permet à <strong>France Travail</strong> de financer intégralement la formation d'un demandeur d'emploi qu'un employeur souhaite recruter. La formation se déroule <strong>avant la prise de poste</strong>, ce qui permet à l'employeur de recruter un collaborateur déjà formé à ses standards.<br>
+          <strong>Conditions d'éligibilité :</strong> être inscrit comme demandeur d'emploi · avoir une promesse d'embauche d'un employeur · dossier validé conjointement entre l'employeur, France Travail et Evolia Institut. Notre équipe assure le montage complet du dossier.</p>
+        </div>
+
+        <div class="grid-3" style="gap:24px;margin-bottom:0;">
+
+          <!-- POEI Serveur -->
+          <article class="card card-poei-accent" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:160px;">
+              <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation Serveur POEI" style="width:100%;height:100%;object-fit:cover;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(12,68,124,.85));display:flex;align-items:flex-end;padding:14px;">
+                <span class="badge--poei">POEI · France Travail</span>
+              </div>
+            </div>
+            <div style="padding:20px;">
+              <h3 style="font-size:17px;margin-bottom:6px;">Serveur</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.6;">Techniques de service · Accueil client · Mise en place · Hygiène HACCP</p>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;">
+                <span class="badge--poei">France Travail</span>
+                <span class="badge badge--cat">175h</span>
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:11px;color:#378ADD;font-weight:700;">Financement France Travail</span>
+                <a href="../financement/poei.html" class="btn btn-secondary" style="padding:7px 14px;font-size:11px;">En savoir plus →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- POEI Équipier Polyvalent -->
+          <article class="card card-poei-accent" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:160px;">
+              <img src="https://images.pexels.com/photos/2231168/pexels-photo-2231168.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Équipier Polyvalent POEI" style="width:100%;height:100%;object-fit:cover;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(12,68,124,.85));display:flex;align-items:flex-end;padding:14px;">
+                <span class="badge--poei">POEI · France Travail</span>
+              </div>
+            </div>
+            <div style="padding:20px;">
+              <h3 style="font-size:17px;margin-bottom:6px;">Équipier Polyvalent</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.6;">Polyvalence cuisine & salle · Préparations de base · Hygiène · Travail en équipe</p>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;">
+                <span class="badge--poei">France Travail</span>
+                <span class="badge badge--cat">175h</span>
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:11px;color:#378ADD;font-weight:700;">Financement France Travail</span>
+                <a href="../financement/poei.html" class="btn btn-secondary" style="padding:7px 14px;font-size:11px;">En savoir plus →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- POEI Commis de Cuisine -->
+          <article class="card card-poei-accent" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:160px;">
+              <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Commis de Cuisine POEI" style="width:100%;height:100%;object-fit:cover;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(12,68,124,.85));display:flex;align-items:flex-end;padding:14px;">
+                <span class="badge--poei">POEI · France Travail</span>
+              </div>
+            </div>
+            <div style="padding:20px;">
+              <h3 style="font-size:17px;margin-bottom:6px;">Commis de Cuisine</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.6;">Techniques culinaires de base · Fiches techniques · HACCP · Organisation du poste</p>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;">
+                <span class="badge--poei">France Travail</span>
+                <span class="badge badge--cat">203h</span>
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:11px;color:#378ADD;font-weight:700;">Financement France Travail</span>
+                <a href="../financement/poei.html" class="btn btn-secondary" style="padding:7px 14px;font-size:11px;">En savoir plus →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- CERTIFIANTES -->
+        <div class="tab-subtitle" style="margin-top:56px;">Formations certifiantes courtes — Finançables OPCO · Plan de formation</div>
+
+        <div class="grid-3" style="gap:24px;">
+
+          <!-- HACCP -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:160px;">
+              <img src="https://images.pexels.com/photos/2506990/pexels-photo-2506990.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Hygiène Alimentaire HACCP" style="width:100%;height:100%;object-fit:cover;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(26,155,151,.9));display:flex;align-items:flex-end;padding:14px;">
+                <span class="badge" style="background:var(--color-teal);color:white;">Certifiante · Obligatoire CHR</span>
+              </div>
+            </div>
+            <div style="padding:20px;">
+              <h3 style="font-size:16px;margin-bottom:6px;">Hygiène Alimentaire HACCP</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.6;">Réglementation sanitaire · Dangers alimentaires · Plan HACCP · Bonnes pratiques</p>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+                <span class="badge badge--diplome">Certifiante</span>
+                <span class="badge badge--cat">14h — 2 jours</span>
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:11px;color:var(--color-teal);font-weight:700;">OPCO · Plan formation</span>
+                <a href="haccp.html" class="btn btn-secondary" style="padding:7px 14px;font-size:11px;">Voir la fiche →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Gestion Conflits -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:160px;">
+              <img src="https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gestion des Conflits" style="width:100%;height:100%;object-fit:cover;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(26,58,46,.85));display:flex;align-items:flex-end;padding:14px;">
+                <span class="badge" style="background:#2d6a4f;color:white;">Certifiante</span>
+              </div>
+            </div>
+            <div style="padding:20px;">
+              <h3 style="font-size:16px;margin-bottom:6px;">Gestion des Conflits</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.6;">Médiation · Communication non-violente · Cohésion d'équipe · Cas CHR</p>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+                <span class="badge badge--diplome">Certifiante</span>
+                <span class="badge badge--cat">14h — 2 jours</span>
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:11px;color:var(--color-teal);font-weight:700;">Financement OPCO</span>
+                <a href="gestion-conflits.html" class="btn btn-secondary" style="padding:7px 14px;font-size:11px;">Voir la fiche →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Gestes et Postures -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:160px;">
+              <img src="https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Gestes et Postures" style="width:100%;height:100%;object-fit:cover;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(26,58,46,.85));display:flex;align-items:flex-end;padding:14px;">
+                <span class="badge" style="background:#2d6a4f;color:white;">Certifiante · SST</span>
+              </div>
+            </div>
+            <div style="padding:20px;">
+              <h3 style="font-size:16px;margin-bottom:6px;">Gestes et Postures</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.6;">Prévention TMS · Manutention sécurisée · Ergonomie en cuisine et en salle</p>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+                <span class="badge badge--diplome">Certifiante · SST</span>
+                <span class="badge badge--cat">7h — 1 jour</span>
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:11px;color:var(--color-teal);font-weight:700;">Financement OPCO</span>
+                <a href="gestes-postures.html" class="btn btn-secondary" style="padding:7px 14px;font-size:11px;">Voir la fiche →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Prévention Harcèlement -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:160px;">
+              <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Prévention du Harcèlement" style="width:100%;height:100%;object-fit:cover;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(28,28,28,.85));display:flex;align-items:flex-end;padding:14px;">
+                <span class="badge" style="background:var(--color-dark);color:white;">Certifiante</span>
+              </div>
+            </div>
+            <div style="padding:20px;">
+              <h3 style="font-size:16px;margin-bottom:6px;">Prévention du Harcèlement</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.6;">Identifier · Prévenir · Protocoles · Obligations légales CHR</p>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+                <span class="badge badge--diplome">Certifiante</span>
+                <span class="badge badge--cat">7h — 1 jour</span>
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:11px;color:var(--color-teal);font-weight:700;">Financement OPCO</span>
+                <a href="prevention-harcelement.html" class="btn btn-secondary" style="padding:7px 14px;font-size:11px;">Voir la fiche →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Eco-Responsable -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:160px;">
+              <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Démarche Éco-Responsable" style="width:100%;height:100%;object-fit:cover;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(26,58,46,.85));display:flex;align-items:flex-end;padding:14px;">
+                <span class="badge" style="background:#2d6a4f;color:white;">Certifiante</span>
+              </div>
+            </div>
+            <div style="padding:20px;">
+              <h3 style="font-size:16px;margin-bottom:6px;">Démarche Éco-Responsable</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.6;">Anti-gaspillage · Énergie · Approvisionnement local · Bilan carbone restaurant</p>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+                <span class="badge badge--diplome">Certifiante</span>
+                <span class="badge badge--cat">14h — 2 jours</span>
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:11px;color:var(--color-teal);font-weight:700;">Financement OPCO</span>
+                <a href="eco-responsable.html" class="btn btn-secondary" style="padding:7px 14px;font-size:11px;">Voir la fiche →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Intra-Entreprise -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div style="position:relative;overflow:hidden;height:160px;">
+              <img src="https://images.pexels.com/photos/2231168/pexels-photo-2231168.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Formation Intra-Entreprise" style="width:100%;height:100%;object-fit:cover;">
+              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(28,28,28,.85));display:flex;align-items:flex-end;padding:14px;">
+                <span class="badge" style="background:var(--color-dark);color:white;">Sur mesure</span>
+              </div>
+            </div>
+            <div style="padding:20px;">
+              <h3 style="font-size:16px;margin-bottom:6px;">Formation Intra-Entreprise</h3>
+              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.6;">Programme 100% personnalisé · Dans vos locaux · Contenus adaptés à votre enseigne</p>
+              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+                <span class="badge badge--cat">Sur mesure</span>
+                <span class="badge badge--cat">Tous niveaux</span>
+              </div>
+              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-size:11px;color:var(--color-mid);font-weight:700;">Devis sur demande</span>
+                <a href="intra-entreprise.html" class="btn btn-secondary" style="padding:7px 14px;font-size:11px;">En savoir plus →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <div class="tab-footer-bar" style="background:#0C447C;">
+          <p style="color:white;">💡 Financement OPCO · POEI · Plan de formation — notre équipe monte votre dossier</p>
+          <a href="../contact/index.html" class="btn btn-white" style="font-size:12px;">Demander un devis</a>
+        </div>
+      </div>
+
+
+      <!-- ═══════════════════════════════════════
+           TAB 3 : CONSEIL & AUDIT
+      ════════════════════════════════════════ -->
+      <div id="ftab-conseil" class="ftab-panel">
+
+        <div class="tab-subtitle">Restaurateurs indépendants · Franchisés &amp; Franchiseurs · Groupes CHR</div>
+
+        <div class="grid-3" style="gap:28px;">
+
+          <!-- Ouverture Restaurant -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div class="conseil-card-header" style="background:var(--color-teal);">
+              <div class="conseil-card-num">01</div>
+              <div class="conseil-card-sector">Mission complète</div>
+              <div class="conseil-card-title">Ouverture Restaurant De A à Z</div>
+              <p class="conseil-card-desc">Consulting complet · 5 semaines d'accompagnement · Du cadrage au service blanc</p>
+            </div>
+            <div class="conseil-card-body">
+              <ul class="conseil-card-points">
+                <li>1. Audit &amp; cadrage du projet</li>
+                <li>2. Recrutement des équipes</li>
+                <li>3. Formation &amp; process opérationnels</li>
+                <li>4. Service blanc &amp; ouverture officielle</li>
+              </ul>
+              <div style="display:flex;gap:8px;margin-bottom:16px;">
+                <span class="badge badge--cat">5 semaines</span>
+                <span class="badge badge--cat">Sur devis</span>
+              </div>
+              <a href="../consulting-ouverture/index.html" class="btn btn-secondary" style="display:block;text-align:center;padding:10px 20px;font-size:12px;">En savoir plus →</a>
+            </div>
+          </article>
+
+          <!-- Recrutement CHR -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div class="conseil-card-header" style="background:var(--color-orange);">
+              <div class="conseil-card-num">02</div>
+              <div class="conseil-card-sector">Expertise RH</div>
+              <div class="conseil-card-title">Recrutement CHR</div>
+              <p class="conseil-card-desc">Sourcing multi-canal · POEI · Fiches de poste · Onboarding structuré</p>
+            </div>
+            <div class="conseil-card-body">
+              <ul class="conseil-card-points">
+                <li>→ Définition des fiches de poste</li>
+                <li>→ Sourcing multi-canal (POEI, jobboards)</li>
+                <li>→ Entretiens &amp; onboarding structuré</li>
+                <li>→ Partenariat France Travail</li>
+              </ul>
+              <div style="display:flex;gap:8px;margin-bottom:16px;">
+                <span class="badge badge--cat">Sur mesure</span>
+              </div>
+              <a href="../consulting-ouverture/index.html" class="btn btn-secondary" style="display:block;text-align:center;padding:10px 20px;font-size:12px;">En savoir plus →</a>
+            </div>
+          </article>
+
+          <!-- Audit & Optimisation -->
+          <article class="card" style="padding:0;overflow:hidden;">
+            <div class="conseil-card-header" style="background:var(--color-dark);">
+              <div class="conseil-card-num">03</div>
+              <div class="conseil-card-sector">Process · Opérations</div>
+              <div class="conseil-card-title">Audit &amp; Optimisation Opérationnelle</div>
+              <p class="conseil-card-desc">Procédures · Check-lists · KPIs · Tableaux de bord opérationnels</p>
+            </div>
+            <div class="conseil-card-body">
+              <ul class="conseil-card-points">
+                <li>→ Manuel de procédures &amp; fiches techniques</li>
+                <li>→ Check-lists &amp; KPIs de pilotage</li>
+                <li>→ Tableaux de bord opérationnels</li>
+                <li>→ Formation équipes incluse</li>
+              </ul>
+              <div style="display:flex;gap:8px;margin-bottom:16px;">
+                <span class="badge badge--cat">Sur devis</span>
+              </div>
+              <a href="../consulting-ouverture/index.html" class="btn btn-secondary" style="display:block;text-align:center;padding:10px 20px;font-size:12px;">En savoir plus →</a>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Franchisés & Franchiseurs -->
+        <div style="background:rgba(26,155,151,.05);border:1px solid rgba(26,155,151,.2);border-radius:8px;padding:24px 28px;margin-top:32px;">
+          <h3 style="font-size:16px;margin-bottom:8px;color:var(--color-teal);">🔗 Franchisés &amp; Franchiseurs</h3>
+          <p style="font-size:14px;color:var(--color-mid);line-height:1.8;">Evolia Institut accompagne les <strong>réseaux de franchise</strong> dans le déploiement de formations homogènes sur l'ensemble de leurs établissements. Audit des pratiques, standardisation des process opérationnels, formation des équipes en intra — nous intervenons à toutes les étapes du développement de votre réseau. Contactez-nous pour un devis personnalisé.</p>
+        </div>
+
+        <div class="tab-footer-bar" style="background:var(--color-teal);">
+          <p style="color:white;">🤝 Premier échange offert · Réponse garantie sous 48h</p>
+          <a href="../contact/index.html" class="btn btn-white" style="font-size:12px;">Discuter de mon projet</a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- CTA FINANCEMENT -->
   <section class="section section--teal">
-    <div class="container" style="text-align: center;">
-      <h2 style="color: white; margin-bottom: 16px;">Toutes nos formations sont finançables</h2>
-      <p style="color: rgba(255,255,255,.85); max-width: 540px; margin: 0 auto 32px;">OPCO, POEI, Plan de formation — notre équipe monte votre dossier et vous accompagne de A à Z.</p>
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+    <div class="container" style="text-align:center;">
+      <h2 style="color:white;margin-bottom:16px;">Toutes nos formations sont finançables</h2>
+      <p style="color:rgba(255,255,255,.85);max-width:540px;margin:0 auto 32px;">OPCO, POEI, Plan de formation — notre équipe monte votre dossier et vous accompagne de A à Z.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
         <a href="../contact/index.html" class="btn btn-white">Demander un devis gratuit</a>
         <a href="../financement/poei.html" class="btn btn-outline-white">Découvrir le POEI</a>
       </div>
@@ -243,20 +631,23 @@
 </main>
 <div id="site-footer"></div>
 <script>
-function filterFormations(type, btn) {
-  document.querySelectorAll('#formations-grid article').forEach(function(card) {
-    var types = card.getAttribute('data-type') || '';
-    card.style.display = (type === 'tous' || types.includes(type)) ? '' : 'none';
-  });
-  document.querySelectorAll('[data-filter]').forEach(function(b) {
-    b.style.background = 'transparent';
-    b.style.color = 'var(--color-mid)';
-    b.style.borderColor = 'var(--color-border)';
-  });
-  btn.style.background = 'var(--color-teal)';
-  btn.style.color = 'white';
-  btn.style.borderColor = 'var(--color-teal)';
+function switchFTab(name, btn) {
+  document.querySelectorAll('.ftab-panel').forEach(function(p) { p.classList.remove('ftab-active'); });
+  document.querySelectorAll('.ftab-btn').forEach(function(b) { b.classList.remove('ftab-active'); });
+  document.getElementById('ftab-' + name).classList.add('ftab-active');
+  btn.classList.add('ftab-active');
+  window.history.replaceState(null, '', '?tab=' + name);
+  // Scroll to tabs
+  document.getElementById('ftabs-nav').scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
+// Restore tab from URL
+(function() {
+  var tab = new URLSearchParams(window.location.search).get('tab');
+  if (tab) {
+    var btn = document.querySelector('.ftab-btn[onclick*="\'' + tab + '\'"]');
+    if (btn) { switchFTab(tab, btn); }
+  }
+})();
 </script>
 <script src="../js/header.js" defer></script>
 <script src="../js/animations.js" defer></script>

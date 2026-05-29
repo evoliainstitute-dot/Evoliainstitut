@@ -34,9 +34,14 @@
           Nos solutions <span class="caret">▾</span>
         </a>
         <div class="dropdown" role="menu">
-          <div class="dropdown-label">Formations</div>
+          <div class="dropdown-label">Alternance</div>
           <a href="/evolia-institut/formations/employe-polyvalent.html">Employé Polyvalent (RNCP #38663)</a>
           <a href="/evolia-institut/formations/responsable-pme.html">Responsable PME/PMI (RNCP #38575)</a>
+          <a href="/evolia-institut/formations/community-manager.html">Community Manager (RNCP #40907)</a>
+          <a href="/evolia-institut/formations/conseiller-commercial.html">Conseiller Commercial (RNCP #37717)</a>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-label">Certifiantes</div>
+          <a href="/evolia-institut/formations/haccp.html">Hygiène Alimentaire HACCP</a>
           <a href="/evolia-institut/formations/gestion-conflits.html">Gestion des Conflits</a>
           <a href="/evolia-institut/formations/gestes-postures.html">Gestes et Postures</a>
           <a href="/evolia-institut/formations/prevention-harcelement.html">Prévention Harcèlement</a>
@@ -111,10 +116,10 @@
         <ul>
           <li><a href="/evolia-institut/formations/employe-polyvalent.html">Employé Polyvalent</a></li>
           <li><a href="/evolia-institut/formations/responsable-pme.html">Responsable PME/PMI</a></li>
+          <li><a href="/evolia-institut/formations/community-manager.html">Community Manager</a></li>
+          <li><a href="/evolia-institut/formations/conseiller-commercial.html">Conseiller Commercial</a></li>
+          <li><a href="/evolia-institut/formations/haccp.html">Hygiène HACCP</a></li>
           <li><a href="/evolia-institut/formations/gestion-conflits.html">Gestion des Conflits</a></li>
-          <li><a href="/evolia-institut/formations/gestes-postures.html">Gestes et Postures</a></li>
-          <li><a href="/evolia-institut/formations/prevention-harcelement.html">Prévention Harcèlement</a></li>
-          <li><a href="/evolia-institut/formations/eco-responsable.html">Éco-Responsable</a></li>
           <li><a href="/evolia-institut/financement/poei.html">Dispositif POEI</a></li>
         </ul>
       </div>
