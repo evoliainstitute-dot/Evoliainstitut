@@ -9,7 +9,12 @@
   <meta property="og:title" content="Evolia Institut | Formation Restauration CHR Qualiopi">
   <meta property="og:description" content="Formations certifiantes et diplômantes en restauration CHR. Organisme certifié Qualiopi. Financement OPCO, France Travail disponible.">
   <meta property="og:type" content="website">
-  <link rel="canonical" href="https://www.evoliainstitut.com/">
+  <meta property="og:image" content="https://evoliainstitute-dot.github.io/Evoliainstitut/img/evolia-logo.png">
+  <meta property="og:url" content="https://evoliainstitute-dot.github.io/Evoliainstitut/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Evolia Institut | Formation Restauration CHR Qualiopi">
+  <meta name="twitter:description" content="Formations certifiantes et diplômantes en restauration CHR. Organisme certifié Qualiopi. Financement OPCO, France Travail disponible.">
+  <link rel="canonical" href="https://evoliainstitute-dot.github.io/Evoliainstitut/">
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/header-footer.css">
   <script type="application/ld+json">
@@ -52,9 +57,28 @@
     .hfc { position:absolute; border-radius:14px; box-shadow:0 10px 36px rgba(0,0,0,.11); }
     .hfc-teal { animation:float-a 4s ease-in-out infinite; }
     .hfc-rate { animation:float-b 4.5s ease-in-out infinite; }
-    .hero-trust-bar { background:white; border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border); padding:14px 0; }
-    .hero-trust-inner { display:flex; align-items:center; justify-content:center; gap:28px; flex-wrap:wrap; font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--color-mid); text-transform:uppercase; }
-    .hts { color:var(--color-border); }
+    @keyframes mqscroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    @keyframes mqscroll-rev { from{transform:translateX(-50%)} to{transform:translateX(0)} }
+    .mq-band { overflow:hidden; position:relative; padding:22px 0; }
+    .mq-band--white { background:white; border-bottom:1px solid var(--color-border); }
+    .mq-band--cream { background:#f8f5f1; border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border); }
+    .mq-label { text-align:center; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--color-mid); margin-bottom:16px; }
+    .mq-track-wrap { overflow:hidden; position:relative; }
+    .mq-track-wrap::before,.mq-track-wrap::after { content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; pointer-events:none; }
+    .mq-track-wrap.white::before { left:0; background:linear-gradient(to right,white,transparent); }
+    .mq-track-wrap.white::after  { right:0; background:linear-gradient(to left,white,transparent); }
+    .mq-track-wrap.cream::before { left:0; background:linear-gradient(to right,#f8f5f1,transparent); }
+    .mq-track-wrap.cream::after  { right:0; background:linear-gradient(to left,#f8f5f1,transparent); }
+    .mq-track { display:flex; width:max-content; animation:mqscroll 32s linear infinite; }
+    .mq-track:hover { animation-play-state:paused; }
+    .mq-track--rev { animation-name:mqscroll-rev; animation-duration:36s; }
+    .mq-item { display:flex; align-items:center; justify-content:center; padding:0 44px; height:56px; flex-shrink:0; }
+    .mq-item img { height:38px; width:auto; max-width:120px; object-fit:contain; filter:grayscale(1) opacity(.6); transition:filter .3s ease; }
+    .mq-item img:hover { filter:grayscale(0) opacity(1); }
+    .mq-sep { width:1px; height:28px; background:var(--color-border); flex-shrink:0; }
+    .mq-pill { display:inline-flex; align-items:center; gap:10px; background:white; border:1px solid var(--color-border); border-radius:9999px; padding:6px 16px 6px 10px; font-size:11px; font-weight:700; letter-spacing:.06em; color:var(--color-dark); white-space:nowrap; }
+    .mq-pill img { height:22px; width:auto; object-fit:contain; }
+    @media(max-width:640px) { .mq-track-wrap::before,.mq-track-wrap::after { width:40px; } }
     @media (max-width:960px) {
       .hero-split-grid { grid-template-columns:1fr; gap:40px; }
       .hero-float-wrap { height:340px; }
@@ -169,23 +193,6 @@
     </div>
   </section>
 
-  <!-- TRUST BAR -->
-  <div class="hero-trust-bar" aria-label="Certifications et partenaires">
-    <div class="container">
-      <div class="hero-trust-inner">
-        <span>✦ Certifié Qualiopi</span>
-        <span class="hts">|</span>
-        <span>OPCO AKTO partenaire</span>
-        <span class="hts">|</span>
-        <span>Ministère du Travail</span>
-        <span class="hts">|</span>
-        <span>Titres Pro RNCP officiels</span>
-        <span class="hts">|</span>
-        <span>Paris 19e · Île-de-France</span>
-      </div>
-    </div>
-  </div>
-
   <!-- ═══════════════════════════════════════════
        S2 — RÉASSURANCE (chiffres clés)
   ═══════════════════════════════════════════ -->
@@ -215,18 +222,18 @@
   <!-- ═══════════════════════════════════════════
        S4 — NOS FORMATIONS
   ═══════════════════════════════════════════ -->
-  <section class=section section--alt style=padding:56px 0 0;>
-    <div class=container style=text-align:center;margin-bottom:36px;>
-      <span class=section-label>Catalogue complet</span>
+  <section class="section section--alt" style="padding:56px 0 0;">
+    <div class="container" style="text-align:center;margin-bottom:36px;">
+      <span class="section-label">Catalogue complet</span>
       <h2>Alternance · Formation · Conseil</h2>
-      <span class=divider-teal style=margin:16px auto;></span>
-      <p style=color:var(--color-mid);>Toutes nos formations diplômantes RNCP et certifiantes — financées OPCO.</p>
+      <span class="divider-teal" style="margin:16px auto;"></span>
+      <p style="color:var(--color-mid);">Toutes nos formations diplômantes RNCP et certifiantes — financées OPCO.</p>
     </div>
     <iframe
-      src=https://evoliainstitute-dot.github.io/Evoliainstitut/formations/index.html
-      title=Catalogue des formations Evolia Institut
-      style=width:100%;height:900px;border:none;display:block;
-      loading=lazy
+      src="https://evoliainstitute-dot.github.io/Evoliainstitut/formations/index.html"
+      title="Catalogue des formations Evolia Institut"
+      style="width:100%;height:900px;border:none;display:block;"
+      loading="lazy"
     ></iframe>
   </section>
 
@@ -502,7 +509,7 @@
               <span class="cat">Financement</span>
               <span>14 mai 2026</span>
             </div>
-            <h3><a href="blog/articles/financement-formation-restauration.html">Comment financer sa formation en restauration en 2025 ?</a></h3>
+            <h3><a href="blog/articles/financement-formation-restauration.html">Comment financer sa formation en restauration en 2026 ?</a></h3>
             <p>OPCO, France Travail, Plan de formation… les dispositifs de financement sont nombreux mais méconnus. Notre guide complet pour former vos équipes.</p>
             <a href="blog/articles/financement-formation-restauration.html" class="read-more">Lire l'article →</a>
           </div>
@@ -543,31 +550,6 @@
   </section>
 
   <!-- MARQUEE PARTENAIRES -->
-  <style>
-    @keyframes mqscroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-    @keyframes mqscroll-rev { from{transform:translateX(-50%)} to{transform:translateX(0)} }
-    .mq-band { overflow:hidden; position:relative; padding:22px 0; }
-    .mq-band--white { background:white; border-bottom:1px solid var(--color-border); }
-    .mq-band--cream { background:#f8f5f1; border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border); }
-    .mq-label { text-align:center; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--color-mid); margin-bottom:16px; }
-    .mq-track-wrap { overflow:hidden; position:relative; }
-    .mq-track-wrap::before,.mq-track-wrap::after { content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; pointer-events:none; }
-    .mq-track-wrap.white::before { left:0; background:linear-gradient(to right,white,transparent); }
-    .mq-track-wrap.white::after  { right:0; background:linear-gradient(to left,white,transparent); }
-    .mq-track-wrap.cream::before { left:0; background:linear-gradient(to right,#f8f5f1,transparent); }
-    .mq-track-wrap.cream::after  { right:0; background:linear-gradient(to left,#f8f5f1,transparent); }
-    .mq-track { display:flex; width:max-content; animation:mqscroll 32s linear infinite; }
-    .mq-track:hover { animation-play-state:paused; }
-    .mq-track--rev { animation-name:mqscroll-rev; animation-duration:36s; }
-    .mq-item { display:flex; align-items:center; justify-content:center; padding:0 44px; height:56px; flex-shrink:0; }
-    .mq-item img { height:38px; width:auto; max-width:120px; object-fit:contain; filter:grayscale(1) opacity(.6); transition:filter .3s ease; }
-    .mq-item img:hover { filter:grayscale(0) opacity(1); }
-    .mq-sep { width:1px; height:28px; background:var(--color-border); flex-shrink:0; }
-    .mq-pill { display:inline-flex; align-items:center; gap:10px; background:white; border:1px solid var(--color-border); border-radius:9999px; padding:6px 16px 6px 10px; font-size:11px; font-weight:700; letter-spacing:.06em; color:var(--color-dark); white-space:nowrap; }
-    .mq-pill img { height:22px; width:auto; object-fit:contain; }
-    @media(max-width:640px) { .mq-track-wrap::before,.mq-track-wrap::after { width:40px; } }
-  </style>
-
   <div class="mq-band mq-band--white" aria-label="Nos partenaires">
     <div class="mq-label">Ils nous font confiance</div>
     <div class="mq-track-wrap white">
