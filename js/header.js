@@ -54,6 +54,7 @@
         </div>
       </li>
       <li><a href="/Evoliainstitut/financement/index.html">Financement</a></li>
+      <li><a href="/Evoliainstitut/blog/index.html">Blog</a></li>
       <li><a href="/Evoliainstitut/contact/index.html">Nous contacter</a></li>
     </ul>
     <div class="nav-actions" id="nav-actions">
@@ -90,6 +91,7 @@
           <li><a href="/Evoliainstitut/blog/index.html">Blog</a></li>
           <li><a href="/Evoliainstitut/contact/index.html">Nous contacter</a></li>
           <li><a href="/Evoliainstitut/accessibilite/index.html">Accessibilité &amp; PSH</a></li>
+          <li><a href="/Evoliainstitut/consulting-ouverture/index.html">Consulting ouverture</a></li>
         </ul>
       </div>
       <div class="footer-col">
