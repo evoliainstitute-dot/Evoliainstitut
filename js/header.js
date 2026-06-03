@@ -12,7 +12,7 @@
 <nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="container">
     <a href="/Evoliainstitut/index.html" class="nav-logo" aria-label="Evolia Institut — Accueil" style="gap:0;">
-      <img src="/Evoliainstitut/img/evolia-logo.png" alt="Evolia Institut" style="height:80px;width:auto;object-fit:contain;flex-shrink:0;" loading="eager">
+      <img src="/Evoliainstitut/img/evolia-logo.png" alt="Evolia Institut" style="height:120px;width:auto;object-fit:contain;flex-shrink:0;" loading="eager">
     </a>
     <ul class="nav-links" role="list" id="nav-links">
       <li>
