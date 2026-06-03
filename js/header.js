@@ -9,16 +9,6 @@
   function getHeaderHTML(activePage) {
     const active = activePage || '';
     return `
-<div class="site-topbar">
-  <div class="container">
-    <span class="topbar-pill">✓ Qualiopi</span>
-    <span>NDA : 11757542775</span>
-    <span>·</span>
-    <a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a>
-    <span>·</span>
-    <span>Paris 19e · Réponse sous 48h</span>
-  </div>
-</div>
 <nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="container">
     <a href="/Evoliainstitut/index.html" class="nav-logo" aria-label="Evolia Institut — Accueil" style="gap:0;">
