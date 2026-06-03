@@ -37,45 +37,154 @@
 <main id="main-content">
 
   <!-- ═══════════════════════════════════════════
-       S1 — HERO
+       S1 — HERO SPLIT (blanc / moderne)
   ═══════════════════════════════════════════ -->
-  <section class="hero" style="min-height: 88vh; display: flex; align-items: center;">
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <div class="aos" style="max-width: 700px;">
-        <div class="badge-qualiopi" style="margin-bottom: 28px; display: inline-flex;">
-          ✓ Certification Qualiopi · Formations reconnues par l'État
-        </div>
-        <h1 style="margin-bottom: 20px; color: white;">
-          La formation certifiante<br>
-          <em style="color: var(--color-teal); font-style: italic;">qui transforme</em><br>
-          les professionnels CHR
-        </h1>
-        <p style="font-size: 18px; color: rgba(255,255,255,.85); max-width: 540px; margin-bottom: 36px; line-height: 1.7;">
-          Formations diplômantes et certifiantes en restauration, hôtellerie et CHR.
-          Experts terrain · 100% financement possible · Réponse garantie sous 48h.
-        </p>
-        <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
-          <a href="formations/index.html" class="btn btn-primary btn-lg">Découvrir nos formations</a>
-          <a href="contact/index.html" class="btn btn-outline-white btn-lg">Dépôt de candidature</a>
-        </div>
-        <div style="display: flex; gap: 32px; margin-top: 48px; flex-wrap: wrap;">
-          <div style="color: rgba(255,255,255,.7); font-size: 13px;">
-            <span style="font-family: var(--font-display); font-size: 28px; font-weight: 600; color: white; display: block;">100%</span>
-            formations finançables
+  <style>
+    @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:.45;transform:scale(.65);} }
+    @keyframes float-a { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+    @keyframes float-b { 0%,100%{transform:translateY(0);} 50%{transform:translateY(6px);} }
+    .hero-split { background:#f8f5f1; min-height:calc(100vh - 40px); display:flex; align-items:center; padding:88px 0 64px; overflow:hidden; position:relative; }
+    .hero-split-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    .hero-float-wrap { position:relative; height:530px; }
+    .hero-float-img { position:absolute; top:0; right:0; width:87%; border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,.14); }
+    .hero-float-img img { width:100%; height:350px; object-fit:cover; display:block; }
+    .hero-float-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,transparent 52%,rgba(20,20,20,.52)); border-radius:20px; }
+    .hfc { position:absolute; border-radius:14px; box-shadow:0 10px 36px rgba(0,0,0,.11); }
+    .hfc-teal { animation:float-a 4s ease-in-out infinite; }
+    .hfc-rate { animation:float-b 4.5s ease-in-out infinite; }
+    .hero-trust-bar { background:white; border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border); padding:14px 0; }
+    .hero-trust-inner { display:flex; align-items:center; justify-content:center; gap:28px; flex-wrap:wrap; font-size:11px; font-weight:700; letter-spacing:.08em; color:var(--color-mid); text-transform:uppercase; }
+    .hts { color:var(--color-border); }
+    @media (max-width:960px) {
+      .hero-split-grid { grid-template-columns:1fr; gap:40px; }
+      .hero-float-wrap { height:340px; }
+      .hero-float-img { width:100%; }
+      .hero-float-img img { height:240px; }
+    }
+    @media (max-width:640px) {
+      .hero-split { padding:72px 0 48px; }
+      .hero-float-wrap { height:280px; }
+      .hero-trust-inner { gap:14px; }
+      .hts { display:none; }
+    }
+  </style>
+
+  <section class="hero-split" aria-labelledby="hero-heading">
+    <!-- Déco blobs -->
+    <div style="position:absolute;top:-120px;right:-40px;width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,rgba(26,155,151,.08) 0%,transparent 68%);pointer-events:none;" aria-hidden="true"></div>
+    <div style="position:absolute;bottom:-100px;left:-60px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(219,86,14,.06) 0%,transparent 70%);pointer-events:none;" aria-hidden="true"></div>
+
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="hero-split-grid">
+
+        <!-- ── GAUCHE ── -->
+        <div class="aos">
+          <!-- Pill Qualiopi -->
+          <div style="display:inline-flex;align-items:center;gap:9px;background:white;border:1px solid var(--color-border);border-radius:9999px;padding:7px 18px 7px 10px;font-size:11px;font-weight:700;letter-spacing:.07em;color:var(--color-teal);margin-bottom:32px;box-shadow:0 2px 16px rgba(0,0,0,.06);">
+            <span style="width:7px;height:7px;border-radius:50%;background:var(--color-teal);flex-shrink:0;animation:pulse-dot 2s ease-in-out infinite;"></span>
+            Certifié Qualiopi · N°QNW0211 · Paris 19e
           </div>
-          <div style="color: rgba(255,255,255,.7); font-size: 13px;">
-            <span style="font-family: var(--font-display); font-size: 28px; font-weight: 600; color: white; display: block;">+10</span>
-            formations certifiantes
+
+          <h1 id="hero-heading" style="font-size:clamp(42px,5vw,74px);font-weight:700;line-height:1.06;letter-spacing:-.025em;color:var(--color-dark);margin-bottom:24px;">
+            La formation<br>
+            qui <em style="color:var(--color-teal);font-style:italic;font-family:var(--font-display);">transforme</em><br>
+            les pros CHR
+          </h1>
+
+          <p style="font-size:17px;color:var(--color-mid);max-width:430px;margin-bottom:40px;line-height:1.78;">
+            Formations diplômantes RNCP &amp; certifiantes — alternance, continue, intra. Financement OPCO jusqu'à 100%.
+          </p>
+
+          <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px;">
+            <a href="formations/index.html" class="btn btn-primary btn-lg" style="border-radius:9999px;">Nos formations →</a>
+            <a href="contact/index.html" class="btn btn-lg" style="border-radius:9999px;border:2px solid var(--color-dark);color:var(--color-dark);background:transparent;font-weight:700;padding:12px 28px;text-decoration:none;display:inline-flex;align-items:center;">Dépôt de dossier</a>
           </div>
-          <div style="color: rgba(255,255,255,.7); font-size: 13px;">
-            <span style="font-family: var(--font-display); font-size: 28px; font-weight: 600; color: white; display: block;">★ 4.9</span>
-            satisfaction stagiaires
+
+          <!-- Mini stats -->
+          <div style="display:flex;gap:32px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--color-border);">
+            <div>
+              <div style="font-family:var(--font-display);font-size:30px;font-weight:700;color:var(--color-dark);line-height:1;">+10</div>
+              <div style="font-size:11px;color:var(--color-mid);margin-top:3px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Formations</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-display);font-size:30px;font-weight:700;color:var(--color-dark);line-height:1;">100%</div>
+              <div style="font-size:11px;color:var(--color-mid);margin-top:3px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Finançable</div>
+            </div>
+            <div>
+              <div style="font-family:var(--font-display);font-size:30px;font-weight:700;color:var(--color-dark);line-height:1;">★ 4.9</div>
+              <div style="font-size:11px;color:var(--color-mid);margin-top:3px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;">Satisfaction</div>
+            </div>
           </div>
         </div>
+
+        <!-- ── DROITE : floating cards ── -->
+        <div class="aos" data-delay="1">
+          <div class="hero-float-wrap">
+
+            <!-- Image principale -->
+            <div class="hero-float-img">
+              <img src="https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Formation restauration CHR — cuisine professionnelle">
+            </div>
+
+            <!-- Card 1 : 100% Finançable (teal) -->
+            <div class="hfc hfc-teal" style="bottom:222px;left:-8px;background:var(--color-teal);color:white;padding:16px 22px;min-width:172px;">
+              <div style="font-size:10px;opacity:.75;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px;">Financement</div>
+              <div style="font-family:var(--font-display);font-size:34px;font-weight:700;line-height:1;">100%</div>
+              <div style="font-size:11px;opacity:.85;margin-top:3px;">OPCO · France Travail</div>
+            </div>
+
+            <!-- Card 2 : rating (blanc) -->
+            <div class="hfc hfc-rate" style="bottom:110px;right:-22px;background:white;padding:14px 18px;display:flex;align-items:center;gap:12px;">
+              <div style="width:42px;height:42px;background:var(--color-orange);border-radius:10px;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;flex-shrink:0;">★</div>
+              <div>
+                <div style="font-weight:700;font-size:16px;color:var(--color-dark);line-height:1;">4.9 / 5</div>
+                <div style="font-size:11px;color:var(--color-mid);margin-top:2px;">Satisfaction stagiaires</div>
+              </div>
+            </div>
+
+            <!-- Card 3 : RNCP badges -->
+            <div class="hfc" style="bottom:18px;left:0;background:white;padding:14px 18px;min-width:220px;">
+              <div style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--color-mid);margin-bottom:8px;">Titres Pro RNCP</div>
+              <div style="display:flex;gap:5px;flex-wrap:wrap;">
+                <span style="background:rgba(26,155,151,.1);color:var(--color-teal);border-radius:9999px;padding:3px 10px;font-size:10px;font-weight:700;">#38663</span>
+                <span style="background:rgba(219,86,14,.1);color:var(--color-orange);border-radius:9999px;padding:3px 10px;font-size:10px;font-weight:700;">#38575</span>
+                <span style="background:rgba(26,155,151,.1);color:var(--color-teal);border-radius:9999px;padding:3px 10px;font-size:10px;font-weight:700;">#40907</span>
+                <span style="background:rgba(219,86,14,.1);color:var(--color-orange);border-radius:9999px;padding:3px 10px;font-size:10px;font-weight:700;">#37717</span>
+              </div>
+            </div>
+
+            <!-- Card 4 : mini témoignage -->
+            <div class="hfc" style="top:292px;left:0;right:14%;background:white;padding:14px 18px;display:flex;align-items:center;gap:12px;">
+              <div style="width:38px;height:38px;border-radius:50%;background:var(--color-teal);color:white;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:13px;font-weight:600;flex-shrink:0;">CR</div>
+              <div style="min-width:0;">
+                <div style="font-size:12px;color:var(--color-dark);font-weight:600;line-height:1.4;">"CDI obtenu dès la fin du parcours. 100% recommandé."</div>
+                <div style="font-size:10px;color:var(--color-mid);margin-top:3px;">Camille R. · Paris 11e · ★★★★★</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- TRUST BAR -->
+  <div class="hero-trust-bar" aria-label="Certifications et partenaires">
+    <div class="container">
+      <div class="hero-trust-inner">
+        <span>✦ Certifié Qualiopi</span>
+        <span class="hts">|</span>
+        <span>OPCO AKTO partenaire</span>
+        <span class="hts">|</span>
+        <span>Ministère du Travail</span>
+        <span class="hts">|</span>
+        <span>Titres Pro RNCP officiels</span>
+        <span class="hts">|</span>
+        <span>Paris 19e · Île-de-France</span>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════════════
        S2 — RÉASSURANCE (chiffres clés)

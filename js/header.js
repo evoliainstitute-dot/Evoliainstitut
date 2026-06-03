@@ -22,7 +22,16 @@
 <nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="container">
     <a href="/Evoliainstitut/index.html" class="nav-logo" aria-label="Evolia Institut — Accueil">
-      <div class="nav-logo-mark">EI</div>
+      <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
+        <circle cx="18" cy="6.5" r="5.5" fill="#DB560E"/>
+        <rect x="9" y="11.5" width="18" height="3" rx="1.5" fill="#1C1C1C"/>
+        <rect x="12.5" y="14.5" width="11" height="14" rx="1" fill="#1C1C1C"/>
+        <line x1="15" y1="14.5" x2="15" y2="28.5" stroke="#f8f5f1" stroke-width="1" stroke-opacity="0.45"/>
+        <line x1="18" y1="14.5" x2="18" y2="28.5" stroke="#f8f5f1" stroke-width="1" stroke-opacity="0.45"/>
+        <line x1="21" y1="14.5" x2="21" y2="28.5" stroke="#f8f5f1" stroke-width="1" stroke-opacity="0.45"/>
+        <rect x="10" y="28.5" width="16" height="2.5" rx="1" fill="#1C1C1C"/>
+        <rect x="7" y="31" width="22" height="3.5" rx="1.75" fill="#1C1C1C"/>
+      </svg>
       <div>
         <div class="nav-logo-text">Evolia Institut</div>
         <div class="nav-logo-sub">Formation CHR · Qualiopi</div>
@@ -78,8 +87,17 @@
   <div class="container">
     <div class="footer-top">
       <div>
-        <div class="footer-brand">
-          <div class="footer-logo-mark">EI</div>
+        <div class="footer-brand" style="display:flex;align-items:center;gap:12px;">
+          <svg width="34" height="34" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
+            <circle cx="18" cy="6.5" r="5.5" fill="#DB560E"/>
+            <rect x="9" y="11.5" width="18" height="3" rx="1.5" fill="rgba(255,255,255,0.9)"/>
+            <rect x="12.5" y="14.5" width="11" height="14" rx="1" fill="rgba(255,255,255,0.9)"/>
+            <line x1="15" y1="14.5" x2="15" y2="28.5" stroke="#1a1a1a" stroke-width="1" stroke-opacity="0.3"/>
+            <line x1="18" y1="14.5" x2="18" y2="28.5" stroke="#1a1a1a" stroke-width="1" stroke-opacity="0.3"/>
+            <line x1="21" y1="14.5" x2="21" y2="28.5" stroke="#1a1a1a" stroke-width="1" stroke-opacity="0.3"/>
+            <rect x="10" y="28.5" width="16" height="2.5" rx="1" fill="rgba(255,255,255,0.9)"/>
+            <rect x="7" y="31" width="22" height="3.5" rx="1.75" fill="rgba(255,255,255,0.9)"/>
+          </svg>
           <div class="footer-logo-text">Evolia Institut</div>
         </div>
         <p class="footer-tagline">Former mieux. Performer durablement.<br>Spécialiste formation CHR.</p>
