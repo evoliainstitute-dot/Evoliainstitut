@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parcours de Formation — Evolia Institut</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --teal:#1a9b97;--teal-dark:#157a76;--teal-light:#e6f5f5;
+  --orange:#db560e;--orange-dark:#c44d0c;--orange-light:#fef0e8;
+  --dark:#1c1c1c;--cream:#fff7ed;--mid:#6b6b6b;--border:#e0d5c8;--light:#f0e8de;
+}
+body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.page{width:210mm;min-height:297mm;margin:16px auto;background:#fff;box-shadow:0 8px 40px rgba(0,0,0,.15);page-break-after:always;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+@media print{body{background:#fff;}.page{margin:0;box-shadow:none;}}
+@page{size:A4;margin:0;}
+
+/* ── COVER ── */
+.cover{min-height:297mm;display:flex;flex-direction:column;}
+.cover-top{background:linear-gradient(145deg,var(--dark) 0%,#2a2a2a 100%);padding:48px 48px 56px;flex:1;position:relative;overflow:hidden;}
+.cover-top::before{content:'FORMATION';position:absolute;bottom:-30px;right:-20px;font-family:'Cormorant Garamond',serif;font-size:110px;font-weight:700;color:rgba(255,255,255,.04);line-height:1;}
+.cover-top-accent{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal) 0%,#0ecfcb 50%,transparent 100%);}
+.cover-logo img{height:72px;width:auto;object-fit:contain;filter:brightness(0) invert(1) opacity(.9);margin-bottom:48px;}
+.cover-category{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:14px;}
+.cover-category::before{content:'';display:block;width:24px;height:2px;background:var(--orange);}
+.cover-h1{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;line-height:1.08;color:#fff;margin-bottom:8px;}
+.cover-h1 em{font-style:italic;color:var(--teal);filter:brightness(1.3);}
+.cover-h1-sub{font-family:'Cormorant Garamond',serif;font-size:26px;font-style:italic;font-weight:400;color:rgba(255,255,255,.55);margin-bottom:32px;}
+.cover-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px;}
+.cover-pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:2px;padding:8px 16px;font-size:12px;font-weight:500;color:rgba(255,255,255,.8);}
+.cover-pill strong{color:#fff;font-weight:700;}
+.cover-bottom{background:var(--cream);padding:28px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.cover-stat{text-align:center;}
+.cover-stat strong{display:block;font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--teal);}
+.cover-stat strong.orange{color:var(--orange);}
+.cover-stat span{font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:.08em;margin-top:4px;display:block;}
+
+/* ── PAGE HEADER ── */
+.doc-header{display:flex;align-items:center;justify-content:space-between;padding:14px 36px 12px;border-bottom:1px solid var(--border);}
+.doc-header img{height:40px;width:auto;object-fit:contain;}
+.doc-header-tag{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);}
+.doc-header-accent{height:3px;background:linear-gradient(90deg,var(--teal) 0%,#0ecfcb 50%,transparent 100%);}
+.doc-footer{margin-top:auto;padding:10px 36px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--mid);}
+.doc-footer .q{font-weight:700;color:var(--teal);}
+
+/* ── CONTENT ── */
+.page-content{flex:1;padding:28px 36px;}
+.section-tag{display:inline-flex;align-items:center;gap:8px;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);background:var(--teal-light);padding:4px 10px;border-radius:2px;margin-bottom:10px;}
+.section-tag.orange{color:var(--orange-dark);background:var(--orange-light);}
+.section-h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;line-height:1.2;color:var(--dark);margin-bottom:8px;}
+.section-h2 em{font-style:italic;color:var(--teal);}
+.intro{font-size:12px;color:var(--mid);line-height:1.7;margin-bottom:18px;}
+.divider{height:1px;background:var(--border);margin:16px 0;}
+
+/* ── OBJECTIFS ── */
+.obj-list{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;}
+.obj-item{display:flex;gap:12px;align-items:flex-start;padding:10px 14px;background:#fafafa;border-radius:4px;border-left:3px solid var(--teal);}
+.obj-item.orange{border-left-color:var(--orange);}
+.obj-bullet{width:24px;height:24px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+.obj-item.orange .obj-bullet{background:linear-gradient(135deg,var(--orange),var(--orange-dark));}
+.obj-item p{font-size:12px;color:var(--dark);line-height:1.6;}
+
+/* ── SEMAINE CARDS ── */
+.semaine-card{border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:12px;}
+.semaine-card-header{display:flex;align-items:center;gap:0;background:linear-gradient(135deg,var(--teal),var(--teal-dark));padding:12px 16px;}
+.semaine-card-header.s2{background:linear-gradient(135deg,#1a9b97,#0d7470);}
+.semaine-card-header.s3{background:linear-gradient(135deg,var(--orange),var(--orange-dark));}
+.semaine-card-header.s4{background:linear-gradient(135deg,#157a76,#0d5e5b);}
+.semaine-card-header.s5{background:linear-gradient(135deg,var(--dark),#2d2d2d);}
+.s-num{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:rgba(255,255,255,.3);margin-right:12px;min-width:32px;}
+.s-title{flex:1;}
+.s-title h4{font-size:14px;font-weight:700;color:#fff;}
+.s-title span{font-size:10px;color:rgba(255,255,255,.7);}
+.s-pills{display:flex;gap:6px;}
+.s-pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:2px;padding:3px 8px;font-size:9px;color:rgba(255,255,255,.9);font-weight:600;}
+.semaine-card-body{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.s-col{padding:12px 14px;}
+.s-col:first-child{border-right:1px solid var(--border);}
+.s-col h5{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:6px;}
+.s-col ul{list-style:none;}
+.s-col ul li{font-size:11px;color:var(--dark);padding:2px 0 2px 12px;position:relative;line-height:1.5;}
+.s-col ul li::before{content:'›';position:absolute;left:0;color:var(--teal);font-weight:700;}
+.s-col ul li.orange::before{color:var(--orange);}
+
+/* ── INFO BLOCKS ── */
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;}
+.info-block{background:#fafafa;border-radius:4px;padding:14px;border-left:4px solid var(--teal);}
+.info-block.orange{border-left-color:var(--orange);}
+.info-block h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--teal-dark);margin-bottom:7px;}
+.info-block.orange h4{color:var(--orange-dark);}
+.info-block p,.info-block li{font-size:11.5px;color:var(--dark);line-height:1.65;}
+.info-block ul{list-style:none;}
+.info-block ul li{padding:2px 0 2px 12px;position:relative;}
+.info-block ul li::before{content:'›';position:absolute;left:0;color:var(--teal);font-weight:700;}
+.info-block.orange ul li::before{color:var(--orange);}
+
+/* ── HIGHLIGHT / DARK BOX ── */
+.highlight-box{background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:4px;padding:18px 22px;color:#fff;margin:16px 0;}
+.highlight-box h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;margin-bottom:6px;}
+.highlight-box p{font-size:12px;color:rgba(255,255,255,.85);line-height:1.7;}
+.orange-box{background:linear-gradient(135deg,var(--orange),var(--orange-dark));border-radius:4px;padding:18px 22px;color:#fff;margin:16px 0;}
+.orange-box h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;margin-bottom:6px;}
+.orange-box p{font-size:12px;color:rgba(255,255,255,.85);line-height:1.7;}
+.dark-box{background:linear-gradient(135deg,var(--dark),#2d2d2d);border-radius:4px;padding:18px 22px;color:#fff;margin:16px 0;}
+.dark-box h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:700;margin-bottom:6px;}
+.dark-box p{font-size:12px;color:rgba(255,255,255,.75);line-height:1.7;}
+
+/* ── INDICATORS ── */
+.indicator-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px;}
+.indicator{text-align:center;background:var(--cream);border-radius:4px;padding:16px 12px;}
+.indicator strong{display:block;font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:var(--teal);}
+.indicator strong.orange{color:var(--orange);}
+.indicator span{font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:.07em;margin-top:4px;display:block;line-height:1.4;}
+
+/* ── FINAL PAGE ── */
+.final-split{display:grid;grid-template-columns:1fr 1fr;min-height:297mm;}
+.final-left{background:var(--dark);padding:48px 36px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.final-left::before{content:'EVOLIA';position:absolute;bottom:-20px;right:-10px;font-family:'Cormorant Garamond',serif;font-size:90px;font-weight:700;color:rgba(255,255,255,.04);line-height:1;}
+.final-left img{height:56px;width:auto;filter:brightness(0) invert(1) opacity(.9);margin-bottom:32px;}
+.final-left h2{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#fff;line-height:1.2;margin-bottom:12px;}
+.final-left h2 em{font-style:italic;color:var(--teal);filter:brightness(1.3);}
+.final-left p{font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;}
+.final-contacts{display:flex;flex-direction:column;gap:10px;margin-top:28px;}
+.final-contact{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:4px;padding:12px 14px;}
+.final-contact .lbl{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px;}
+.final-contact p,.final-contact a{font-size:12px;color:rgba(255,255,255,.7);}
+.final-footer-bar{font-size:9px;color:rgba(255,255,255,.25);padding-top:24px;border-top:1px solid rgba(255,255,255,.08);}
+.final-right{background:var(--cream);padding:48px 32px;display:flex;flex-direction:column;gap:14px;}
+.final-right-title{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mid);margin-bottom:4px;}
+.final-right h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--dark);margin-bottom:14px;line-height:1.2;}
+.final-right h3 em{font-style:italic;color:var(--teal);}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ PAGE 1 : COUVERTURE ══════════════ -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-top">
+      <div class="cover-top-accent"></div>
+      <div class="cover-logo"><img src="../img/evolia-logo.png" alt="Evolia Institut"></div>
+      <div class="cover-category">Gestion relation client · Restauration CHR</div>
+      <h1 class="cover-h1">Parcours de<br><em>Formation</em></h1>
+      <div class="cover-h1-sub">Service à la clientèle dans un restaurant</div>
+      <div class="cover-meta">
+        <div class="cover-pill"><strong>175h</strong> de formation totale</div>
+        <div class="cover-pill"><strong>5 semaines</strong> de parcours</div>
+        <div class="cover-pill"><strong>E-learning</strong> + AFEST</div>
+        <div class="cover-pill"><strong>Qualiopi</strong> certifié</div>
+      </div>
+    </div>
+    <div class="cover-bottom">
+      <div class="cover-stat"><strong>175h</strong><span>de formation</span></div>
+      <div class="cover-stat"><strong>5</strong><span>semaines</span></div>
+      <div class="cover-stat"><strong class="orange">80%</strong><span>score minimum</span></div>
+      <div class="cover-stat"><strong>3 700€</strong><span>ou 100% OPCO</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 2 : OBJECTIFS ══════════════ -->
+<div class="page">
+  <div class="doc-header"><img src="../img/evolia-logo.png" alt="Evolia Institut"><span class="doc-header-tag">Parcours de formation · Objectifs</span></div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="section-tag">🎯 Objectifs de la formation</div>
+    <h2 class="section-h2">Ce que le stagiaire <em>maîtrisera</em></h2>
+    <p class="intro">À la fin de la formation, le stagiaire disposera de l'ensemble des compétences opérationnelles du métier de serveur en restauration.</p>
+
+    <div class="obj-list">
+      <div class="obj-item"><div class="obj-bullet">1</div><p>Comprendre le rôle et les responsabilités du serveur en restauration</p></div>
+      <div class="obj-item"><div class="obj-bullet">2</div><p>Maîtriser l'organisation du service et la coordination salle/cuisine</p></div>
+      <div class="obj-item orange"><div class="obj-bullet">3</div><p>Réaliser un service client complet, de l'accueil à l'encaissement</p></div>
+      <div class="obj-item orange"><div class="obj-bullet">4</div><p>Gérer les stocks et approvisionnements liés au service</p></div>
+      <div class="obj-item"><div class="obj-bullet">5</div><p>Utiliser les outils de caisse Connectill et procédures de gestion</p></div>
+      <div class="obj-item"><div class="obj-bullet">6</div><p>Promouvoir les offres et contribuer à l'image de marque du restaurant</p></div>
+      <div class="obj-item orange"><div class="obj-bullet">7</div><p>Appliquer les règles d'hygiène, de sécurité et de conformité via l'outil Hygie</p></div>
+      <div class="obj-item orange"><div class="obj-bullet">8</div><p>Organiser et assurer le bon déroulement des services midi et soir</p></div>
+    </div>
+
+    <div class="highlight-box">
+      <h3>Indicateurs de performance</h3>
+      <div class="indicator-row" style="margin-top:10px;">
+        <div class="indicator"><strong>100%</strong><span>Satisfaction apprenants</span></div>
+        <div class="indicator"><strong>100%</strong><span>Autonomie à 1 mois post-formation</span></div>
+        <div class="indicator"><strong class="orange">6 mois</strong><span>Calculés tous les 6 mois</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 2</span></div>
+</div>
+
+<!-- ══════════════ PAGE 3 : PROGRAMME S1–S3 ══════════════ -->
+<div class="page">
+  <div class="doc-header"><img src="../img/evolia-logo.png" alt="Evolia Institut"><span class="doc-header-tag">Parcours de formation · Programme</span></div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="section-tag">📚 Programme — 5 semaines × 35h</div>
+    <h2 class="section-h2">Déroulement du <em>parcours</em></h2>
+    <p class="intro">Chaque semaine alterne <strong>12,5h d'e-learning</strong> sur Teachizy et <strong>22,5h d'AFEST</strong> en situation de travail réelle.</p>
+
+    <div class="semaine-card">
+      <div class="semaine-card-header">
+        <div class="s-num">01</div>
+        <div class="s-title"><h4>Rôle &amp; Environnement</h4><span>Semaine 1 · 35 heures</span></div>
+        <div class="s-pills"><div class="s-pill">E-learning 12,5h</div><div class="s-pill">AFEST 22,5h</div></div>
+      </div>
+      <div class="semaine-card-body">
+        <div class="s-col"><h5>💻 E-learning (Teachizy)</h5><ul><li>Le rôle de l'employé polyvalent</li><li>Structure organisationnelle</li><li>Rôle dans l'expérience client</li><li>Connaissance de la carte</li><li>Organisation du service</li></ul></div>
+        <div class="s-col"><h5>🔧 AFEST en situation</h5><ul><li>Découverte des locaux et équipes</li><li>Premières pratiques de service</li><li class="orange">Communication du concept Evolia</li><li>Rotation postes de travail</li><li>Apprentissage menu et boissons</li></ul></div>
+      </div>
+    </div>
+
+    <div class="semaine-card">
+      <div class="semaine-card-header s2">
+        <div class="s-num">02</div>
+        <div class="s-title"><h4>Service à la clientèle</h4><span>Semaine 2 · 35 heures</span></div>
+        <div class="s-pills"><div class="s-pill">E-learning 12,5h</div><div class="s-pill">AFEST 22,5h</div></div>
+      </div>
+      <div class="semaine-card-body">
+        <div class="s-col"><h5>💻 E-learning (Teachizy)</h5><ul><li>Mise en place avant le service</li><li>Accueil et prise de commande</li><li>Gestion du service en salle</li><li>Encaissement et départ du client</li></ul></div>
+        <div class="s-col"><h5>🔧 AFEST en situation</h5><ul><li>Normes d'accueil personnalisé</li><li>Prise de commandes en situation</li><li class="orange">Mises en situation service direct</li><li>Communication salle/cuisine</li></ul></div>
+      </div>
+    </div>
+
+    <div class="semaine-card">
+      <div class="semaine-card-header s3">
+        <div class="s-num">03</div>
+        <div class="s-title"><h4>Gestion de la caisse</h4><span>Semaine 3 · 35 heures</span></div>
+        <div class="s-pills"><div class="s-pill">E-learning 12,5h</div><div class="s-pill">AFEST 22,5h</div></div>
+      </div>
+      <div class="semaine-card-body">
+        <div class="s-col"><h5>💻 E-learning (Teachizy)</h5><ul><li>Outil Connectill — gestion des commandes</li><li>Résolution problèmes d'encaissement</li><li>Procédure de clôture de caisse</li></ul></div>
+        <div class="s-col"><h5>🔧 AFEST en situation</h5><ul><li class="orange">Utilisation pratique Connectill</li><li>Enregistrement des commandes</li><li>Gestion des paiements réels</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 3</span></div>
+</div>
+
+<!-- ══════════════ PAGE 4 : PROGRAMME S4–S5 + MODALITÉS ══════════════ -->
+<div class="page">
+  <div class="doc-header"><img src="../img/evolia-logo.png" alt="Evolia Institut"><span class="doc-header-tag">Parcours de formation · Programme</span></div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="semaine-card">
+      <div class="semaine-card-header s4">
+        <div class="s-num">04</div>
+        <div class="s-title"><h4>Gestion des stocks</h4><span>Semaine 4 · 35 heures</span></div>
+        <div class="s-pills"><div class="s-pill">E-learning 12,5h</div><div class="s-pill">AFEST 22,5h</div></div>
+      </div>
+      <div class="semaine-card-body">
+        <div class="s-col"><h5>💻 E-learning (Teachizy)</h5><ul><li>Responsabilités vis-à-vis des stocks</li><li>Réalisation d'inventaires</li><li>Gestion des approvisionnements</li><li>Techniques pour minimiser les pertes</li></ul></div>
+        <div class="s-col"><h5>🔧 AFEST en situation</h5><ul><li class="orange">Exercices pratiques d'inventaires</li><li>Techniques d'optimisation</li><li>Gestion des approvisionnements</li></ul></div>
+      </div>
+    </div>
+
+    <div class="semaine-card" style="margin-bottom:18px;">
+      <div class="semaine-card-header s5">
+        <div class="s-num">05</div>
+        <div class="s-title"><h4>Hygiène &amp; Marketing</h4><span>Semaine 5 · 35 heures</span></div>
+        <div class="s-pills"><div class="s-pill">E-learning 12,5h</div><div class="s-pill">AFEST 22,5h</div></div>
+      </div>
+      <div class="semaine-card-body">
+        <div class="s-col"><h5>💻 E-learning (Teachizy)</h5><ul><li>Hygiène alimentaire — outil Hygie</li><li>Conformité aux normes</li><li>Gestion situations d'urgence</li><li>Marketing &amp; communication</li><li>Ventes additionnelles</li></ul></div>
+        <div class="s-col"><h5>🔧 AFEST en situation</h5><ul><li class="orange">Mise en pratique Hygie</li><li>Vente additionnelle en situation</li><li>Promotion des offres spéciales</li><li class="orange">Création contenu marketing</li></ul></div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-tag orange" style="margin-top:14px;">📍 Modalités</div>
+    <div class="info-grid" style="margin-top:10px;">
+      <div class="info-block"><h4>👥 Public</h4><ul><li>Salariés du secteur CHR</li><li>Demandeurs d'emploi inscrits chez France Travail</li></ul></div>
+      <div class="info-block orange"><h4>✅ Prérequis</h4><p>Savoir lire et écrire le français. Entretien préalable entreprise + candidat. Accessible sur dossier.</p></div>
+      <div class="info-block"><h4>📅 Durée &amp; effectif</h4><ul><li>175h · 5 semaines</li><li>Intra : 1 à 12 stagiaires</li><li>Inter : 2 à 12 stagiaires</li></ul></div>
+      <div class="info-block orange"><h4>📍 Lieu</h4><ul><li>Distanciel — e-learning Teachizy</li><li>Présentiel — AFEST sur site</li></ul></div>
+    </div>
+  </div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 4</span></div>
+</div>
+
+<!-- ══════════════ PAGE 5 : MÉTHODES & VALIDATION ══════════════ -->
+<div class="page">
+  <div class="doc-header"><img src="../img/evolia-logo.png" alt="Evolia Institut"><span class="doc-header-tag">Parcours de formation · Méthodes &amp; Validation</span></div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="section-tag">🧑‍🏫 Méthodes pédagogiques</div>
+    <h2 class="section-h2">Une pédagogie <em>active &amp; immersive</em></h2>
+    <p class="intro">Nos formateurs proposent un apport théorique et technique via une interaction permanente et par la mise en situation concrète des stagiaires.</p>
+
+    <div class="info-grid" style="margin-bottom:18px;">
+      <div class="info-block"><h4>📺 Pédagogie démonstrative</h4><p>Formateurs en posture d'experts — vidéos structurées et accessibles via Teachizy.</p></div>
+      <div class="info-block orange"><h4>⚡ Pédagogie active</h4><p>Forte incitation à la pratique et à la réalisation d'activités concrètes pour favoriser l'ancrage.</p></div>
+      <div class="info-block"><h4>🔧 AFEST</h4><p>Formation en situation de travail réelle au sein d'un établissement restauration partenaire.</p></div>
+      <div class="info-block orange"><h4>🎭 Jeux de rôle</h4><p>Simulations de situations difficiles et improvisations en contexte réel — mises en situation clients.</p></div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-tag" style="margin-top:14px;">📂 Supports &amp; Matériels</div>
+    <div class="info-grid" style="margin-top:10px;margin-bottom:18px;">
+      <div class="info-block"><h4>🖥 Distanciel (e-learning)</h4><ul><li>Plateforme Teachizy</li><li>Vidéos e-learning structurées</li><li>QCM de fin de module (45 min)</li><li>Ordinateur ou tablette + internet</li></ul></div>
+      <div class="info-block orange"><h4>🍽 Présentiel (AFEST)</h4><ul><li>Restaurant entièrement équipé</li><li>Outil de caisse Connectill</li><li>Outil d'hygiène Hygie</li><li>Vidéoprojecteur, paperboard</li></ul></div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-tag orange" style="margin-top:14px;">📊 Modalités d'évaluation &amp; Financement</div>
+    <div class="info-grid" style="margin-top:10px;">
+      <div class="info-block"><h4>✅ Validation</h4><ul><li>Score minimal <strong>80 %</strong> aux évaluations</li><li>QCM continus + mises en situation</li><li>Évaluations réflexives AFEST</li><li>Attestation nominative délivrée</li></ul></div>
+      <div class="info-block orange"><h4>💶 Financement</h4><ul><li><strong>3 700 €</strong> sans prise en charge</li><li>Prise en charge intégrale possible (OPCO)</li><li>Éligible France Travail (POEI)</li><li>Plan de développement des compétences</li></ul></div>
+    </div>
+  </div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 5</span></div>
+</div>
+
+<!-- ══════════════ PAGE 6 : FINALE ══════════════ -->
+<div class="page">
+  <div class="final-split">
+    <div class="final-left">
+      <div>
+        <img src="../img/evolia-logo.png" alt="Evolia Institut">
+        <h2>Votre réussite,<br><em>notre mission.</em></h2>
+        <p style="margin-top:10px;">Evolia Institut accompagne salariés, demandeurs d'emploi et entreprises du secteur CHR dans le développement de leurs compétences.</p>
+        <div class="final-contacts">
+          <div class="final-contact"><div class="lbl">Contact</div><a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a></div>
+          <div class="final-contact"><div class="lbl">Adresse</div><p>26 rue du Maroc, 75019 Paris</p></div>
+          <div class="final-contact"><div class="lbl">Horaires</div><p>Lun–Ven · 9h00–17h00</p></div>
+          <div class="final-contact"><div class="lbl">Certification</div><p style="color:rgba(26,155,151,.9);font-weight:600;">✓ Qualiopi n°QNW0211</p></div>
+        </div>
+      </div>
+      <div class="final-footer-bar">NDA : 11757542775 · SIRET : 99918809700011 · © 2026 Evolia Institut</div>
+    </div>
+    <div class="final-right">
+      <div class="final-right-title">Résumé du parcours</div>
+      <h3>Service à la<br><em>clientèle</em></h3>
+
+      <div class="info-block" style="margin-bottom:10px;">
+        <h4>⏱ Durée totale</h4>
+        <p><strong>175 heures</strong> · 5 semaines · 35h/semaine</p>
+      </div>
+      <div class="info-block" style="margin-bottom:10px;">
+        <h4>🖥 E-learning (62,5h)</h4>
+        <p>7 modules via Teachizy · QCM de validation · accessible à tout moment</p>
+      </div>
+      <div class="info-block orange" style="margin-bottom:10px;">
+        <h4>🔧 AFEST (112,5h)</h4>
+        <p>Formation en situation réelle · 5 semaines · tuteur dédié · grille d'évaluation hebdomadaire</p>
+      </div>
+      <div class="info-block" style="margin-bottom:10px;">
+        <h4>🏅 Validation</h4>
+        <p>Score 80% minimum · Attestation nominative délivrée à l'issue</p>
+      </div>
+      <div class="info-block orange" style="margin-bottom:10px;">
+        <h4>💶 Financement</h4>
+        <p>3 700 € · Prise en charge intégrale OPCO/France Travail possible</p>
+      </div>
+
+      <div style="margin-top:auto;background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:4px;padding:14px;color:#fff;">
+        <p style="font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;">Indicateurs qualité</p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="text-align:center;"><strong style="font-family:'Cormorant Garamond',serif;font-size:24px;">100%</strong><p style="font-size:9px;color:rgba(255,255,255,.7);">Satisfaction</p></div>
+          <div style="text-align:center;"><strong style="font-family:'Cormorant Garamond',serif;font-size:24px;">100%</strong><p style="font-size:9px;color:rgba(255,255,255,.7);">Autonomie J+30</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livret de Suivi & d'Évaluation — Evolia Institut</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --teal:#1a9b97;--teal-dark:#157a76;--teal-light:#e6f5f5;
+  --orange:#db560e;--orange-dark:#c44d0c;--orange-light:#fef0e8;
+  --dark:#1c1c1c;--cream:#fff7ed;--mid:#6b6b6b;--border:#e0d5c8;--light:#f0e8de;
+}
+body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+.page{width:210mm;min-height:297mm;margin:16px auto;background:#fff;box-shadow:0 8px 40px rgba(0,0,0,.15);page-break-after:always;position:relative;overflow:hidden;display:flex;flex-direction:column;}
+@media print{body{background:#fff;}.page{margin:0;box-shadow:none;}}
+@page{size:A4;margin:0;}
+
+/* ── COVER ── */
+.cover{display:grid;grid-template-columns:55% 45%;min-height:297mm;}
+.cover-left{background:var(--dark);padding:48px 40px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
+.cover-left::before{content:'ÉVALUATION';position:absolute;bottom:-20px;right:-20px;font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:700;color:rgba(255,255,255,.04);line-height:1;writing-mode:vertical-rl;}
+.cover-right{background:var(--cream);padding:48px 32px;display:flex;flex-direction:column;justify-content:space-between;}
+.cover-logo img{height:64px;width:auto;object-fit:contain;filter:brightness(0) invert(1) opacity(.9);}
+.cover-title{flex:1;display:flex;flex-direction:column;justify-content:center;padding:32px 0;}
+.cover-eyebrow{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,155,151,.9);margin-bottom:10px;}
+.cover-title h1{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:700;line-height:1.1;color:#fff;}
+.cover-title h1 em{font-style:italic;color:var(--teal);filter:brightness(1.3);}
+.cover-title .sub{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin-top:14px;}
+.cover-badges{display:flex;flex-direction:column;gap:10px;margin-top:28px;}
+.cover-badge{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:12px 16px;display:flex;align-items:center;gap:12px;}
+.cover-badge .val{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#fff;min-width:56px;}
+.cover-badge .val.orange{color:#ffb899;}
+.cover-badge .info{font-size:10px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.06em;}
+.cover-footer{font-size:9px;color:rgba(255,255,255,.3);font-weight:600;letter-spacing:.1em;text-transform:uppercase;}
+/* right side */
+.cover-right-logo{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.cover-right-title{flex:1;display:flex;flex-direction:column;justify-content:center;}
+.cover-right-title h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--dark);margin-bottom:12px;line-height:1.2;}
+.cover-right-stats{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
+.stat-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fff;border-radius:4px;border-left:3px solid var(--teal);}
+.stat-item.orange{border-left-color:var(--orange);}
+.stat-item strong{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--teal);min-width:50px;}
+.stat-item.orange strong{color:var(--orange);}
+.stat-item span{font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:.06em;}
+.cover-right-tag{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);}
+.apprenant-field{margin-top:20px;background:var(--cream);border-radius:4px;padding:14px;}
+.apprenant-field label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:6px;}
+.apprenant-field .line{height:1.5px;background:var(--border);margin-top:20px;}
+
+/* ── PAGE HEADER ── */
+.doc-header{display:flex;align-items:center;justify-content:space-between;padding:14px 32px 12px;border-bottom:1px solid var(--border);}
+.doc-header img{height:40px;width:auto;object-fit:contain;}
+.doc-header-tag{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);}
+.doc-header-accent{height:3px;background:linear-gradient(90deg,var(--teal) 0%,#0ecfcb 50%,transparent 100%);}
+.doc-footer{margin-top:auto;padding:10px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--mid);}
+.doc-footer .q{font-weight:700;color:var(--teal);}
+
+/* ── CONTENT ── */
+.page-content{flex:1;padding:24px 32px;}
+.section-tag{display:inline-flex;align-items:center;gap:8px;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);background:var(--teal-light);padding:4px 10px;border-radius:2px;margin-bottom:10px;}
+.section-tag.orange{color:var(--orange-dark);background:var(--orange-light);}
+.section-h2{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;line-height:1.2;color:var(--dark);margin-bottom:6px;}
+.section-h2 em{font-style:italic;color:var(--teal);}
+.intro{font-size:12px;color:var(--mid);line-height:1.7;margin-bottom:18px;}
+
+.eval-block{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;padding:14px;background:#fafafa;border-radius:4px;border-left:3px solid var(--teal);}
+.eval-block.orange{border-left-color:var(--orange);}
+.eval-num{width:32px;height:32px;background:linear-gradient(135deg,var(--teal),var(--teal-dark));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;flex-shrink:0;}
+.eval-block.orange .eval-num{background:linear-gradient(135deg,var(--orange),var(--orange-dark));}
+.eval-text h4{font-size:12px;font-weight:600;color:var(--dark);margin-bottom:4px;}
+.eval-text p{font-size:11px;color:var(--mid);line-height:1.65;}
+
+/* ── SEMAINE ── */
+.semaine-header{background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:4px;padding:16px 20px;color:#fff;margin-bottom:16px;}
+.semaine-header.s2{background:linear-gradient(135deg,#1a9b97,#0d7470);}
+.semaine-header.s3{background:linear-gradient(135deg,var(--orange),var(--orange-dark));}
+.semaine-header.s4{background:linear-gradient(135deg,#157a76,#0d5e5b);}
+.semaine-header.s5{background:linear-gradient(135deg,var(--dark),#2d2d2d);}
+.semaine-num{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:4px;}
+.semaine-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;}
+.semaine-title em{font-style:italic;color:rgba(255,255,255,.8);}
+.semaine-info{display:flex;gap:12px;margin-top:10px;}
+.semaine-pill{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:2px;padding:4px 10px;font-size:10px;color:rgba(255,255,255,.9);font-weight:600;}
+
+.programme-box{background:var(--cream);border-radius:4px;padding:14px;margin-bottom:14px;}
+.programme-box h4{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--orange-dark);margin-bottom:8px;}
+.programme-box ul{list-style:none;}
+.programme-box ul li{font-size:11px;color:var(--dark);padding:3px 0 3px 14px;position:relative;line-height:1.6;}
+.programme-box ul li::before{content:'›';position:absolute;left:0;color:var(--teal);font-weight:700;}
+
+.eval-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
+.eval-section-label{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
+
+.auto-eval-grid{background:#fafafa;border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:14px;}
+.aeg-header{display:grid;grid-template-columns:1fr 80px 80px 80px 90px;background:linear-gradient(135deg,var(--dark),#2d2d2d);color:#fff;font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;}
+.aeg-header div,.aeg-row div{padding:8px 10px;}
+.aeg-row{display:grid;grid-template-columns:1fr 80px 80px 80px 90px;border-top:1px solid var(--border);}
+.aeg-row:nth-child(even){background:var(--cream);}
+.aeg-row .crit{font-size:11px;font-weight:500;color:var(--dark);}
+.aeg-row .col{text-align:center;font-size:11px;color:var(--mid);}
+
+.reflexion-box{background:#fafafa;border:1px solid var(--border);border-radius:4px;padding:14px;margin-bottom:10px;}
+.reflexion-box .ref-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--orange-dark);margin-bottom:8px;}
+.reflexion-box .lines{margin-top:6px;}
+.reflexion-box .line{height:1px;background:var(--border);margin-bottom:18px;}
+
+.signature-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px;}
+.sig-box{background:var(--cream);border-radius:4px;padding:12px;}
+.sig-box label{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:4px;}
+.sig-box .sig-line{height:1px;background:var(--border);margin-top:28px;}
+.sig-box p{font-size:10px;color:var(--mid);margin-top:4px;}
+
+.textarea-mock{background:var(--cream);border-radius:4px;padding:10px;min-height:56px;border:1px solid var(--border);font-size:11px;color:var(--mid);}
+
+.divider{height:1px;background:var(--border);margin:14px 0;}
+</style>
+</head>
+<body>
+
+<!-- ══════════════ PAGE 1 : COUVERTURE ══════════════ -->
+<div class="page">
+  <div class="cover">
+    <div class="cover-left">
+      <div class="cover-logo"><img src="../img/evolia-logo.png" alt="Evolia Institut"></div>
+      <div class="cover-title">
+        <div class="cover-eyebrow">Certification Qualiopi · Formation professionnelle</div>
+        <h1>Livret de suivi<br><em>&amp; d'évaluation</em></h1>
+        <p class="sub">Service à la clientèle dans un restaurant<br>Restauration CHR · Parcours AFEST</p>
+        <div class="cover-badges">
+          <div class="cover-badge"><div class="val">175h</div><div class="info">de formation totale</div></div>
+          <div class="cover-badge"><div class="val">5</div><div class="info">semaines de parcours AFEST</div></div>
+          <div class="cover-badge"><div class="val orange">80%</div><div class="info">score minimum requis</div></div>
+        </div>
+      </div>
+      <div class="cover-footer">✓ Qualiopi · NDA 11757542775 · SIRET 99918809700011</div>
+    </div>
+    <div class="cover-right">
+      <div class="cover-right-logo">Evolia Institut</div>
+      <div class="cover-right-title">
+        <h2>Parcours pédagogique<br><em>apprenant</em></h2>
+        <p style="font-size:11px;color:var(--mid);line-height:1.7;margin-top:10px;">Ce livret accompagne votre progression tout au long des 5 semaines de formation. Il sert de fil rouge entre l'apprenant, le tuteur AFEST et l'équipe pédagogique.</p>
+        <div class="cover-right-stats">
+          <div class="stat-item"><strong>35h</strong><span>par semaine</span></div>
+          <div class="stat-item orange"><strong>45'</strong><span>suivi à mi-parcours</span></div>
+          <div class="stat-item"><strong>+1</strong><span>mois post-AFEST</span></div>
+        </div>
+        <div class="apprenant-field" style="margin-top:20px;">
+          <label>Nom &amp; Prénom de l'apprenant</label>
+          <div class="line"></div>
+          <label style="margin-top:14px;">Date de début de formation</label>
+          <div class="line"></div>
+          <label style="margin-top:14px;">Tuteur AFEST référent</label>
+          <div class="line"></div>
+        </div>
+      </div>
+      <div class="cover-right-tag">À compléter par l'apprenant</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 2 : INTRODUCTION ══════════════ -->
+<div class="page">
+  <div class="doc-header">
+    <img src="../img/evolia-logo.png" alt="Evolia Institut">
+    <span class="doc-header-tag">Livret de suivi · Introduction</span>
+  </div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="section-tag">📋 En bref</div>
+    <h2 class="section-h2">Déroulement du <em>parcours</em></h2>
+    <p class="intro">Votre formation se déroule en trois phases complémentaires, conçues pour alterner apprentissage théorique et mise en pratique professionnelle.</p>
+
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+      <div class="eval-block">
+        <div class="eval-num">A</div>
+        <div class="eval-text">
+          <h4>Partie théorique — e-learning (Teachizy)</h4>
+          <p>À suivre pendant votre temps libre. Accès libre aux modules vidéo, QCM de fin de module (45 min chacun).</p>
+        </div>
+      </div>
+      <div class="eval-block">
+        <div class="eval-num">B</div>
+        <div class="eval-text">
+          <h4>Point de suivi à mi-parcours — Visioconférence</h4>
+          <p>45 minutes avec un formateur de l'organisme pour mesurer la progression et identifier les besoins.</p>
+        </div>
+      </div>
+      <div class="eval-block orange">
+        <div class="eval-num">C</div>
+        <div class="eval-text">
+          <h4>Phase AFEST — Présentiel en situation de travail</h4>
+          <p>Organisée pendant le temps de travail au sein du restaurant. 5 semaines × 35h = 175h total.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <div class="section-tag">📊 Déroulement des évaluations</div>
+    <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px;">
+      <div class="eval-block">
+        <div class="eval-num" style="background:linear-gradient(135deg,#4b5563,#374151);font-size:12px;">1</div>
+        <div class="eval-text">
+          <h4>Évaluations continues et formatives</h4>
+          <p>QCM en ligne à la fin de chaque module (45 min) pour valider les connaissances techniques et comportementales.</p>
+        </div>
+      </div>
+      <div class="eval-block">
+        <div class="eval-num" style="background:linear-gradient(135deg,#4b5563,#374151);font-size:12px;">2</div>
+        <div class="eval-text">
+          <h4>Auto-évaluation à mi-parcours</h4>
+          <p>Réalisée lors du point de suivi pédagogique de 45 minutes pour mesurer la progression de l'apprenant.</p>
+        </div>
+      </div>
+      <div class="eval-block orange">
+        <div class="eval-num" style="font-size:12px;">3</div>
+        <div class="eval-text">
+          <h4>Évaluations formatives en situation de travail (AFEST)</h4>
+          <p>Réparties sur les journées de mise en situation pour mesurer l'acquisition des compétences.</p>
+        </div>
+      </div>
+      <div class="eval-block orange">
+        <div class="eval-num" style="font-size:12px;">4</div>
+        <div class="eval-text">
+          <h4>Évaluations réflexives journalières</h4>
+          <p>Réalisées à chaque fin de journée de mise en situation avec le tuteur AFEST.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:4px;padding:14px 18px;color:#fff;margin-top:18px;">
+      <p style="font-size:12px;font-weight:600;margin-bottom:4px;">Sanction de la formation</p>
+      <p style="font-size:11px;color:rgba(255,255,255,.85);line-height:1.65;">La validation est conditionnée par la réussite aux évaluations avec un score minimal de <strong>80 %</strong>. Une attestation de suivi et de réussite nominative est délivrée à l'issue.</p>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <span>Evolia Institut · contact@evoliainstitut.com</span>
+    <span class="q">✓ Qualiopi</span>
+    <span>Page 2</span>
+  </div>
+</div>
+
+<!-- ══════════════ PAGE 3 : SUIVI MI-PARCOURS ══════════════ -->
+<div class="page">
+  <div class="doc-header">
+    <img src="../img/evolia-logo.png" alt="Evolia Institut">
+    <span class="doc-header-tag">Livret de suivi · Suivi mi-parcours</span>
+  </div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="section-tag orange">📍 Suivi pédagogique à mi-parcours</div>
+    <h2 class="section-h2">Point de suivi — <em>45 minutes</em></h2>
+    <p class="intro">À compléter en entretien de suivi avec l'équipe pédagogique et l'apprenant, à mi-chemin de la partie théorique.</p>
+
+    <div class="reflexion-box" style="margin-bottom:12px;">
+      <div class="ref-label">1 / Ressenti général de l'apprenant après cette première période</div>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+      <div class="reflexion-box">
+        <div class="ref-label">2 / Les contenus sont cohérents vis-à-vis des objectifs</div>
+        <div style="display:flex;gap:12px;margin-top:10px;">
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><input type="checkbox"> Oui</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><input type="checkbox"> Non</label>
+        </div>
+      </div>
+      <div class="reflexion-box">
+        <div class="ref-label">3 / La communication avec l'équipe est bienveillante et fluide</div>
+        <div style="display:flex;gap:12px;margin-top:10px;">
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><input type="checkbox"> Oui</label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:12px;"><input type="checkbox"> Non</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="reflexion-box" style="margin-bottom:12px;">
+      <div class="ref-label">4 / Difficultés rencontrées — cibler des notions précises</div>
+      <div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div>
+    </div>
+
+    <div class="reflexion-box" style="margin-bottom:18px;">
+      <div class="ref-label">5 / Score moyen obtenu aux quiz en ligne</div>
+      <div class="lines"><div class="line"></div></div>
+    </div>
+
+    <div class="signature-row">
+      <div class="sig-box">
+        <label>Date</label>
+        <div class="sig-line"></div>
+        <p>Signature tuteur AFEST</p>
+        <div class="sig-line" style="margin-top:40px;"></div>
+      </div>
+      <div class="sig-box">
+        <label>Nom &amp; Prénom tuteur AFEST</label>
+        <div class="sig-line"></div>
+        <p>Signature apprenant</p>
+        <div class="sig-line" style="margin-top:40px;"></div>
+      </div>
+    </div>
+  </div>
+  <div class="doc-footer">
+    <span>Evolia Institut · contact@evoliainstitut.com</span>
+    <span class="q">✓ Qualiopi</span>
+    <span>Page 3</span>
+  </div>
+</div>
+
+<!-- ══════════════ SEMAINES 1–5 (template répété) ══════════════ -->
+
+<!-- SEMAINE 1 -->
+<div class="page">
+  <div class="doc-header">
+    <img src="../img/evolia-logo.png" alt="Evolia Institut">
+    <span class="doc-header-tag">Livret de suivi · AFEST Semaine 1</span>
+  </div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="semaine-header">
+      <div class="semaine-num">Semaine 1 · 35 heures</div>
+      <div class="semaine-title">Rôle &amp; <em>Environnement</em></div>
+      <div class="semaine-info">
+        <div class="semaine-pill">E-learning 12,5h</div>
+        <div class="semaine-pill">AFEST 22,5h</div>
+      </div>
+    </div>
+    <div class="programme-box">
+      <h4>Programme des mises en situation</h4>
+      <ul>
+        <li>Découverte approfondie des locaux et des équipes</li>
+        <li>Rotation à travers les postes de travail du serveur</li>
+        <li>Premières pratiques du service — communiquer le concept Evolia Institut</li>
+        <li>Apprentissage détaillé du menu et des boissons</li>
+      </ul>
+    </div>
+    <div class="eval-section-label">I — Partie à compléter par l'apprenant avant le point de suivi tuteur</div>
+    <div class="reflexion-box"><div class="ref-label">1 / Ressenti général après cette semaine en situation de travail</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+      <div class="reflexion-box"><div class="ref-label">2 / Contenus cohérents vs mises en situation</div><div style="display:flex;gap:12px;margin-top:10px;"><label style="font-size:12px;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Oui</label><label style="font-size:12px;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Non</label></div></div>
+      <div class="reflexion-box"><div class="ref-label">3 / Difficultés rencontrées</div><div class="lines"><div class="line"></div></div></div>
+    </div>
+    <div class="eval-section-label">II — Auto-évaluation par l'apprenant</div>
+    <div class="auto-eval-grid">
+      <div class="aeg-header"><div>Critère</div><div>Très bien</div><div>Bien</div><div>Moyen</div><div>Insuffisant</div></div>
+      <div class="aeg-row"><div class="crit">Adaptation</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Ponctualité</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Respect &amp; écoute</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Motivation</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Initiatives personnelles</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Sens des responsabilités</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+    </div>
+    <div class="eval-section-label">III — Phases réflexives — point apprenant / tuteur AFEST</div>
+    <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px;">
+      <div class="reflexion-box"><div class="ref-label">Réflexion 1 — Axes d'amélioration repérés par l'apprenant</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+      <div class="reflexion-box"><div class="ref-label">Réflexion 2 — Besoins en ressources supplémentaires</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+    </div>
+    <div class="signature-row">
+      <div class="sig-box"><label>Date &amp; Nom tuteur AFEST</label><div class="sig-line"></div><p>Signature tuteur</p><div class="sig-line" style="margin-top:30px;"></div></div>
+      <div class="sig-box"><label>Signature apprenant</label><div class="sig-line" style="margin-top:44px;"></div></div>
+    </div>
+  </div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 4</span></div>
+</div>
+
+<!-- SEMAINE 2 -->
+<div class="page">
+  <div class="doc-header"><img src="../img/evolia-logo.png" alt="Evolia Institut"><span class="doc-header-tag">Livret de suivi · AFEST Semaine 2</span></div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="semaine-header s2">
+      <div class="semaine-num">Semaine 2 · 35 heures</div>
+      <div class="semaine-title">Service à la <em>clientèle</em></div>
+      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 22,5h</div></div>
+    </div>
+    <div class="programme-box">
+      <h4>Programme des mises en situation</h4>
+      <ul>
+        <li>Apprentissage des normes d'accueil personnalisé</li>
+        <li>Prise de commandes et service en salle</li>
+        <li>Mises en situation de service direct avec les clients</li>
+      </ul>
+    </div>
+    <div class="eval-section-label">I — Partie à compléter par l'apprenant avant le point de suivi tuteur</div>
+    <div class="reflexion-box"><div class="ref-label">1 / Ressenti général après cette semaine en situation de travail</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+      <div class="reflexion-box"><div class="ref-label">2 / Contenus cohérents vs mises en situation</div><div style="display:flex;gap:12px;margin-top:10px;"><label style="font-size:12px;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Oui</label><label style="font-size:12px;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Non</label></div></div>
+      <div class="reflexion-box"><div class="ref-label">3 / Difficultés rencontrées</div><div class="lines"><div class="line"></div></div></div>
+    </div>
+    <div class="eval-section-label">II — Auto-évaluation par l'apprenant</div>
+    <div class="auto-eval-grid">
+      <div class="aeg-header"><div>Critère</div><div>Très bien</div><div>Bien</div><div>Moyen</div><div>Insuffisant</div></div>
+      <div class="aeg-row"><div class="crit">Adaptation</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Ponctualité</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Respect &amp; écoute</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Motivation</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Initiatives personnelles</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Sens des responsabilités</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+    </div>
+    <div class="eval-section-label">III — Phases réflexives</div>
+    <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px;">
+      <div class="reflexion-box"><div class="ref-label">Réflexion 1 — Axes d'amélioration repérés par l'apprenant</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+      <div class="reflexion-box"><div class="ref-label">Réflexion 2 — Besoins en ressources supplémentaires</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+    </div>
+    <div class="signature-row">
+      <div class="sig-box"><label>Date &amp; Nom tuteur AFEST</label><div class="sig-line"></div><p>Signature tuteur</p><div class="sig-line" style="margin-top:30px;"></div></div>
+      <div class="sig-box"><label>Signature apprenant</label><div class="sig-line" style="margin-top:44px;"></div></div>
+    </div>
+  </div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 5</span></div>
+</div>
+
+<!-- SEMAINE 3 -->
+<div class="page">
+  <div class="doc-header"><img src="../img/evolia-logo.png" alt="Evolia Institut"><span class="doc-header-tag">Livret de suivi · AFEST Semaine 3</span></div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="semaine-header s3">
+      <div class="semaine-num">Semaine 3 · 35 heures</div>
+      <div class="semaine-title">Gestion de la <em>caisse</em></div>
+      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 22,5h</div></div>
+    </div>
+    <div class="programme-box">
+      <h4>Programme des mises en situation</h4>
+      <ul>
+        <li>Utilisation pratique de l'outil Connectill — enregistrement des commandes</li>
+        <li>Mises en situation de service direct avec les clients</li>
+        <li>Gestion des paiements en situation réelle</li>
+        <li>Procédures de clôture de caisse</li>
+      </ul>
+    </div>
+    <div class="eval-section-label">I — Partie à compléter par l'apprenant avant le point de suivi tuteur</div>
+    <div class="reflexion-box"><div class="ref-label">1 / Ressenti général après cette semaine en situation de travail</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+      <div class="reflexion-box"><div class="ref-label">2 / Contenus cohérents vs mises en situation</div><div style="display:flex;gap:12px;margin-top:10px;"><label style="font-size:12px;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Oui</label><label style="font-size:12px;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Non</label></div></div>
+      <div class="reflexion-box"><div class="ref-label">3 / Difficultés rencontrées</div><div class="lines"><div class="line"></div></div></div>
+    </div>
+    <div class="eval-section-label">II — Auto-évaluation par l'apprenant</div>
+    <div class="auto-eval-grid">
+      <div class="aeg-header"><div>Critère</div><div>Très bien</div><div>Bien</div><div>Moyen</div><div>Insuffisant</div></div>
+      <div class="aeg-row"><div class="crit">Adaptation</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Ponctualité</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Respect &amp; écoute</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Motivation</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Initiatives personnelles</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Sens des responsabilités</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+    </div>
+    <div class="eval-section-label">III — Phases réflexives</div>
+    <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px;">
+      <div class="reflexion-box"><div class="ref-label">Réflexion 1 — Axes d'amélioration repérés par l'apprenant</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+      <div class="reflexion-box"><div class="ref-label">Réflexion 2 — Besoins en ressources supplémentaires</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+    </div>
+    <div class="signature-row">
+      <div class="sig-box"><label>Date &amp; Nom tuteur AFEST</label><div class="sig-line"></div><p>Signature tuteur</p><div class="sig-line" style="margin-top:30px;"></div></div>
+      <div class="sig-box"><label>Signature apprenant</label><div class="sig-line" style="margin-top:44px;"></div></div>
+    </div>
+  </div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 6</span></div>
+</div>
+
+<!-- SEMAINE 4 -->
+<div class="page">
+  <div class="doc-header"><img src="../img/evolia-logo.png" alt="Evolia Institut"><span class="doc-header-tag">Livret de suivi · AFEST Semaine 4</span></div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="semaine-header s4">
+      <div class="semaine-num">Semaine 4 · 35 heures</div>
+      <div class="semaine-title">Gestion des <em>stocks</em></div>
+      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 22,5h</div></div>
+    </div>
+    <div class="programme-box">
+      <h4>Programme des mises en situation</h4>
+      <ul>
+        <li>Mises en situation de service direct avec les clients</li>
+        <li>Exercices pratiques de réalisation d'inventaires et de gestion des stocks</li>
+        <li>Techniques pour minimiser les pertes et maximiser l'efficacité des approvisionnements</li>
+      </ul>
+    </div>
+    <div class="eval-section-label">I — Partie à compléter par l'apprenant avant le point de suivi tuteur</div>
+    <div class="reflexion-box"><div class="ref-label">1 / Ressenti général après cette semaine en situation de travail</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+      <div class="reflexion-box"><div class="ref-label">2 / Contenus cohérents vs mises en situation</div><div style="display:flex;gap:12px;margin-top:10px;"><label style="font-size:12px;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Oui</label><label style="font-size:12px;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Non</label></div></div>
+      <div class="reflexion-box"><div class="ref-label">3 / Difficultés rencontrées</div><div class="lines"><div class="line"></div></div></div>
+    </div>
+    <div class="eval-section-label">II — Auto-évaluation par l'apprenant</div>
+    <div class="auto-eval-grid">
+      <div class="aeg-header"><div>Critère</div><div>Très bien</div><div>Bien</div><div>Moyen</div><div>Insuffisant</div></div>
+      <div class="aeg-row"><div class="crit">Adaptation</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Ponctualité</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Respect &amp; écoute</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Motivation</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Initiatives personnelles</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Sens des responsabilités</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+    </div>
+    <div class="eval-section-label">III — Phases réflexives</div>
+    <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px;">
+      <div class="reflexion-box"><div class="ref-label">Réflexion 1 — Axes d'amélioration</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+      <div class="reflexion-box"><div class="ref-label">Réflexion 2 — Besoins en ressources supplémentaires</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+    </div>
+    <div class="signature-row">
+      <div class="sig-box"><label>Date &amp; Nom tuteur AFEST</label><div class="sig-line"></div><p>Signature tuteur</p><div class="sig-line" style="margin-top:30px;"></div></div>
+      <div class="sig-box"><label>Signature apprenant</label><div class="sig-line" style="margin-top:44px;"></div></div>
+    </div>
+  </div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 7</span></div>
+</div>
+
+<!-- SEMAINE 5 -->
+<div class="page">
+  <div class="doc-header"><img src="../img/evolia-logo.png" alt="Evolia Institut"><span class="doc-header-tag">Livret de suivi · AFEST Semaine 5</span></div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="semaine-header s5">
+      <div class="semaine-num">Semaine 5 · 35 heures</div>
+      <div class="semaine-title">Hygiène &amp; <em>Marketing</em></div>
+      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 22,5h</div></div>
+    </div>
+    <div class="programme-box">
+      <h4>Programme des mises en situation</h4>
+      <ul>
+        <li>Mise en pratique des normes d'hygiène via l'outil Hygie</li>
+        <li>Mises en situation de service direct avec les clients</li>
+        <li>Techniques de vente additionnelle et promotion des offres spéciales</li>
+        <li>Création de contenu marketing pour promouvoir la vie du restaurant</li>
+      </ul>
+    </div>
+    <div class="eval-section-label">I — Partie à compléter par l'apprenant avant le point de suivi tuteur</div>
+    <div class="reflexion-box"><div class="ref-label">1 / Ressenti général après cette semaine en situation de travail</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;">
+      <div class="reflexion-box"><div class="ref-label">2 / Contenus cohérents vs mises en situation</div><div style="display:flex;gap:12px;margin-top:10px;"><label style="font-size:12px;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Oui</label><label style="font-size:12px;display:flex;align-items:center;gap:4px;"><input type="checkbox"> Non</label></div></div>
+      <div class="reflexion-box"><div class="ref-label">3 / Difficultés rencontrées</div><div class="lines"><div class="line"></div></div></div>
+    </div>
+    <div class="eval-section-label">II — Auto-évaluation par l'apprenant</div>
+    <div class="auto-eval-grid">
+      <div class="aeg-header"><div>Critère</div><div>Très bien</div><div>Bien</div><div>Moyen</div><div>Insuffisant</div></div>
+      <div class="aeg-row"><div class="crit">Adaptation</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Ponctualité</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Respect &amp; écoute</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Motivation</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Initiatives personnelles</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+      <div class="aeg-row"><div class="crit">Sens des responsabilités</div><div class="col">○</div><div class="col">○</div><div class="col">○</div><div class="col">○</div></div>
+    </div>
+    <div class="eval-section-label">III — Phases réflexives</div>
+    <div style="display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px;">
+      <div class="reflexion-box"><div class="ref-label">Réflexion 1 — Axes d'amélioration</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+      <div class="reflexion-box"><div class="ref-label">Réflexion 2 — Besoins en ressources supplémentaires</div><div class="lines"><div class="line"></div><div class="line"></div></div></div>
+    </div>
+    <div class="signature-row">
+      <div class="sig-box"><label>Date &amp; Nom tuteur AFEST</label><div class="sig-line"></div><p>Signature tuteur</p><div class="sig-line" style="margin-top:30px;"></div></div>
+      <div class="sig-box"><label>Signature apprenant</label><div class="sig-line" style="margin-top:44px;"></div></div>
+    </div>
+  </div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 8</span></div>
+</div>
+
+<!-- ══════════════ PAGE : POINT +1 MOIS ══════════════ -->
+<div class="page">
+  <div class="doc-header"><img src="../img/evolia-logo.png" alt="Evolia Institut"><span class="doc-header-tag">Livret de suivi · Point +1 mois</span></div>
+  <div class="doc-header-accent"></div>
+  <div class="page-content">
+    <div class="section-tag orange">📅 Après la formation</div>
+    <h2 class="section-h2">Point +1 mois post-<em>AFEST</em></h2>
+    <p class="intro">Auto-évaluation à mener avant le point de suivi à +1 mois. Il n'y a pas de bonne ou mauvaise réponse — c'est une réflexion personnelle pour appréhender au mieux la suite du parcours.</p>
+
+    <div style="background:var(--cream);border-radius:4px;padding:16px;margin-bottom:18px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);margin-bottom:14px;">Auto-évaluation de l'apprenant</div>
+      <div style="overflow:hidden;border-radius:4px;border:1px solid var(--border);">
+        <div style="display:grid;grid-template-columns:140px 1fr 1fr 1fr 1fr;background:linear-gradient(135deg,var(--dark),#2d2d2d);color:#fff;font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;">
+          <div style="padding:10px 12px;">Objectif</div><div style="padding:10px 12px;">Critère</div><div style="padding:10px 12px;text-align:center;">Oui tout à fait</div><div style="padding:10px 12px;text-align:center;">Partiellement</div><div style="padding:10px 12px;text-align:center;">Pas du tout</div>
+        </div>
+        <div style="display:grid;grid-template-columns:140px 1fr 1fr 1fr 1fr;border-top:1px solid var(--border);background:#fff;">
+          <div style="padding:10px 12px;font-size:10px;font-weight:700;color:var(--teal-dark);background:var(--teal-light);">Compréhension</div><div style="padding:10px 12px;font-size:11px;">Je comprends les missions et les actions qui en découlent.</div><div style="padding:10px 12px;text-align:center;">○</div><div style="padding:10px 12px;text-align:center;">○</div><div style="padding:10px 12px;text-align:center;">○</div>
+        </div>
+        <div style="display:grid;grid-template-columns:140px 1fr 1fr 1fr 1fr;border-top:1px solid var(--border);background:var(--cream);">
+          <div style="padding:10px 12px;font-size:10px;font-weight:700;color:var(--orange-dark);background:var(--orange-light);">Réalisation</div><div style="padding:10px 12px;font-size:11px;">Je réalise des tâches de manière complète et satisfaisante.</div><div style="padding:10px 12px;text-align:center;">○</div><div style="padding:10px 12px;text-align:center;">○</div><div style="padding:10px 12px;text-align:center;">○</div>
+        </div>
+        <div style="display:grid;grid-template-columns:140px 1fr 1fr 1fr 1fr;border-top:1px solid var(--border);background:#fff;">
+          <div style="padding:10px 12px;font-size:10px;font-weight:700;color:var(--teal-dark);background:var(--teal-light);">Autonomie</div><div style="padding:10px 12px;font-size:11px;">J'ai réussi à réaliser mes missions en toute autonomie.</div><div style="padding:10px 12px;text-align:center;">○</div><div style="padding:10px 12px;text-align:center;">○</div><div style="padding:10px 12px;text-align:center;">○</div>
+        </div>
+        <div style="display:grid;grid-template-columns:140px 1fr 1fr 1fr 1fr;border-top:1px solid var(--border);background:var(--cream);">
+          <div style="padding:10px 12px;font-size:10px;font-weight:700;color:var(--orange-dark);background:var(--orange-light);">Satisfaction</div><div style="padding:10px 12px;font-size:11px;">Je suis satisfait(e) du travail que j'ai réalisé.</div><div style="padding:10px 12px;text-align:center;">○</div><div style="padding:10px 12px;text-align:center;">○</div><div style="padding:10px 12px;text-align:center;">○</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reflexion-box"><div class="ref-label">Point de suivi avec le référent AFEST — Débrief sur l'auto-évaluation</div><div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+    <div class="reflexion-box" style="margin-top:10px;"><div class="ref-label">Débrief sur les objectifs fixés en fin d'AFEST</div><div class="lines"><div class="line"></div><div class="line"></div><div class="line"></div></div></div>
+
+    <div class="signature-row" style="margin-top:16px;">
+      <div class="sig-box"><label>Date &amp; Nom tuteur AFEST</label><div class="sig-line"></div><p>Signature tuteur</p><div class="sig-line" style="margin-top:30px;"></div></div>
+      <div class="sig-box"><label>Signature apprenant</label><div class="sig-line" style="margin-top:44px;"></div></div>
+    </div>
+
+    <div style="background:linear-gradient(135deg,var(--teal),var(--teal-dark));border-radius:4px;padding:16px 20px;color:#fff;margin-top:16px;display:flex;align-items:center;gap:16px;">
+      <div>
+        <p style="font-size:12px;font-weight:600;margin-bottom:4px;">Assistance technique et pédagogique</p>
+        <p style="font-size:11px;color:rgba(255,255,255,.8);">Pour tout besoin d'assistance, contactez notre responsable pédagogique du lundi au jeudi de 9h30 à 17h00 : <strong>contact@evoliainstitut.com</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com · 26 rue du Maroc, 75019 Paris</span><span class="q">✓ Qualiopi</span><span>Page 9</span></div>
+</div>
+
+</body>
+</html>
