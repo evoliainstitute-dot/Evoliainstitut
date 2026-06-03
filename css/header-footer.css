@@ -46,7 +46,7 @@
   content: '';
   display: block;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-teal) 0%, #00B4D8 40%, rgba(0,119,182,.15) 80%, transparent 100%);
+  background: linear-gradient(90deg, var(--color-teal) 0%, #0ecfcb 40%, rgba(26,155,151,.15) 80%, transparent 100%);
 }
 .site-header.scrolled {
   background: rgba(255,255,255,.9);
@@ -483,35 +483,3 @@
   .hero { padding: 72px 0; }
   .page-hero { padding: 56px 0 48px; }
 }
-
-/* ── Inner pages logo bar ── */
-.site-header-inner {
-  background: white;
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 1px 4px rgba(0,0,0,.05);
-}
-.site-header-inner::after {
-  content: '';
-  display: block;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-teal) 0%, #00B4D8 40%, rgba(0,119,182,.15) 80%, transparent 100%);
-}
-.site-header-inner .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 24px;
-}
-.site-header-inner .inner-logo-back {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--color-mid);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: color .2s;
-}
-.site-header-inner .inner-logo-back:hover { color: var(--color-teal); }

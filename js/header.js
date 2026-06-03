@@ -136,14 +136,7 @@
         headerEl.innerHTML = getHeaderHTML();
         headerEl.className = 'site-header';
       } else {
-        headerEl.className = 'site-header-inner';
-        headerEl.innerHTML = `
-<div class="container">
-  <a href="/Evoliainstitut/index.html" aria-label="Evolia Institut — Accueil">
-    <img src="/Evoliainstitut/img/evolia-logo.png" alt="Evolia Institut" style="height:60px;width:auto;object-fit:contain;">
-  </a>
-  <a href="/Evoliainstitut/index.html" class="inner-logo-back">← Retour à l'accueil</a>
-</div>`;
+        headerEl.style.display = 'none';
       }
     }
 
