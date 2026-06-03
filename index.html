@@ -186,66 +186,6 @@
     </div>
   </div>
 
-  <!-- MARQUEE PARTENAIRES -->
-  <style>
-    @keyframes mqscroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-    @keyframes mqscroll-rev { from{transform:translateX(-50%)} to{transform:translateX(0)} }
-    .mq-band { overflow:hidden; position:relative; padding:22px 0; }
-    .mq-band--white { background:white; border-bottom:1px solid var(--color-border); }
-    .mq-band--cream { background:#f8f5f1; border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border); }
-    .mq-label { text-align:center; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--color-mid); margin-bottom:16px; }
-    .mq-track-wrap { overflow:hidden; position:relative; }
-    .mq-track-wrap::before,.mq-track-wrap::after { content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; pointer-events:none; }
-    .mq-track-wrap.white::before { left:0; background:linear-gradient(to right,white,transparent); }
-    .mq-track-wrap.white::after  { right:0; background:linear-gradient(to left,white,transparent); }
-    .mq-track-wrap.cream::before { left:0; background:linear-gradient(to right,#f8f5f1,transparent); }
-    .mq-track-wrap.cream::after  { right:0; background:linear-gradient(to left,#f8f5f1,transparent); }
-    .mq-track { display:flex; width:max-content; animation:mqscroll 32s linear infinite; }
-    .mq-track:hover { animation-play-state:paused; }
-    .mq-track--rev { animation-name:mqscroll-rev; animation-duration:36s; }
-    .mq-item { display:flex; align-items:center; justify-content:center; padding:0 44px; height:56px; flex-shrink:0; }
-    .mq-item img { height:38px; width:auto; max-width:120px; object-fit:contain; filter:grayscale(1) opacity(.6); transition:filter .3s ease; }
-    .mq-item img:hover { filter:grayscale(0) opacity(1); }
-    .mq-sep { width:1px; height:28px; background:var(--color-border); flex-shrink:0; }
-    .mq-pill { display:inline-flex; align-items:center; gap:10px; background:white; border:1px solid var(--color-border); border-radius:9999px; padding:6px 16px 6px 10px; font-size:11px; font-weight:700; letter-spacing:.06em; color:var(--color-dark); white-space:nowrap; }
-    .mq-pill img { height:22px; width:auto; object-fit:contain; }
-    @media(max-width:640px) { .mq-track-wrap::before,.mq-track-wrap::after { width:40px; } }
-  </style>
-
-  <div class="mq-band mq-band--white" aria-label="Nos partenaires">
-    <div class="mq-label">Ils nous font confiance</div>
-    <div class="mq-track-wrap white">
-      <div class="mq-track" id="mq-partners">
-        <!-- Set A -->
-        <div class="mq-item"><img src="img/partenaires/dakota.webp" alt="Dakota Restaurant" loading="lazy"></div>
-        <div class="mq-sep"></div>
-        <div class="mq-item"><img src="img/partenaires/bouyon.webp" alt="Bouyon" loading="lazy"></div>
-        <div class="mq-sep"></div>
-        <div class="mq-item"><img src="img/partenaires/akadi.jpg" alt="AKADI West African Food" loading="lazy"></div>
-        <div class="mq-sep"></div>
-        <div class="mq-item"><img src="img/partenaires/pizza-hut.webp" alt="Pizza Hut" loading="lazy"></div>
-        <div class="mq-sep"></div>
-        <div class="mq-item"><img src="img/partenaires/poulet-braise.webp" alt="Poulet Braisé" loading="lazy"></div>
-        <div class="mq-sep"></div>
-        <div class="mq-item"><img src="img/partenaires/crousty-game.jpg" alt="Crousty Game" loading="lazy"></div>
-        <div class="mq-sep"></div>
-        <!-- Set B (duplicate pour boucle infinie) -->
-        <div class="mq-item"><img src="img/partenaires/dakota.webp" alt="Dakota Restaurant" loading="lazy"></div>
-        <div class="mq-sep"></div>
-        <div class="mq-item"><img src="img/partenaires/bouyon.webp" alt="Bouyon" loading="lazy"></div>
-        <div class="mq-sep"></div>
-        <div class="mq-item"><img src="img/partenaires/akadi.jpg" alt="AKADI West African Food" loading="lazy"></div>
-        <div class="mq-sep"></div>
-        <div class="mq-item"><img src="img/partenaires/pizza-hut.webp" alt="Pizza Hut" loading="lazy"></div>
-        <div class="mq-sep"></div>
-        <div class="mq-item"><img src="img/partenaires/poulet-braise.webp" alt="Poulet Braisé" loading="lazy"></div>
-        <div class="mq-sep"></div>
-        <div class="mq-item"><img src="img/partenaires/crousty-game.jpg" alt="Crousty Game" loading="lazy"></div>
-        <div class="mq-sep"></div>
-      </div>
-    </div>
-  </div>
-
   <!-- ═══════════════════════════════════════════
        S2 — RÉASSURANCE (chiffres clés)
   ═══════════════════════════════════════════ -->
@@ -273,190 +213,21 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       S4 — CATALOGUE FORMATIONS
+       S4 — NOS FORMATIONS
   ═══════════════════════════════════════════ -->
-  <section class="section section--alt">
-    <div class="container" style="text-align:center;max-width:720px;margin:0 auto;">
-      <span class="section-label">Catalogue complet</span>
+  <section class=section section--alt style=padding:56px 0 0;>
+    <div class=container style=text-align:center;margin-bottom:36px;>
+      <span class=section-label>Catalogue complet</span>
       <h2>Alternance · Formation · Conseil</h2>
-      <span class="divider-teal" style="margin:16px auto;"></span>
-      <p style="color:var(--color-mid);margin-bottom:16px;line-height:1.8;">4 formations diplômantes RNCP en alternance, formations certifiantes courtes et conseil en ouverture — toutes finançables OPCO.</p>
-
-      <!-- 3 piliers visuels -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:32px 0;">
-        <div style="background:white;border-radius:12px;padding:24px 20px;border:1px solid var(--color-border);text-align:center;">
-          <div style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:rgba(123,114,233,.12);border-radius:12px;margin-bottom:12px;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="17" rx="2" fill="#7B72E9" fill-opacity=".18" stroke="#7B72E9" stroke-width="2"/><path d="M3 9h18" stroke="#7B72E9" stroke-width="2"/><path d="M8 2v4M16 2v4" stroke="#7B72E9" stroke-width="2" stroke-linecap="round"/><rect x="14" y="13" width="5" height="4" rx="1" fill="#7B72E9" fill-opacity=".3" stroke="#7B72E9" stroke-width="1.5"/><path d="M15 13v-1a1.5 1.5 0 013 0v1" stroke="#7B72E9" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <strong style="display:block;font-size:14px;color:var(--color-dark);margin-bottom:4px;">Alternance</strong>
-          <span style="font-size:12px;color:var(--color-mid);">4 titres RNCP · Financement OPCO 100%</span>
-        </div>
-        <div style="background:white;border-radius:12px;padding:24px 20px;border:1px solid var(--color-border);text-align:center;">
-          <div style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:rgba(255,107,157,.12);border-radius:12px;margin-bottom:12px;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="14" rx="2" fill="#FF6B9D" fill-opacity=".18" stroke="#FF6B9D" stroke-width="2"/><circle cx="12" cy="10" r="1.2" fill="#FF6B9D"/><path d="M12 12v3" stroke="#FF6B9D" stroke-width="2" stroke-linecap="round"/><path d="M8 19l1.5-3M16 19l-1.5-3" stroke="#FF6B9D" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <strong style="display:block;font-size:14px;color:var(--color-dark);margin-bottom:4px;">Formation continue</strong>
-          <span style="font-size:12px;color:var(--color-mid);">HACCP · Conflits · Gestes · Éco-resp.</span>
-        </div>
-        <div style="background:white;border-radius:12px;padding:24px 20px;border:1px solid var(--color-border);text-align:center;">
-          <div style="display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;background:rgba(255,112,67,.12);border-radius:12px;margin-bottom:12px;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="2" y="8" width="20" height="13" rx="2" fill="#FF7043" fill-opacity=".18" stroke="#FF7043" stroke-width="2"/><path d="M8 8V6a4 4 0 018 0v2" stroke="#FF7043" stroke-width="2" stroke-linecap="round"/><path d="M2 14h20M12 14v3" stroke="#FF7043" stroke-width="2" stroke-linecap="round"/></svg>
-          </div>
-          <strong style="display:block;font-size:14px;color:var(--color-dark);margin-bottom:4px;">Conseil &amp; Ouverture</strong>
-          <span style="font-size:12px;color:var(--color-mid);">Accompagnement A à Z · Premier échange offert</span>
-        </div>
-      </div>
-
-      <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-        <a href="https://evoliainstitute-dot.github.io/Evoliainstitut/formations/index.html?tab=formation" class="btn btn-primary btn-lg" style="border-radius:9999px;">Voir toutes les formations →</a>
-        <a href="contact/index.html" class="btn btn-lg" style="border-radius:9999px;border:2px solid var(--color-dark);color:var(--color-dark);background:transparent;font-weight:700;padding:12px 28px;text-decoration:none;display:inline-flex;align-items:center;">Candidater</a>
-      </div>
-
-      <!-- (contenu déplacé vers formations/index.html) -->
-      <div id="htab-alternance" class="htab-panel htab-active" hidden>
-        <div class="htab-subtitle">4 formations diplômantes · Titre Professionnel RNCP · Financement OPCO 100%</div>
-        <div class="grid-3" style="gap:24px;">
-
-          <article class="card aos" style="padding:0;overflow:hidden;">
-            <div style="position:relative;overflow:hidden;height:160px;">
-              <img src="img/formations/01_Employe_Polyvalent_en_Restauration.png" alt="Employé Polyvalent en Restauration" style="width:100%;height:100%;object-fit:cover;">
-              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(26,155,151,.85));display:flex;align-items:flex-end;padding:14px;">
-                <span class="badge" style="background:var(--color-teal);color:white;">✦ Diplômante · RNCP</span>
-              </div>
-            </div>
-            <div style="padding:20px;">
-              <h3 style="font-size:17px;margin-bottom:6px;">Employé Polyvalent en Restauration</h3>
-              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.7;">Service en salle · Préparations culinaires · Hygiène HACCP · Accueil client</p>
-              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
-                <span class="badge badge--diplome">RNCP #38663</span>
-                <span class="badge badge--cat">420h</span>
-                <span class="badge badge--cat">Alternance</span>
-              </div>
-              <div style="font-size:12px;color:var(--color-mid);padding:8px 12px;background:var(--color-light);border-radius:4px;margin-bottom:14px;">🏫 Niveau 3 · Débouchés : restaurants, hôtels, traiteurs</div>
-              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
-                <span style="font-size:11px;color:var(--color-teal);font-weight:700;">OPCO 100%</span>
-                <a href="formations/employe-polyvalent.html" class="btn btn-secondary" style="padding:7px 14px;font-size:11px;">Voir la fiche →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card aos" data-delay="1" style="padding:0;overflow:hidden;">
-            <div style="position:relative;overflow:hidden;height:160px;">
-              <img src="img/formations/02_Responsable_Petite_Moyenne_Structure.png" alt="Responsable PME/PMI" style="width:100%;height:100%;object-fit:cover;">
-              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(219,86,14,.85));display:flex;align-items:flex-end;padding:14px;">
-                <span class="badge" style="background:var(--color-orange);color:white;">✦ Diplômante · RNCP</span>
-              </div>
-            </div>
-            <div style="padding:20px;">
-              <h3 style="font-size:17px;margin-bottom:6px;">Responsable de Petite ou Moyenne Structure</h3>
-              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.7;">Management · RH · Gestion financière · Administration · Leadership</p>
-              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
-                <span class="badge badge--certif">RNCP #38575</span>
-                <span class="badge badge--cat">554h</span>
-                <span class="badge badge--cat">Alternance</span>
-              </div>
-              <div style="font-size:12px;color:var(--color-mid);padding:8px 12px;background:var(--color-light);border-radius:4px;margin-bottom:14px;">🏫 Niveau 5 · Débouchés : gérant, directeur adjoint</div>
-              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
-                <span style="font-size:11px;color:var(--color-orange);font-weight:700;">OPCO 100%</span>
-                <a href="formations/responsable-pme.html" class="btn" style="padding:7px 14px;font-size:11px;background:var(--color-orange);color:white;border-radius:2px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;">Voir la fiche →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card aos" data-delay="2" style="padding:0;overflow:hidden;">
-            <div style="position:relative;overflow:hidden;height:160px;">
-              <img src="https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Community Manager" style="width:100%;height:100%;object-fit:cover;">
-              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(26,155,151,.85));display:flex;align-items:flex-end;padding:14px;">
-                <span class="badge" style="background:var(--color-teal);color:white;">✦ Diplômante · RNCP</span>
-              </div>
-            </div>
-            <div style="padding:20px;">
-              <h3 style="font-size:17px;margin-bottom:6px;">Community Manager</h3>
-              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.7;">Stratégie réseaux sociaux · Création de contenu · Storytelling · Reporting digital</p>
-              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
-                <span class="badge badge--diplome">RNCP #40907</span>
-                <span class="badge badge--cat">400h</span>
-                <span class="badge badge--cat">Alternance</span>
-              </div>
-              <div style="font-size:12px;color:var(--color-mid);padding:8px 12px;background:var(--color-light);border-radius:4px;margin-bottom:14px;">🏫 Niveau 5 · Débouchés : agences, marques, CHR</div>
-              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
-                <span style="font-size:11px;color:var(--color-teal);font-weight:700;">OPCO 100%</span>
-                <a href="formations/community-manager.html" class="btn btn-secondary" style="padding:7px 14px;font-size:11px;">Voir la fiche →</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card aos" style="padding:0;overflow:hidden;">
-            <div style="position:relative;overflow:hidden;height:160px;">
-              <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Conseiller Commercial" style="width:100%;height:100%;object-fit:cover;">
-              <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(219,86,14,.85));display:flex;align-items:flex-end;padding:14px;">
-                <span class="badge" style="background:var(--color-orange);color:white;">✦ Diplômante · RNCP</span>
-              </div>
-            </div>
-            <div style="padding:20px;">
-              <h3 style="font-size:17px;margin-bottom:6px;">Conseiller Commercial</h3>
-              <p style="font-size:12px;color:var(--color-mid);margin-bottom:12px;line-height:1.7;">Prospection · Techniques de vente · Fidélisation client · CRM · Outils numériques</p>
-              <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
-                <span class="badge badge--certif">RNCP #37717</span>
-                <span class="badge badge--cat">406h</span>
-                <span class="badge badge--cat">Alternance</span>
-              </div>
-              <div style="font-size:12px;color:var(--color-mid);padding:8px 12px;background:var(--color-light);border-radius:4px;margin-bottom:14px;">🏫 Niveau 4 · Débouchés : commercial terrain, chargé clientèle</div>
-              <div style="border-top:1px solid var(--color-border);padding-top:12px;display:flex;justify-content:space-between;align-items:center;">
-                <span style="font-size:11px;color:var(--color-orange);font-weight:700;">OPCO 100%</span>
-                <a href="formations/conseiller-commercial.html" class="btn" style="padding:7px 14px;font-size:11px;background:var(--color-orange);color:white;border-radius:2px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;">Voir la fiche →</a>
-              </div>
-            </div>
-          </article>
-
-        </div>
-        <div style="background:var(--color-teal);border-radius:4px;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;margin-top:32px;flex-wrap:wrap;gap:16px;">
-          <p style="color:white;font-size:14px;font-weight:600;margin:0;">🎓 Financement 100% OPCO · Accompagnement dans la recherche d'entreprise · Aucun reste à charge</p>
-          <a href="contact/index.html" class="btn btn-white" style="font-size:12px;">Candidater maintenant</a>
-        </div>
-      </div>
-
-      <!-- TAB FORMATION -->
-      <div id="htab-formation" class="htab-panel">
-        <div class="htab-subtitle">Formations courtes — Finançables OPCO · France Travail</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;">
-          <div style="display:flex;gap:10px;align-items:flex-start;padding:16px;background:var(--color-light);border-radius:4px;"><span style="color:var(--color-teal);font-size:18px;flex-shrink:0;">✓</span><div><strong style="font-size:14px;display:block;margin-bottom:2px;">Employé Polyvalent en Restauration</strong><span style="font-size:12px;color:var(--color-mid);">200h · France Travail</span></div></div>
-          <div style="display:flex;gap:10px;align-items:flex-start;padding:16px;background:var(--color-light);border-radius:4px;"><span style="color:var(--color-teal);font-size:18px;flex-shrink:0;">✓</span><div><strong style="font-size:14px;display:block;margin-bottom:2px;">Serveur</strong><span style="font-size:12px;color:var(--color-mid);">200h · France Travail</span></div></div>
-          <div style="display:flex;gap:10px;align-items:flex-start;padding:16px;background:var(--color-light);border-radius:4px;"><span style="color:var(--color-teal);font-size:18px;flex-shrink:0;">✓</span><div><strong style="font-size:14px;display:block;margin-bottom:2px;">Commis de Cuisine</strong><span style="font-size:12px;color:var(--color-mid);">203h · France Travail</span></div></div>
-          <div style="display:flex;gap:10px;align-items:flex-start;padding:16px;background:var(--color-light);border-radius:4px;"><span style="color:var(--color-teal);font-size:18px;flex-shrink:0;">✓</span><div><strong style="font-size:14px;display:block;margin-bottom:2px;">Hygiène Alimentaire HACCP</strong><span style="font-size:12px;color:var(--color-mid);">14h · Obligatoire CHR · OPCO</span></div></div>
-          <div style="display:flex;gap:10px;align-items:flex-start;padding:16px;background:var(--color-light);border-radius:4px;"><span style="color:var(--color-teal);font-size:18px;flex-shrink:0;">✓</span><div><strong style="font-size:14px;display:block;margin-bottom:2px;">Gestion des Conflits</strong><span style="font-size:12px;color:var(--color-mid);">14h · OPCO</span></div></div>
-          <div style="display:flex;gap:10px;align-items:flex-start;padding:16px;background:var(--color-light);border-radius:4px;"><span style="color:var(--color-teal);font-size:18px;flex-shrink:0;">✓</span><div><strong style="font-size:14px;display:block;margin-bottom:2px;">Gestes et Postures · Prévention Harcèlement · Éco-Responsable</strong><span style="font-size:12px;color:var(--color-mid);">1 à 2 jours · OPCO</span></div></div>
-        </div>
-        <div style="background:#0C447C;border-radius:4px;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
-          <p style="color:white;font-size:14px;font-weight:600;margin:0;">📋 Catalogue complet avec fiches détaillées sur notre page Formations</p>
-          <a href="formations/index.html?tab=formation" class="btn btn-white" style="font-size:12px;">Voir toutes les formations →</a>
-        </div>
-      </div>
-
-      <!-- TAB CONSEIL & OUVERTURE -->
-      <div id="htab-conseil" class="htab-panel">
-        <div class="htab-subtitle">Restaurateurs indépendants · Franchisés &amp; Franchiseurs · Groupes CHR</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:32px;">
-          <div style="padding:24px;border-left:3px solid var(--color-teal);background:var(--color-light);border-radius:0 4px 4px 0;">
-            <strong style="font-size:15px;display:block;margin-bottom:8px;color:var(--color-teal);">01 · Ouverture de A à Z</strong>
-            <p style="font-size:13px;color:var(--color-mid);line-height:1.7;margin:0;">Audit, recrutement, formation équipes, process, service blanc — 5 semaines d'accompagnement complet.</p>
-          </div>
-          <div style="padding:24px;border-left:3px solid var(--color-orange);background:var(--color-light);border-radius:0 4px 4px 0;">
-            <strong style="font-size:15px;display:block;margin-bottom:8px;color:var(--color-orange);">02 · Recrutement CHR</strong>
-            <p style="font-size:13px;color:var(--color-mid);line-height:1.7;margin:0;">Sourcing multi-canal, fiches de poste, entretiens, onboarding structuré.</p>
-          </div>
-          <div style="padding:24px;border-left:3px solid var(--color-dark);background:var(--color-light);border-radius:0 4px 4px 0;">
-            <strong style="font-size:15px;display:block;margin-bottom:8px;">03 · Audit Opérationnel</strong>
-            <p style="font-size:13px;color:var(--color-mid);line-height:1.7;margin:0;">Procédures, check-lists, KPIs, tableaux de bord — formation équipes incluse.</p>
-          </div>
-        </div>
-        <div style="background:var(--color-teal);border-radius:4px;padding:20px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
-          <p style="color:white;font-size:14px;font-weight:600;margin:0;">🤝 Premier échange offert · Réponse sous 48h</p>
-          <a href="consulting-ouverture/index.html" class="btn btn-white" style="font-size:12px;">Découvrir le consulting →</a>
-        </div>
-      </div>
-
+      <span class=divider-teal style=margin:16px auto;></span>
+      <p style=color:var(--color-mid);>Toutes nos formations diplômantes RNCP et certifiantes — financées OPCO.</p>
     </div>
+    <iframe
+      src=https://evoliainstitute-dot.github.io/Evoliainstitut/formations/index.html
+      title=Catalogue des formations Evolia Institut
+      style=width:100%;height:900px;border:none;display:block;
+      loading=lazy
+    ></iframe>
   </section>
 
   <!-- ═══════════════════════════════════════════
@@ -473,7 +244,7 @@
       <div class="grid-3" style="gap:28px;">
 
         <div class="card aos" style="border-top:3px solid var(--color-teal);padding:28px 24px;">
-          <div style="width:52px;height:52px;background:rgba(26,155,151,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;">👤</div>
+          <div style="width:52px;height:52px;background:rgba(26,155,151,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;"><svg width=20 height=20 viewBox=0 0 24 24 fill=none aria-hidden=true><circle cx=12 cy=7 r=4 stroke=currentColor stroke-width=2/><path d=M4 20c0-4 3.6-7 8-7s8 3 8 7 stroke=currentColor stroke-width=2 stroke-linecap=round/></svg></div>
           <h3 style="font-size:18px;margin-bottom:10px;color:var(--color-teal);">Demandeurs d'emploi</h3>
           <p style="font-size:13px;color:var(--color-mid);line-height:1.8;margin-bottom:18px;">Vous souhaitez entrer dans la restauration ou vous reconvertir. Nos formations courtes et en alternance sont finançables à 100% via France Travail ou l'OPCO.</p>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--color-mid);">
@@ -484,7 +255,7 @@
         </div>
 
         <div class="card aos" data-delay="1" style="border-top:3px solid var(--color-orange);padding:28px 24px;">
-          <div style="width:52px;height:52px;background:rgba(219,86,14,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;">🏢</div>
+          <div style="width:52px;height:52px;background:rgba(219,86,14,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;"><svg width=20 height=20 viewBox=0 0 24 24 fill=none aria-hidden=true><rect x=3 y=3 width=18 height=18 rx=2 stroke=currentColor stroke-width=2/><path d=M9 3v18M15 3v18M3 9h6M3 15h6M15 9h6M15 15h6 stroke=currentColor stroke-width=1.5/></svg></div>
           <h3 style="font-size:18px;margin-bottom:10px;color:var(--color-orange);">Employeurs CHR</h3>
           <p style="font-size:13px;color:var(--color-mid);line-height:1.8;margin-bottom:18px;">Restaurant, hôtel, traiteur, franchisé — vous souhaitez former vos équipes ou recruter des collaborateurs déjà formés à vos standards.</p>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--color-mid);">
@@ -495,7 +266,7 @@
         </div>
 
         <div class="card aos" data-delay="2" style="border-top:3px solid var(--color-dark);padding:28px 24px;">
-          <div style="width:52px;height:52px;background:rgba(28,28,28,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;">🚀</div>
+          <div style="width:52px;height:52px;background:rgba(28,28,28,.08);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px;"><svg width=20 height=20 viewBox=0 0 24 24 fill=none aria-hidden=true><path d=M12 2C8 2 5 8 5 14l2 2 2-2c0-2 1-5 3-7 2 2 3 5 3 7l2 2 2-2c0-6-3-12-7-12z stroke=currentColor stroke-width=2 stroke-linejoin=round/><path d=M9 16l-2 4 4-1M15 16l2 4-4-1 stroke=currentColor stroke-width=1.5 stroke-linecap=round stroke-linejoin=round/></svg></div>
           <h3 style="font-size:18px;margin-bottom:10px;">Porteurs de projet</h3>
           <p style="font-size:13px;color:var(--color-mid);line-height:1.8;margin-bottom:18px;">Vous ouvrez un restaurant, un concept food ou rejoignez une franchise. Notre consulting vous accompagne de A à Z : recrutement, formation, process, ouverture.</p>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--color-mid);">
@@ -636,44 +407,6 @@
     </div>
   </section>
 
-  <!-- MARQUEE FINANCEMENT -->
-  <div class="mq-band mq-band--cream" aria-label="Financement possible">
-    <div class="mq-track-wrap cream">
-      <div class="mq-track mq-track--rev">
-        <!-- Set A -->
-        <div class="mq-item">
-          <span class="mq-pill"><img src="img/partenaires/akto.webp" alt="AKTO"> Financement OPCO</span>
-        </div>
-        <div class="mq-item">
-          <span class="mq-pill"><img src="img/partenaires/france-travail.webp" alt="France Travail"> Demandeurs d'emploi</span>
-        </div>
-        <div class="mq-item">
-          <span class="mq-pill">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="4" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="2"/><circle cx="15" cy="6" r="2.5" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="1.5"/><circle cx="18" cy="10" r="2.5" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="1.5"/><path d="M3 19c0-2 2.7-4 6-4s6 2 6 4" stroke="#00B894" stroke-width="2" stroke-linecap="round"/></svg>
-            Plan de formation
-          </span>
-        </div>
-        <div class="mq-item"><span class="mq-pill">✦ 100% Finançable · Aucun reste à charge</span></div>
-        <div class="mq-item"><span class="mq-pill">📅 Réponse sous 48h · Dossier géré par nos équipes</span></div>
-        <!-- Set B (boucle) -->
-        <div class="mq-item">
-          <span class="mq-pill"><img src="img/partenaires/akto.webp" alt="AKTO"> Financement OPCO</span>
-        </div>
-        <div class="mq-item">
-          <span class="mq-pill"><img src="img/partenaires/france-travail.webp" alt="France Travail"> Demandeurs d'emploi</span>
-        </div>
-        <div class="mq-item">
-          <span class="mq-pill">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="4" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="2"/><circle cx="15" cy="6" r="2.5" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="1.5"/><circle cx="18" cy="10" r="2.5" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="1.5"/><path d="M3 19c0-2 2.7-4 6-4s6 2 6 4" stroke="#00B894" stroke-width="2" stroke-linecap="round"/></svg>
-            Plan de formation
-          </span>
-        </div>
-        <div class="mq-item"><span class="mq-pill">✦ 100% Finançable · Aucun reste à charge</span></div>
-        <div class="mq-item"><span class="mq-pill">📅 Réponse sous 48h · Dossier géré par nos équipes</span></div>
-      </div>
-    </div>
-  </div>
-
   <!-- ═══════════════════════════════════════════
        S7 — FINANCEMENT
   ═══════════════════════════════════════════ -->
@@ -707,6 +440,44 @@
       </div>
     </div>
   </section>
+
+  <!-- MARQUEE FINANCEMENT -->
+  <div class="mq-band mq-band--cream" aria-label="Financement possible">
+    <div class="mq-track-wrap cream">
+      <div class="mq-track mq-track--rev">
+        <!-- Set A -->
+        <div class="mq-item">
+          <span class="mq-pill"><img src="img/partenaires/akto.webp" alt="AKTO"> Financement OPCO</span>
+        </div>
+        <div class="mq-item">
+          <span class="mq-pill"><img src="img/partenaires/france-travail.webp" alt="France Travail"> Demandeurs d'emploi</span>
+        </div>
+        <div class="mq-item">
+          <span class="mq-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="4" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="2"/><circle cx="15" cy="6" r="2.5" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="1.5"/><circle cx="18" cy="10" r="2.5" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="1.5"/><path d="M3 19c0-2 2.7-4 6-4s6 2 6 4" stroke="#00B894" stroke-width="2" stroke-linecap="round"/></svg>
+            Plan de formation
+          </span>
+        </div>
+        <div class="mq-item"><span class="mq-pill">✦ 100% Finançable · Aucun reste à charge</span></div>
+        <div class="mq-item"><span class="mq-pill"><svg width=14 height=14 viewBox=0 0 24 24 fill=none aria-hidden=true><circle cx=12 cy=12 r=9 stroke=currentColor stroke-width=2/><path d=M12 7v5l3 3 stroke=currentColor stroke-width=2 stroke-linecap=round/></svg> Réponse sous 48h · Dossier géré par nos équipes</span></div>
+        <!-- Set B (boucle) -->
+        <div class="mq-item">
+          <span class="mq-pill"><img src="img/partenaires/akto.webp" alt="AKTO"> Financement OPCO</span>
+        </div>
+        <div class="mq-item">
+          <span class="mq-pill"><img src="img/partenaires/france-travail.webp" alt="France Travail"> Demandeurs d'emploi</span>
+        </div>
+        <div class="mq-item">
+          <span class="mq-pill">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="9" cy="9" r="4" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="2"/><circle cx="15" cy="6" r="2.5" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="1.5"/><circle cx="18" cy="10" r="2.5" fill="#00B894" fill-opacity=".2" stroke="#00B894" stroke-width="1.5"/><path d="M3 19c0-2 2.7-4 6-4s6 2 6 4" stroke="#00B894" stroke-width="2" stroke-linecap="round"/></svg>
+            Plan de formation
+          </span>
+        </div>
+        <div class="mq-item"><span class="mq-pill">✦ 100% Finançable · Aucun reste à charge</span></div>
+        <div class="mq-item"><span class="mq-pill"><svg width=14 height=14 viewBox=0 0 24 24 fill=none aria-hidden=true><circle cx=12 cy=12 r=9 stroke=currentColor stroke-width=2/><path d=M12 7v5l3 3 stroke=currentColor stroke-width=2 stroke-linecap=round/></svg> Réponse sous 48h · Dossier géré par nos équipes</span></div>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══════════════════════════════════════════
        S8 — BLOG PREVIEW + CTA
@@ -771,6 +542,66 @@
     </div>
   </section>
 
+  <!-- MARQUEE PARTENAIRES -->
+  <style>
+    @keyframes mqscroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+    @keyframes mqscroll-rev { from{transform:translateX(-50%)} to{transform:translateX(0)} }
+    .mq-band { overflow:hidden; position:relative; padding:22px 0; }
+    .mq-band--white { background:white; border-bottom:1px solid var(--color-border); }
+    .mq-band--cream { background:#f8f5f1; border-top:1px solid var(--color-border); border-bottom:1px solid var(--color-border); }
+    .mq-label { text-align:center; font-size:10px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--color-mid); margin-bottom:16px; }
+    .mq-track-wrap { overflow:hidden; position:relative; }
+    .mq-track-wrap::before,.mq-track-wrap::after { content:''; position:absolute; top:0; bottom:0; width:80px; z-index:2; pointer-events:none; }
+    .mq-track-wrap.white::before { left:0; background:linear-gradient(to right,white,transparent); }
+    .mq-track-wrap.white::after  { right:0; background:linear-gradient(to left,white,transparent); }
+    .mq-track-wrap.cream::before { left:0; background:linear-gradient(to right,#f8f5f1,transparent); }
+    .mq-track-wrap.cream::after  { right:0; background:linear-gradient(to left,#f8f5f1,transparent); }
+    .mq-track { display:flex; width:max-content; animation:mqscroll 32s linear infinite; }
+    .mq-track:hover { animation-play-state:paused; }
+    .mq-track--rev { animation-name:mqscroll-rev; animation-duration:36s; }
+    .mq-item { display:flex; align-items:center; justify-content:center; padding:0 44px; height:56px; flex-shrink:0; }
+    .mq-item img { height:38px; width:auto; max-width:120px; object-fit:contain; filter:grayscale(1) opacity(.6); transition:filter .3s ease; }
+    .mq-item img:hover { filter:grayscale(0) opacity(1); }
+    .mq-sep { width:1px; height:28px; background:var(--color-border); flex-shrink:0; }
+    .mq-pill { display:inline-flex; align-items:center; gap:10px; background:white; border:1px solid var(--color-border); border-radius:9999px; padding:6px 16px 6px 10px; font-size:11px; font-weight:700; letter-spacing:.06em; color:var(--color-dark); white-space:nowrap; }
+    .mq-pill img { height:22px; width:auto; object-fit:contain; }
+    @media(max-width:640px) { .mq-track-wrap::before,.mq-track-wrap::after { width:40px; } }
+  </style>
+
+  <div class="mq-band mq-band--white" aria-label="Nos partenaires">
+    <div class="mq-label">Ils nous font confiance</div>
+    <div class="mq-track-wrap white">
+      <div class="mq-track" id="mq-partners">
+        <!-- Set A -->
+        <div class="mq-item"><img src="img/partenaires/dakota.webp" alt="Dakota Restaurant" loading="lazy"></div>
+        <div class="mq-sep"></div>
+        <div class="mq-item"><img src="img/partenaires/bouyon.webp" alt="Bouyon" loading="lazy"></div>
+        <div class="mq-sep"></div>
+        <div class="mq-item"><img src="img/partenaires/akadi.jpg" alt="AKADI West African Food" loading="lazy"></div>
+        <div class="mq-sep"></div>
+        <div class="mq-item"><img src="img/partenaires/pizza-hut.webp" alt="Pizza Hut" loading="lazy"></div>
+        <div class="mq-sep"></div>
+        <div class="mq-item"><img src="img/partenaires/poulet-braise.webp" alt="Poulet Braisé" loading="lazy"></div>
+        <div class="mq-sep"></div>
+        <div class="mq-item"><img src="img/partenaires/crousty-game.jpg" alt="Crousty Game" loading="lazy"></div>
+        <div class="mq-sep"></div>
+        <!-- Set B (duplicate pour boucle infinie) -->
+        <div class="mq-item"><img src="img/partenaires/dakota.webp" alt="Dakota Restaurant" loading="lazy"></div>
+        <div class="mq-sep"></div>
+        <div class="mq-item"><img src="img/partenaires/bouyon.webp" alt="Bouyon" loading="lazy"></div>
+        <div class="mq-sep"></div>
+        <div class="mq-item"><img src="img/partenaires/akadi.jpg" alt="AKADI West African Food" loading="lazy"></div>
+        <div class="mq-sep"></div>
+        <div class="mq-item"><img src="img/partenaires/pizza-hut.webp" alt="Pizza Hut" loading="lazy"></div>
+        <div class="mq-sep"></div>
+        <div class="mq-item"><img src="img/partenaires/poulet-braise.webp" alt="Poulet Braisé" loading="lazy"></div>
+        <div class="mq-sep"></div>
+        <div class="mq-item"><img src="img/partenaires/crousty-game.jpg" alt="Crousty Game" loading="lazy"></div>
+        <div class="mq-sep"></div>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══════════════════════════════════════════
        CTA FINALE
   ═══════════════════════════════════════════ -->
@@ -787,7 +618,7 @@
         <a href="formations/index.html" class="btn btn-outline-white btn-lg">Parcourir les formations</a>
       </div>
       <p style="margin-top: 24px; font-size: 13px; color: rgba(255,255,255,.4);">
-        📍 26 rue du Maroc · 75019 Paris · contact@evoliainstitut.com
+        <svg width=14 height=14 viewBox=0 0 24 24 fill=none aria-hidden=true><path d=M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7z stroke=currentColor stroke-width=2/><circle cx=12 cy=9 r=2.5 stroke=currentColor stroke-width=2/></svg> 26 rue du Maroc · 75019 Paris · contact@evoliainstitut.com
       </p>
     </div>
   </section>
