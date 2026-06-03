@@ -13,14 +13,12 @@
   <div class="container">
     <a href="mailto:contact@evoliainstitut.com" style="color:white;">📧 contact@evoliainstitut.com</a>
     <span>·</span>
-    <a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a>
-    <span>·</span>
     <span>Réponse garantie sous 48h</span>
   </div>
 </div>
 <nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="container">
-    <a href="/evolia-institut/index.html" class="nav-logo" aria-label="Evolia Institut — Accueil">
+    <a href="/Evoliainstitut/index.html" class="nav-logo" aria-label="Evolia Institut — Accueil">
       <div class="nav-logo-mark">EI</div>
       <div>
         <div class="nav-logo-text">Evolia Institut</div>
@@ -28,55 +26,40 @@
       </div>
     </a>
     <ul class="nav-links" role="list" id="nav-links">
-      <li><a href="/evolia-institut/index.html">Accueil</a></li>
       <li>
-        <a href="/evolia-institut/formations/index.html" aria-haspopup="true">
-          Nos solutions <span class="caret">▾</span>
+        <a href="/Evoliainstitut/notre-ecole/index.html" aria-haspopup="true">L'Institut <span class="caret">▾</span></a>
+        <div class="dropdown" role="menu">
+          <div class="dropdown-label">L'Institut</div>
+          <a href="/Evoliainstitut/notre-ecole/index.html">Notre école</a>
+          <a href="/Evoliainstitut/accessibilite/index.html">♿ Accessibilité &amp; PSH</a>
+        </div>
+      </li>
+      <li>
+        <a href="/Evoliainstitut/formations/index.html" aria-haspopup="true">
+          Formations <span class="caret">▾</span>
         </a>
         <div class="dropdown" role="menu">
           <div class="dropdown-label">Alternance</div>
-          <a href="/evolia-institut/formations/employe-polyvalent.html">Employé Polyvalent (RNCP #38663)</a>
-          <a href="/evolia-institut/formations/responsable-pme.html">Responsable PME/PMI (RNCP #38575)</a>
-          <a href="/evolia-institut/formations/community-manager.html">Community Manager (RNCP #40907)</a>
-          <a href="/evolia-institut/formations/conseiller-commercial.html">Conseiller Commercial (RNCP #37717)</a>
+          <a href="/Evoliainstitut/formations/employe-polyvalent.html">Employé Polyvalent (RNCP #38663)</a>
+          <a href="/Evoliainstitut/formations/responsable-pme.html">Responsable de Petite ou Moyenne Structure (RNCP #38575)</a>
+          <a href="/Evoliainstitut/formations/community-manager.html">Community Manager (RNCP #40907)</a>
+          <a href="/Evoliainstitut/formations/conseiller-commercial.html">Conseiller Commercial (RNCP #37717)</a>
           <div class="dropdown-divider"></div>
           <div class="dropdown-label">Certifiantes</div>
-          <a href="/evolia-institut/formations/haccp.html">Hygiène Alimentaire HACCP</a>
-          <a href="/evolia-institut/formations/gestion-conflits.html">Gestion des Conflits</a>
-          <a href="/evolia-institut/formations/gestes-postures.html">Gestes et Postures</a>
-          <a href="/evolia-institut/formations/prevention-harcelement.html">Prévention Harcèlement</a>
-          <a href="/evolia-institut/formations/eco-responsable.html">Démarche Éco-Responsable</a>
-          <a href="/evolia-institut/formations/intra-entreprise.html">Formation Intra-Entreprise</a>
-          <div class="dropdown-divider"></div>
-          <a href="/evolia-institut/financement/index.html">Financement & OPCO</a>
+          <a href="/Evoliainstitut/formations/haccp.html">Hygiène Alimentaire HACCP</a>
+          <a href="/Evoliainstitut/formations/gestion-conflits.html">Gestion des Conflits</a>
+          <a href="/Evoliainstitut/formations/gestes-postures.html">Gestes et Postures</a>
+          <a href="/Evoliainstitut/formations/prevention-harcelement.html">Prévention Harcèlement</a>
+          <a href="/Evoliainstitut/formations/eco-responsable.html">Démarche Éco-Responsable</a>
+          <a href="/Evoliainstitut/formations/intra-entreprise.html">Formation Intra-Entreprise</a>
         </div>
       </li>
-      <li>
-        <a href="/evolia-institut/financement/poei.html" aria-haspopup="true">
-          Programmes Spéciaux <span class="caret">▾</span>
-        </a>
-        <div class="dropdown" role="menu">
-          <div class="dropdown-label">Programmes Spéciaux</div>
-          <a href="/evolia-institut/financement/poei.html">Dispositif POEI — jusqu'à 30 000 € économie</a>
-          <a href="/evolia-institut/consulting-ouverture/index.html">Consulting Ouverture</a>
-          <div class="dropdown-divider"></div>
-          <a href="/evolia-institut/financement/index.html">Financement & OPCO</a>
-        </div>
-      </li>
-      <li>
-        <a href="/evolia-institut/notre-ecole/index.html" aria-haspopup="true">Notre école <span class="caret">▾</span></a>
-        <div class="dropdown" role="menu">
-          <div class="dropdown-label">L'Institut</div>
-          <a href="/evolia-institut/notre-ecole/index.html">Notre école</a>
-          <a href="/evolia-institut/accessibilite/index.html">♿ Accessibilité & PSH</a>
-        </div>
-      </li>
-      <li><a href="/evolia-institut/blog/index.html">Blog</a></li>
-      <li><a href="/evolia-institut/contact/index.html">Contact</a></li>
+      <li><a href="/Evoliainstitut/financement/index.html">Financement</a></li>
+      <li><a href="/Evoliainstitut/contact/index.html">Nous contacter</a></li>
     </ul>
     <div class="nav-actions" id="nav-actions">
       <span class="badge-qualiopi" aria-label="Certification Qualiopi">✓ Qualiopi</span>
-      <a href="/evolia-institut/contact/index.html" class="btn btn-primary">Demander un devis</a>
+      <a href="/Evoliainstitut/contact/index.html" class="btn btn-primary">Dépôt de candidature</a>
     </div>
     <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
@@ -97,40 +80,38 @@
           <div class="footer-logo-text">Evolia Institut</div>
         </div>
         <p class="footer-tagline">Former mieux. Performer durablement.<br>Spécialiste formation CHR.</p>
-        <a href="/evolia-institut/documents/certificat-qualiopi-evolia-institut.pdf" target="_blank" rel="noopener" class="badge-qualiopi badge-qualiopi--inverted" style="cursor:pointer;text-decoration:none;" title="Télécharger le certificat Qualiopi">✓ Certification Qualiopi · PDF</a>
+        <a href="/Evoliainstitut/documents/certificat-qualiopi-evolia-institut.pdf" target="_blank" rel="noopener" class="badge-qualiopi badge-qualiopi--inverted" style="cursor:pointer;text-decoration:none;" title="Télécharger le certificat Qualiopi">✓ Certification Qualiopi · PDF</a>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
         <ul>
-          <li><a href="/evolia-institut/index.html">Accueil</a></li>
-          <li><a href="/evolia-institut/formations/index.html">Formations</a></li>
-          <li><a href="/evolia-institut/financement/index.html">Financement</a></li>
-          <li><a href="/evolia-institut/notre-ecole/index.html">Notre école</a></li>
-          <li><a href="/evolia-institut/blog/index.html">Blog</a></li>
-          <li><a href="/evolia-institut/contact/index.html">Contact</a></li>
-          <li><a href="/evolia-institut/accessibilite/index.html">Accessibilité & PSH</a></li>
+          <li><a href="/Evoliainstitut/index.html">Accueil</a></li>
+          <li><a href="/Evoliainstitut/formations/index.html">Formations</a></li>
+          <li><a href="/Evoliainstitut/financement/index.html">Financement</a></li>
+          <li><a href="/Evoliainstitut/notre-ecole/index.html">Notre école</a></li>
+          <li><a href="/Evoliainstitut/blog/index.html">Blog</a></li>
+          <li><a href="/Evoliainstitut/contact/index.html">Nous contacter</a></li>
+          <li><a href="/Evoliainstitut/accessibilite/index.html">Accessibilité &amp; PSH</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Formations</h4>
         <ul>
-          <li><a href="/evolia-institut/formations/employe-polyvalent.html">Employé Polyvalent</a></li>
-          <li><a href="/evolia-institut/formations/responsable-pme.html">Responsable PME/PMI</a></li>
-          <li><a href="/evolia-institut/formations/community-manager.html">Community Manager</a></li>
-          <li><a href="/evolia-institut/formations/conseiller-commercial.html">Conseiller Commercial</a></li>
-          <li><a href="/evolia-institut/formations/haccp.html">Hygiène HACCP</a></li>
-          <li><a href="/evolia-institut/formations/gestion-conflits.html">Gestion des Conflits</a></li>
-          <li><a href="/evolia-institut/financement/poei.html">Dispositif POEI</a></li>
+          <li><a href="/Evoliainstitut/formations/employe-polyvalent.html">Employé Polyvalent</a></li>
+          <li><a href="/Evoliainstitut/formations/responsable-pme.html">Responsable de Petite ou Moyenne Structure</a></li>
+          <li><a href="/Evoliainstitut/formations/community-manager.html">Community Manager</a></li>
+          <li><a href="/Evoliainstitut/formations/conseiller-commercial.html">Conseiller Commercial</a></li>
+          <li><a href="/Evoliainstitut/formations/haccp.html">Hygiène HACCP</a></li>
+          <li><a href="/Evoliainstitut/formations/gestion-conflits.html">Gestion des Conflits</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
         <div class="footer-contact-item">📍 <span>26 rue du Maroc, 75019 Paris</span></div>
         <div class="footer-contact-item">📧 <a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a></div>
-        <div class="footer-contact-item">📧 <a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a></div>
         <div class="footer-contact-item" style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.4);">Lun–Ven · 9h–18h<br>Réponse garantie sous 48h</div>
         <div style="margin-top:16px;">
-          <a href="/evolia-institut/contact/index.html" class="btn btn-white" style="font-size:12px;padding:10px 20px;">Demander un devis</a>
+          <a href="/Evoliainstitut/contact/index.html" class="btn btn-white" style="font-size:12px;padding:10px 20px;">Dépôt de candidature</a>
         </div>
       </div>
     </div>
@@ -143,8 +124,8 @@
         <a href="https://instagram.com/evoliainstitut" target="_blank" style="color:rgba(255,255,255,.35);">📷 Instagram</a>
       </span>
       <span>
-        <a href="/evolia-institut/mentions-legales/index.html" style="color:rgba(255,255,255,.35);">Mentions légales</a> ·
-        <a href="/evolia-institut/politique-confidentialite/index.html" style="color:rgba(255,255,255,.35);">Politique de confidentialité</a> · <a href="/evolia-institut/cgf/index.html" style="color:rgba(255,255,255,.35);">CGF</a> · <a href="/evolia-institut/accessibilite/index.html" style="color:rgba(255,255,255,.35);">Accessibilité</a>
+        <a href="/Evoliainstitut/mentions-legales/index.html" style="color:rgba(255,255,255,.35);">Mentions légales</a> ·
+        <a href="/Evoliainstitut/politique-confidentialite/index.html" style="color:rgba(255,255,255,.35);">Politique de confidentialité</a> · <a href="/Evoliainstitut/cgf/index.html" style="color:rgba(255,255,255,.35);">CGF</a> · <a href="/Evoliainstitut/accessibilite/index.html" style="color:rgba(255,255,255,.35);">Accessibilité</a>
       </span>
     </div>
   </div>
