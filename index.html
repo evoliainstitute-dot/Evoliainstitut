@@ -73,12 +73,33 @@
     .mq-track:hover { animation-play-state:paused; }
     .mq-track--rev { animation-name:mqscroll-rev; animation-duration:36s; }
     .mq-item { display:flex; align-items:center; justify-content:center; padding:0 44px; height:56px; flex-shrink:0; }
-    .mq-item img { height:38px; width:auto; max-width:120px; object-fit:contain; filter:grayscale(1) opacity(.6); transition:filter .3s ease; }
-    .mq-item img:hover { filter:grayscale(0) opacity(1); }
+    .mq-item img { height:38px; width:auto; max-width:130px; object-fit:contain; filter:opacity(.75); transition:filter .3s ease; }
+    .mq-item img:hover { filter:none; }
     .mq-sep { width:1px; height:28px; background:var(--color-border); flex-shrink:0; }
     .mq-pill { display:inline-flex; align-items:center; gap:10px; background:white; border:1px solid var(--color-border); border-radius:9999px; padding:6px 16px 6px 10px; font-size:11px; font-weight:700; letter-spacing:.06em; color:var(--color-dark); white-space:nowrap; }
     .mq-pill img { height:22px; width:auto; object-fit:contain; }
-    @media(max-width:640px) { .mq-track-wrap::before,.mq-track-wrap::after { width:40px; } }
+    /* Catalogue formation cards */
+    .cat-grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+    .cat-grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .fcard { overflow:hidden; border-radius:12px; border:none; box-shadow:0 2px 20px rgba(0,0,0,.07); background:white; transition:box-shadow .25s,transform .25s; }
+    .fcard:hover { box-shadow:0 12px 40px rgba(0,0,0,.13); transform:translateY(-4px); }
+    .fcard-img { position:relative; overflow:hidden; }
+    .fcard-img img { width:100%; object-fit:cover; display:block; transition:transform .4s ease; }
+    .fcard:hover .fcard-img img { transform:scale(1.04); }
+    .fcard-body { padding:18px 18px 20px; }
+    .fcard-tag { display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px; }
+    .fcard-title { font-size:14px;line-height:1.45;font-weight:600;color:var(--color-dark);margin-bottom:10px; }
+    .fcard-meta { display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px; }
+    .fcard-pill { font-size:10px;background:#f4f4f4;color:var(--color-mid);padding:3px 9px;border-radius:4px; }
+    .fcard-cta { display:block;text-align:center;font-size:12px;padding:9px 12px; }
+    .section-divider-row { display:flex;align-items:center;gap:16px;margin-bottom:28px; }
+    .section-divider-row .bar { height:28px;width:4px;border-radius:2px;flex-shrink:0; }
+    .section-divider-row .line { flex:1;height:1px;background:var(--color-border); }
+    .section-divider-row .label { font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase; }
+    .section-divider-row .sub { font-size:11px;color:var(--color-mid);margin-left:8px; }
+    .section-divider-row .all { font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap; }
+    @media(max-width:1024px){ .cat-grid-4{grid-template-columns:repeat(2,1fr);} .cat-grid-3{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:640px){ .cat-grid-4,.cat-grid-3{grid-template-columns:1fr;} .mq-track-wrap::before,.mq-track-wrap::after{width:40px;} }
     @media (max-width:960px) {
       .hero-split-grid { grid-template-columns:1fr; gap:40px; }
       .hero-float-wrap { height:340px; }
@@ -88,8 +109,6 @@
     @media (max-width:640px) {
       .hero-split { padding:72px 0 48px; }
       .hero-float-wrap { height:280px; }
-      .hero-trust-inner { gap:14px; }
-      .hts { display:none; }
     }
   </style>
 
@@ -220,21 +239,223 @@
   </section>
 
   <!-- ═══════════════════════════════════════════
-       S4 — NOS FORMATIONS
+       S4 — CATALOGUE FORMATIONS (intégré)
   ═══════════════════════════════════════════ -->
-  <section class="section section--alt" style="padding:56px 0 0;">
-    <div class="container" style="text-align:center;margin-bottom:36px;">
-      <span class="section-label">Catalogue complet</span>
-      <h2>Alternance · Formation · Conseil</h2>
-      <span class="divider-teal" style="margin:16px auto;"></span>
-      <p style="color:var(--color-mid);">Toutes nos formations diplômantes RNCP et certifiantes — financées OPCO.</p>
+  <section style="background:linear-gradient(180deg,#f8f5f1 0%,white 55%);padding:80px 0 72px;">
+    <div class="container">
+
+      <div style="text-align:center;max-width:620px;margin:0 auto 64px;" class="aos">
+        <span class="section-label">Catalogue complet</span>
+        <h2 style="font-size:clamp(26px,4vw,40px);">Alternance · Formation · Conseil</h2>
+        <span class="divider-teal" style="margin:16px auto;"></span>
+        <p style="color:var(--color-mid);font-size:16px;line-height:1.75;">Formations diplômantes RNCP &amp; certifiantes — toutes finançables via OPCO ou France Travail.</p>
+      </div>
+
+      <!-- ── ALTERNANCE ── -->
+      <div class="section-divider-row">
+        <div class="bar" style="background:var(--color-teal);"></div>
+        <span class="label" style="color:var(--color-teal);">Diplômantes en alternance</span>
+        <span class="sub">Titre Pro RNCP · 12 à 18 mois</span>
+        <div class="line"></div>
+        <a href="formations/index.html" class="all" style="color:var(--color-teal);">Voir tout →</a>
+      </div>
+
+      <div class="cat-grid-4" style="margin-bottom:56px;">
+
+        <div class="fcard aos">
+          <div class="fcard-img" style="height:168px;">
+            <img src="img/formations/01_Employe_Polyvalent_en_Restauration.png" alt="Employé Polyvalent en Restauration" style="height:168px;" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,.48));"></div>
+            <span style="position:absolute;bottom:10px;left:12px;background:var(--color-teal);color:white;font-size:9px;font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:9999px;">RNCP #38663</span>
+          </div>
+          <div class="fcard-body">
+            <div class="fcard-tag" style="color:var(--color-teal);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Alternance
+            </div>
+            <div class="fcard-title">Employé Polyvalent en Restauration</div>
+            <div class="fcard-meta">
+              <span class="fcard-pill">12 mois</span>
+              <span class="fcard-pill">Présentiel</span>
+              <span class="fcard-pill">OPCO</span>
+            </div>
+            <a href="formations/employe-polyvalent.html" class="btn btn-primary fcard-cta">Découvrir →</a>
+          </div>
+        </div>
+
+        <div class="fcard aos" data-delay="1">
+          <div class="fcard-img" style="height:168px;">
+            <img src="img/formations/02_Responsable_Petite_Moyenne_Structure.png" alt="Responsable PME" style="height:168px;" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,.48));"></div>
+            <span style="position:absolute;bottom:10px;left:12px;background:var(--color-orange);color:white;font-size:9px;font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:9999px;">RNCP #38575</span>
+          </div>
+          <div class="fcard-body">
+            <div class="fcard-tag" style="color:var(--color-orange);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Alternance
+            </div>
+            <div class="fcard-title">Responsable de Petite ou Moyenne Structure</div>
+            <div class="fcard-meta">
+              <span class="fcard-pill">18 mois</span>
+              <span class="fcard-pill">Présentiel</span>
+              <span class="fcard-pill">OPCO</span>
+            </div>
+            <a href="formations/responsable-pme.html" class="btn btn-primary fcard-cta">Découvrir →</a>
+          </div>
+        </div>
+
+        <div class="fcard aos" data-delay="2">
+          <div class="fcard-img" style="height:168px;">
+            <img src="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Community Manager" style="height:168px;" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,.48));"></div>
+            <span style="position:absolute;bottom:10px;left:12px;background:var(--color-teal);color:white;font-size:9px;font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:9999px;">RNCP #40907</span>
+          </div>
+          <div class="fcard-body">
+            <div class="fcard-tag" style="color:var(--color-teal);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Alternance
+            </div>
+            <div class="fcard-title">Community Manager</div>
+            <div class="fcard-meta">
+              <span class="fcard-pill">12 mois</span>
+              <span class="fcard-pill">Présentiel</span>
+              <span class="fcard-pill">OPCO</span>
+            </div>
+            <a href="formations/community-manager.html" class="btn btn-primary fcard-cta">Découvrir →</a>
+          </div>
+        </div>
+
+        <div class="fcard aos" data-delay="3">
+          <div class="fcard-img" style="height:168px;">
+            <img src="https://images.pexels.com/photos/5668858/pexels-photo-5668858.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Conseiller Commercial" style="height:168px;" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,.48));"></div>
+            <span style="position:absolute;bottom:10px;left:12px;background:var(--color-orange);color:white;font-size:9px;font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:9999px;">RNCP #37717</span>
+          </div>
+          <div class="fcard-body">
+            <div class="fcard-tag" style="color:var(--color-orange);">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Alternance
+            </div>
+            <div class="fcard-title">Conseiller Commercial</div>
+            <div class="fcard-meta">
+              <span class="fcard-pill">12 mois</span>
+              <span class="fcard-pill">Présentiel</span>
+              <span class="fcard-pill">OPCO</span>
+            </div>
+            <a href="formations/conseiller-commercial.html" class="btn btn-primary fcard-cta">Découvrir →</a>
+          </div>
+        </div>
+
+      </div><!-- /cat-grid-4 -->
+
+      <!-- ── CERTIFIANTES ── -->
+      <div class="section-divider-row">
+        <div class="bar" style="background:var(--color-orange);"></div>
+        <span class="label" style="color:var(--color-orange);">Formations certifiantes</span>
+        <span class="sub">1 à 2 jours · Financement OPCO</span>
+        <div class="line"></div>
+        <a href="formations/index.html" class="all" style="color:var(--color-orange);">Voir tout →</a>
+      </div>
+
+      <div class="cat-grid-3">
+
+        <div class="fcard aos">
+          <div class="fcard-img" style="height:140px;">
+            <img src="img/formations/06_Hygiene_Alimentaire_HACCP.png" alt="Hygiène Alimentaire HACCP" style="height:140px;" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.45));"></div>
+            <span style="position:absolute;top:10px;right:10px;background:rgba(26,155,151,.92);color:white;font-size:9px;font-weight:700;padding:3px 9px;border-radius:9999px;">Certifiante</span>
+          </div>
+          <div class="fcard-body">
+            <div class="fcard-title">Hygiène Alimentaire HACCP</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:var(--color-mid);">1 jour · Obligatoire CHR</span>
+              <a href="formations/haccp.html" class="btn btn-primary" style="font-size:11px;padding:6px 14px;">Voir →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="fcard aos" data-delay="1">
+          <div class="fcard-img" style="height:140px;">
+            <img src="img/formations/07_Gestion_des_Conflits.png" alt="Gestion des Conflits" style="height:140px;" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.45));"></div>
+            <span style="position:absolute;top:10px;right:10px;background:rgba(26,155,151,.92);color:white;font-size:9px;font-weight:700;padding:3px 9px;border-radius:9999px;">Certifiante</span>
+          </div>
+          <div class="fcard-body">
+            <div class="fcard-title">Gestion des Conflits</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:var(--color-mid);">2 jours · Management</span>
+              <a href="formations/gestion-conflits.html" class="btn btn-primary" style="font-size:11px;padding:6px 14px;">Voir →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="fcard aos" data-delay="2">
+          <div class="fcard-img" style="height:140px;">
+            <img src="img/formations/08_Gestes_et_Postures.png" alt="Gestes et Postures" style="height:140px;" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.45));"></div>
+            <span style="position:absolute;top:10px;right:10px;background:rgba(26,155,151,.92);color:white;font-size:9px;font-weight:700;padding:3px 9px;border-radius:9999px;">Certifiante</span>
+          </div>
+          <div class="fcard-body">
+            <div class="fcard-title">Gestes et Postures</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:var(--color-mid);">1 jour · Sécurité</span>
+              <a href="formations/gestes-postures.html" class="btn btn-primary" style="font-size:11px;padding:6px 14px;">Voir →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="fcard aos" data-delay="3">
+          <div class="fcard-img" style="height:140px;">
+            <img src="img/formations/09_Prevention_du_Harcelement.png" alt="Prévention Harcèlement" style="height:140px;" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.45));"></div>
+            <span style="position:absolute;top:10px;right:10px;background:rgba(26,155,151,.92);color:white;font-size:9px;font-weight:700;padding:3px 9px;border-radius:9999px;">Certifiante</span>
+          </div>
+          <div class="fcard-body">
+            <div class="fcard-title">Prévention Harcèlement</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:var(--color-mid);">1 jour · RH</span>
+              <a href="formations/prevention-harcelement.html" class="btn btn-primary" style="font-size:11px;padding:6px 14px;">Voir →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="fcard aos" data-delay="4">
+          <div class="fcard-img" style="height:140px;">
+            <img src="img/formations/10_Demarche_Eco_Responsable.png" alt="Démarche Éco-Responsable" style="height:140px;" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(0,0,0,.45));"></div>
+            <span style="position:absolute;top:10px;right:10px;background:rgba(45,106,79,.92);color:white;font-size:9px;font-weight:700;padding:3px 9px;border-radius:9999px;">Certifiante</span>
+          </div>
+          <div class="fcard-body">
+            <div class="fcard-title">Démarche Éco-Responsable</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:var(--color-mid);">2 jours · Durabilité</span>
+              <a href="formations/eco-responsable.html" class="btn btn-primary" style="font-size:11px;padding:6px 14px;">Voir →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="fcard aos" data-delay="5" style="background:var(--color-dark);">
+          <div class="fcard-img" style="height:140px;">
+            <img src="img/formations/11_Formation_Intra_Entreprise.png" alt="Formation Intra-Entreprise" style="height:140px;opacity:.55;" loading="lazy">
+            <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,155,151,.5) 0%,rgba(0,0,0,.65) 100%);"></div>
+            <span style="position:absolute;top:10px;right:10px;background:var(--color-orange);color:white;font-size:9px;font-weight:700;padding:3px 9px;border-radius:9999px;">Sur mesure</span>
+          </div>
+          <div class="fcard-body">
+            <div class="fcard-title" style="color:white;">Formation Intra-Entreprise</div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:11px;color:rgba(255,255,255,.55);">Durée sur mesure</span>
+              <a href="formations/intra-entreprise.html" class="btn btn-primary" style="font-size:11px;padding:6px 14px;">Voir →</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cat-grid-3 -->
+
+      <div style="text-align:center;margin-top:52px;" class="aos">
+        <a href="formations/index.html" class="btn btn-secondary btn-lg">Voir toutes les formations</a>
+      </div>
+
     </div>
-    <iframe
-      src="https://evoliainstitute-dot.github.io/Evoliainstitut/formations/index.html"
-      title="Catalogue des formations Evolia Institut"
-      style="width:100%;height:900px;border:none;display:block;"
-      loading="lazy"
-    ></iframe>
   </section>
 
   <!-- ═══════════════════════════════════════════
@@ -293,7 +514,7 @@
   <!-- ═══════════════════════════════════════════
        S5 — POURQUOI EVOLIA
   ═══════════════════════════════════════════ -->
-  <section class="section section--white">
+  <section class="section" style="background:#f8f5f1;">
     <div class="container">
       <div class="grid-2" style="align-items: center; gap: 80px;">
         <div class="aos">
@@ -339,14 +560,26 @@
           </div>
         </div>
         <div class="aos" data-delay="1" style="position: relative;">
-          <img
-            src="https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt="Formation professionnelle en restauration — cuisine raffinée"
-            style="width: 100%; border-radius: 4px; object-fit: cover; aspect-ratio: 4/5;"
-          >
-          <div style="position: absolute; bottom: -20px; left: -20px; background: var(--color-orange); color: white; padding: 20px 24px; border-radius: 4px; box-shadow: var(--shadow-md);">
-            <div style="font-family: var(--font-display); font-size: 36px; font-weight: 600; line-height: 1;">★ 4.9</div>
-            <div style="font-size: 12px; opacity: .9; margin-top: 4px;">satisfaction moyenne</div>
+          <div style="border-radius:16px;overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,.13);">
+            <img
+              src="img/pourquoi-nous-choisir.jpg"
+              alt="Équipe Evolia Institut — formateurs experts CHR"
+              style="width:100%;display:block;aspect-ratio:4/3;object-fit:cover;"
+              loading="lazy"
+            >
+          </div>
+          <!-- Badge satisfaction -->
+          <div style="position:absolute;bottom:-16px;left:-16px;background:var(--color-orange);color:white;padding:18px 22px;border-radius:12px;box-shadow:0 8px 28px rgba(219,86,14,.35);">
+            <div style="font-family:var(--font-display);font-size:34px;font-weight:700;line-height:1;">★ 4.9</div>
+            <div style="font-size:11px;opacity:.9;margin-top:3px;font-weight:600;letter-spacing:.04em;">satisfaction moyenne</div>
+          </div>
+          <!-- Badge Qualiopi -->
+          <div style="position:absolute;top:16px;right:-16px;background:white;border-radius:12px;padding:12px 16px;box-shadow:0 8px 24px rgba(0,0,0,.1);display:flex;align-items:center;gap:8px;">
+            <span style="width:28px;height:28px;background:var(--color-teal);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:12px;flex-shrink:0;">✓</span>
+            <div>
+              <div style="font-size:11px;font-weight:700;color:var(--color-dark);">Qualiopi certifié</div>
+              <div style="font-size:9px;color:var(--color-mid);">N° QNW0211</div>
+            </div>
           </div>
         </div>
       </div>
@@ -356,7 +589,7 @@
   <!-- ═══════════════════════════════════════════
        S6 — TÉMOIGNAGES
   ═══════════════════════════════════════════ -->
-  <section class="section section--alt">
+  <section class="section section--white">
     <div class="container">
       <div style="text-align: center; max-width: 600px; margin: 0 auto 56px;">
         <span class="section-label">Ce que disent nos stagiaires</span>
@@ -489,7 +722,7 @@
   <!-- ═══════════════════════════════════════════
        S8 — BLOG PREVIEW + CTA
   ═══════════════════════════════════════════ -->
-  <section class="section section--white">
+  <section class="section" style="background:#f8f5f1;">
     <div class="container">
       <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; flex-wrap: wrap; gap: 16px;">
         <div>
@@ -553,7 +786,7 @@
   <div class="mq-band mq-band--white" aria-label="Nos partenaires">
     <div class="mq-label">Ils nous font confiance</div>
     <div class="mq-track-wrap white">
-      <div class="mq-track" id="mq-partners">
+      <div class="mq-track mq-track--rev" id="mq-partners">
         <!-- Set A -->
         <div class="mq-item"><img src="img/partenaires/dakota.webp" alt="Dakota Restaurant" loading="lazy"></div>
         <div class="mq-sep"></div>
