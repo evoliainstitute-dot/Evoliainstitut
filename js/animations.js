@@ -66,20 +66,16 @@
     });
   }
 
-  /* ── Sticky header shrink ── */
+  /* ── Sticky header — scrolled class + glassmorphism ── */
   function initStickyHeader() {
     var header = document.querySelector('.site-header');
     if (!header) return;
 
     window.addEventListener('scroll', function() {
-      if (window.scrollY > 60) {
-        header.style.boxShadow = '0 4px 24px rgba(0,0,0,.12)';
-        header.style.background = 'rgba(255,255,255,.97)';
-        header.style.backdropFilter = 'blur(8px)';
+      if (window.scrollY > 40) {
+        header.classList.add('scrolled');
       } else {
-        header.style.boxShadow = '0 2px 16px rgba(0,0,0,.07)';
-        header.style.background = 'white';
-        header.style.backdropFilter = '';
+        header.classList.remove('scrolled');
       }
     }, { passive: true });
   }
@@ -137,7 +133,7 @@
   /* ── Init ── */
   document.addEventListener('DOMContentLoaded', function() {
     // AOS
-    document.querySelectorAll('.aos').forEach(function(el) {
+    document.querySelectorAll('.aos, .aos-scale').forEach(function(el) {
       observer.observe(el);
     });
 

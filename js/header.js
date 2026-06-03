@@ -11,9 +11,12 @@
     return `
 <div class="site-topbar">
   <div class="container">
-    <a href="mailto:contact@evoliainstitut.com" style="color:white;">📧 contact@evoliainstitut.com</a>
+    <span class="topbar-pill">✓ Qualiopi</span>
+    <span>NDA : 11757542775</span>
     <span>·</span>
-    <span>Réponse garantie sous 48h</span>
+    <a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a>
+    <span>·</span>
+    <span>Paris 19e · Réponse sous 48h</span>
   </div>
 </div>
 <nav class="navbar" role="navigation" aria-label="Navigation principale">
