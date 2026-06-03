@@ -123,14 +123,24 @@
 
   /* ── Inject header & footer ── */
   document.addEventListener('DOMContentLoaded', function() {
-    // Header
+    // Navbar uniquement sur la page d'accueil
+    var path = window.location.pathname;
+    var isHomepage = path === '/' ||
+                     path.endsWith('/Evoliainstitut/') ||
+                     path.endsWith('/Evoliainstitut/index.html') ||
+                     path === '/index.html';
+
     var headerEl = document.getElementById('site-header');
     if (headerEl) {
-      headerEl.innerHTML = getHeaderHTML();
-      headerEl.className = 'site-header';
+      if (isHomepage) {
+        headerEl.innerHTML = getHeaderHTML();
+        headerEl.className = 'site-header';
+      } else {
+        headerEl.style.display = 'none';
+      }
     }
 
-    // Footer
+    // Footer sur toutes les pages
     var footerEl = document.getElementById('site-footer');
     if (footerEl) {
       footerEl.innerHTML = getFooterHTML();
