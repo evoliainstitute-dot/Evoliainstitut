@@ -33,7 +33,7 @@
   --font-body:    'Jost', sans-serif;
 
   /* Layout */
-  --max-width: 1200px;
+  --max-width: 1360px;
 
   /* Radius scale */
   --radius-xs: 2px;
@@ -102,7 +102,10 @@ h4 {
   font-size: clamp(17px, 2vw, 22px);
   font-weight: 600;
 }
-p { line-height: 1.75; }
+p { font-size: 16px; line-height: 1.78; }
+.section-label { font-size: 12px !important; letter-spacing: .14em !important; }
+small, .text-sm { font-size: 14px; }
+.text-xs { font-size: 12px; }
 
 /* ── Layout ── */
 .container {
@@ -124,10 +127,10 @@ p { line-height: 1.75; }
   display: inline-block;
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 13px;
-  letter-spacing: .1em;
+  font-size: 14px;
+  letter-spacing: .08em;
   text-transform: uppercase;
-  padding: 14px 34px;
+  padding: 14px 36px;
   border-radius: var(--radius-sm);
   border: 2px solid transparent;
   cursor: pointer;

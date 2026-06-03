@@ -54,7 +54,6 @@
         </div>
       </li>
       <li><a href="/Evoliainstitut/financement/index.html">Financement</a></li>
-      <li><a href="/Evoliainstitut/blog/index.html">Blog</a></li>
       <li><a href="/Evoliainstitut/contact/index.html">Nous contacter</a></li>
     </ul>
     <div class="nav-actions" id="nav-actions">
