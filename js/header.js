@@ -9,6 +9,15 @@
   function getHeaderHTML(activePage) {
     const active = activePage || '';
     return `
+<div class="site-topbar">
+  <div class="container">
+    <a href="tel:+33600000000">📞 06 00 00 00 00</a>
+    <span>·</span>
+    <a href="mailto:contact@evoliainstitut.com">✉ contact@evoliainstitut.com</a>
+    <span>·</span>
+    <span>Lun–Ven 9h–18h · Réponse sous 48h</span>
+  </div>
+</div>
 <nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="container">
     <a href="/index.html" class="nav-logo" aria-label="Evolia Institut — Accueil" style="gap:0;">
@@ -97,8 +106,10 @@
       <div class="footer-col">
         <h4>Contact</h4>
         <div class="footer-contact-item">📍 <span>26 rue du Maroc, 75019 Paris</span></div>
-        <div class="footer-contact-item">📧 <a href="mailto:contact@evoliainstitut.com">contact@evoliainstitut.com</a></div>
-        <div class="footer-contact-item" style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.4);">Du lundi au vendredi de 9h00 à 17h00<br>Réponse garantie sous 48h</div>
+        <div class="footer-contact-item">📞 <a href="tel:+33600000000" style="color:rgba(255,255,255,.75);">06 00 00 00 00</a></div>
+        <div class="footer-contact-item">✉ <a href="mailto:contact@evoliainstitut.com" style="color:rgba(255,255,255,.75);">contact@evoliainstitut.com</a></div>
+        <div class="footer-contact-item" style="font-size:12px;color:rgba(255,255,255,.45);">♿ Référente handicap : <a href="mailto:referent-handicap@evoliainstitut.com" style="color:rgba(255,255,255,.55);">Mme CAMARA</a></div>
+        <div class="footer-contact-item" style="margin-top:4px;font-size:12px;color:rgba(255,255,255,.4);">Lun–Ven · 9h–18h · Réponse garantie sous 48h</div>
         <div style="margin-top:16px;">
           <a href="/contact/index.html" class="btn btn-white" style="font-size:12px;padding:10px 20px;">Dépôt de candidature</a>
         </div>
@@ -146,8 +157,12 @@
       footerEl.innerHTML = getFooterHTML();
     }
 
-    // Mobile menu
-    setTimeout(initNav, 0);
+    setTimeout(function() {
+      initNav();
+      initScrollBehavior();
+      initBackToTop();
+      initMobileFloatingCTA();
+    }, 0);
   });
 
   function initNav() {
@@ -191,5 +206,50 @@
         a.style.fontWeight = '600';
       }
     });
+  }
+
+  /* ── Transparent navbar over hero ── */
+  function initScrollBehavior() {
+    var header = document.querySelector('.site-header');
+    if (!header) return;
+    var hasHero = document.querySelector('.hero');
+    if (!hasHero) return;
+
+    header.classList.add('site-header--transparent');
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 40) {
+        header.classList.remove('site-header--transparent');
+      } else {
+        header.classList.add('site-header--transparent');
+      }
+    }, { passive: true });
+  }
+
+  /* ── Back to top ── */
+  function initBackToTop() {
+    var btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.setAttribute('aria-label', 'Retour en haut de page');
+    btn.innerHTML = '&#8679;';
+    document.body.appendChild(btn);
+
+    window.addEventListener('scroll', function() {
+      btn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+
+    btn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  /* ── Mobile floating CTA ── */
+  function initMobileFloatingCTA() {
+    var bar = document.createElement('div');
+    bar.className = 'mobile-cta-floating';
+    bar.setAttribute('role', 'complementary');
+    bar.innerHTML = '<a href="mailto:contact@evoliainstitut.com" class="btn btn-primary">✉ Nous contacter</a>' +
+      '<a href="/evolia-institut/contact/index.html" class="btn btn-secondary">Devis gratuit</a>';
+    document.body.appendChild(bar);
   }
 })();

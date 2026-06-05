@@ -38,7 +38,7 @@
   z-index: 1000;
   background: rgba(255,255,255,.97);
   box-shadow: none;
-  transition: box-shadow .3s ease, background .3s ease;
+  transition: box-shadow .3s ease, background 300ms ease;
   -webkit-backdrop-filter: blur(0px);
   backdrop-filter: blur(0px);
 }
@@ -48,6 +48,14 @@
   height: 3px;
   background: linear-gradient(90deg, var(--color-teal) 0%, #0ecfcb 40%, rgba(26,155,151,.15) 80%, transparent 100%);
 }
+.site-header--transparent {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.site-header--transparent .site-header::after { opacity: 0; }
+.site-header--transparent .nav-links > li > a { color: rgba(255,255,255,.9); }
+.site-header--transparent .nav-links > li > a:hover { background: rgba(255,255,255,.15); color: white; }
+.site-header--transparent .nav-toggle span { background: white; }
 .site-header.scrolled {
   background: rgba(255,255,255,.9);
   box-shadow: 0 4px 24px rgba(0,0,0,.1);
@@ -60,7 +68,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 256px;
+  height: 192px;
   gap: 24px;
 }
 
@@ -73,15 +81,15 @@
   text-decoration: none;
 }
 .nav-logo-mark {
-  width: 42px;
-  height: 42px;
+  width: 32px;
+  height: 32px;
   background: var(--gradient-teal);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   border-radius: var(--radius-xs);
   position: relative;
@@ -102,14 +110,14 @@
 .nav-logo-mark::after  { right: 8px; }
 .nav-logo-text {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--color-dark);
   line-height: 1.1;
 }
 .nav-logo-sub {
   font-family: var(--font-body);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 400;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -129,8 +137,8 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 8px 14px;
-  font-size: 14px;
+  padding: 8px 10px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--color-dark);
   border-radius: var(--radius-sm);
@@ -413,6 +421,62 @@
   flex-wrap: wrap;
 }
 
+/* ── Mobile floating CTA ── */
+.mobile-cta-floating {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 16px;
+  background: white;
+  border-top: 1px solid var(--color-border);
+  z-index: 990;
+  box-shadow: 0 -4px 16px rgba(0,0,0,.1);
+  gap: 10px;
+  align-items: center;
+}
+.mobile-cta-floating .btn { flex: 1; text-align: center; }
+
+/* ── Back to top ── */
+.back-to-top {
+  position: fixed;
+  bottom: 88px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: var(--color-teal);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(26,155,151,.35);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 300ms ease, transform 300ms ease, background 200ms ease;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+.back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.back-to-top:hover { background: var(--color-teal-dark); transform: translateY(-2px); }
+
+/* ── Focus states (accessibilité) ── */
+:focus-visible {
+  outline: 3px solid rgba(26,155,151,.6);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+.btn:focus-visible { outline: 3px solid rgba(26,155,151,.6); outline-offset: 3px; }
+
+/* ── Cartes financement hauteur égale ── */
+.grid-3 > .card { display: flex; flex-direction: column; }
+.grid-3 > .card > p { flex: 1; }
+.grid-3 > .card > a.btn { margin-top: auto; align-self: flex-start; }
+
 /* ── Responsive mobile ── */
 @media (max-width: 1024px) {
   .footer-top { grid-template-columns: 1fr 1fr; gap: 36px; }
@@ -424,13 +488,16 @@
   }
 }
 @media (max-width: 768px) {
+  .mobile-cta-floating { display: flex; }
+  body { padding-bottom: 68px; }
+  .back-to-top { bottom: 80px; }
   .nav-toggle { display: flex; }
   .nav-links, .nav-actions { display: none; }
   .nav-links.open {
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 256px;
+    top: 228px;
     left: 0;
     right: 0;
     bottom: 0;
