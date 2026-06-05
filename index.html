@@ -53,17 +53,17 @@
     .hero-float-img { position:absolute; top:0; right:0; width:87%; border-radius:20px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,.14); }
     .hero-float-img img { width:100%; height:350px; object-fit:cover; display:block; }
     .hero-float-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,transparent 52%,rgba(20,20,20,.52)); border-radius:20px; }
-    .fcard { overflow:hidden; border-radius:12px; border:none; box-shadow:0 2px 20px rgba(0,0,0,.07); background:white; transition:box-shadow .25s,transform .25s; }
+    .fcard { overflow:hidden; border-radius:12px; border:none; box-shadow:0 2px 20px rgba(0,0,0,.07); background:white; transition:box-shadow .25s,transform .25s; display:flex; flex-direction:column; }
     .fcard:hover { box-shadow:0 12px 40px rgba(0,0,0,.13); transform:translateY(-4px); }
-    .fcard-img { position:relative; overflow:hidden; }
+    .fcard-img { position:relative; overflow:hidden; flex-shrink:0; }
     .fcard-img img { width:100%; object-fit:cover; display:block; transition:transform .4s ease; }
     .fcard:hover .fcard-img img { transform:scale(1.04); }
-    .fcard-body { padding:18px 18px 20px; }
+    .fcard-body { padding:18px 18px 20px; display:flex; flex-direction:column; flex:1; }
     .fcard-tag { display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px; }
     .fcard-title { font-size:14px;line-height:1.45;font-weight:600;color:var(--color-dark);margin-bottom:10px; }
     .fcard-meta { display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px; }
     .fcard-pill { font-size:10px;background:#f4f4f4;color:var(--color-mid);padding:3px 9px;border-radius:4px; }
-    .fcard-cta { display:block;text-align:center;font-size:12px;padding:9px 12px; }
+    .fcard-cta { display:block;text-align:center;font-size:12px;padding:9px 12px; margin-top:auto; }
     .section-divider-row { display:flex;align-items:center;gap:16px;margin-bottom:28px; }
     .section-divider-row .bar { height:28px;width:4px;border-radius:2px;flex-shrink:0; }
     .section-divider-row .line { flex:1;height:1px;background:var(--color-border); }
@@ -112,7 +112,6 @@
           </p>
           <div style="display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px;">
             <a href="formations/index.html" class="btn btn-primary btn-lg" style="border-radius:9999px;">Nos formations →</a>
-            <a href="contact/index.html" class="btn btn-lg" style="border-radius:9999px;border:2px solid var(--color-dark);color:var(--color-dark);background:transparent;font-weight:700;padding:12px 28px;text-decoration:none;display:inline-flex;align-items:center;">Dépôt de dossier</a>
             <button onclick="openAllFormationsModal && openAllFormationsModal()" class="btn btn-lg" style="border-radius:9999px;border:2px solid var(--color-teal);color:var(--color-teal);background:transparent;font-weight:700;padding:12px 28px;cursor:pointer;">Candidater →</button>
           </div>
         </div>
