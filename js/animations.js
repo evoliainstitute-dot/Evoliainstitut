@@ -130,6 +130,17 @@
     });
   }
 
+  /* ── Marquee infinite loop ── */
+  function initMarquees() {
+    document.querySelectorAll('.mq-track').forEach(function(track) {
+      Array.from(track.children).forEach(function(child) {
+        var clone = child.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+      });
+    });
+  }
+
   /* ── Init ── */
   document.addEventListener('DOMContentLoaded', function() {
     // AOS
@@ -147,5 +158,6 @@
     initParallax();
     initBlogFilter();
     initSectionArrows();
+    initMarquees();
   });
 })();

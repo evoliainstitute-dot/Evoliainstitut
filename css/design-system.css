@@ -837,3 +837,84 @@ small, .text-sm { font-size: 14px; }
   .btn { padding: 12px 24px; }
   .btn-lg { padding: 14px 32px; font-size: 13px; }
 }
+
+/* ── Marquee bande déroulante ── */
+@keyframes mq-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.mq-band {
+  overflow: hidden;
+  padding: 18px 0;
+}
+.mq-band--white {
+  background: white;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.mq-band--cream { background: #f8f5f1; }
+.mq-label {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--color-mid);
+  margin-bottom: 14px;
+  opacity: .55;
+}
+.mq-track-wrap { overflow: hidden; }
+.mq-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 40px;
+  animation: mq-scroll 28s linear infinite;
+}
+.mq-track--rev { animation-direction: reverse; }
+.mq-track:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .mq-track { animation: none; }
+}
+.mq-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+.mq-item img {
+  height: 40px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  filter: grayscale(15%);
+  opacity: .7;
+  transition: opacity .25s ease, filter .25s ease;
+}
+.mq-item img:hover { opacity: 1; filter: grayscale(0%); }
+.mq-sep {
+  width: 1px;
+  height: 20px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+.mq-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 9999px;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-dark);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.mq-pill img {
+  height: 18px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
