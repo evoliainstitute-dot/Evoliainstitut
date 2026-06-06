@@ -15,6 +15,107 @@
   <link rel="canonical" href="https://evoliainstitut.com/">
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/header-footer.css">
+  <style>
+  /* ============================================================
+     EVOLIA INSTITUT — CSS Confort Visuel & Anti-Fatigue Oculaire
+  ============================================================ */
+
+  /* ── 1. VARIABLES GLOBALES ─────────────────────────────────── */
+  :root {
+    --color-bg:          #F8F6F2;
+    --color-surface:     #F2F0EB;
+    --color-text-main:   #2D2D2D;
+    --color-text-muted:  #4A4A4A;
+    --color-text-light:  #6B6B6B;
+    --color-border:      rgba(0,0,0,0.09);
+    --font-size-body:    17px;
+    --line-height-body:  1.70;
+    --max-prose-width:   65ch;
+  }
+
+  /* ── 2. FOND DE PAGE ───────────────────────────────────────── */
+  html, body { background-color: var(--color-bg) !important; color: var(--color-text-main) !important; }
+
+  /* ── 3. TYPOGRAPHIE — CORPS DE TEXTE ──────────────────────── */
+  body, p, li, td, th, label, input, textarea, select {
+    font-size: var(--font-size-body) !important;
+    line-height: var(--line-height-body) !important;
+    color: var(--color-text-main);
+  }
+  .card-body, .caption, small, figcaption, .text-muted, [class*="subtitle"], [class*="description"] {
+    font-size: 15px !important; color: var(--color-text-muted) !important; line-height: 1.65 !important;
+  }
+  .badge, .tag, .label, time, [class*="meta"] {
+    font-size: 13px !important; color: var(--color-text-light) !important;
+  }
+
+  /* ── 4. HIÉRARCHIE DES TITRES ─────────────────────────────── */
+  h1 { font-size: clamp(36px,5vw,54px) !important; line-height: 1.15 !important; color: var(--color-text-main) !important; font-weight: 700; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(26px,3.5vw,34px) !important; line-height: 1.25 !important; color: var(--color-text-main) !important; font-weight: 600; letter-spacing: -0.015em; }
+  h3 { font-size: clamp(20px,2.5vw,24px) !important; line-height: 1.35 !important; color: var(--color-text-main) !important; font-weight: 600; }
+  h4 { font-size: 19px !important; line-height: 1.4 !important; color: var(--color-text-main) !important; font-weight: 600; }
+  h5, h6 { font-size: 17px !important; line-height: 1.5 !important; color: var(--color-text-muted) !important; font-weight: 600; }
+
+  /* ── 5. LARGEUR MAX DES COLONNES DE TEXTE ─────────────────── */
+  p, .prose, [class*="content"] p, [class*="text-block"], article p, .description, .entry-content p { max-width: var(--max-prose-width); }
+
+  /* ── 6. ESPACEMENT ENTRE SECTIONS ─────────────────────────── */
+  section, .section, [class*="block"], [class*="row"] {
+    padding-top:    clamp(48px,8vw,96px) !important;
+    padding-bottom: clamp(48px,8vw,96px) !important;
+  }
+  p + p { margin-top: 1.1em; }
+
+  /* ── 7. FOND DES CARTES ET SURFACES ───────────────────────── */
+  .card, [class*="card"], [class*="item"], [class*="tile"], [class*="box"] {
+    background-color: #FFFFFF !important;
+    border: 0.5px solid var(--color-border) !important;
+    border-radius: 12px !important;
+  }
+
+  /* ── 8. BOUTONS CTA ───────────────────────────────────────── */
+  a[class*="btn"], button[class*="btn"], .button, [class*="cta"] {
+    letter-spacing: 0.01em; font-size: 16px !important; font-weight: 600 !important;
+    padding: 14px 28px !important; border-radius: 8px !important;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+  a[class*="btn"]:hover, button[class*="btn"]:hover, .button:hover { opacity: 0.88; transform: translateY(-1px); }
+
+  /* ── 9. LIENS ─────────────────────────────────────────────── */
+  a { text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  /* ── 10. IMAGES ───────────────────────────────────────────── */
+  img:not([class*="logo"]):not([class*="icon"]):not([class*="partner"]) {
+    border-radius: 10px;
+    filter: brightness(0.97) saturate(0.95);
+  }
+
+  /* ── 11. HEADER / NAVIGATION ─────────────────────────────── */
+  header, nav, [class*="header"], [class*="navbar"] {
+    background-color: rgba(248,246,242,0.95) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--color-border) !important;
+  }
+  nav a, [class*="nav"] a { font-size: 15px !important; font-weight: 500 !important; color: var(--color-text-main) !important; }
+
+  /* ── 12. FOOTER ───────────────────────────────────────────── */
+  footer, [class*="footer"] { background-color: #EDEAE4 !important; color: var(--color-text-muted) !important; }
+  footer p, footer li, footer a, [class*="footer"] p, [class*="footer"] a { font-size: 14px !important; color: var(--color-text-muted) !important; }
+
+  /* ── 13. FORMULAIRES ─────────────────────────────────────── */
+  input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+    background-color: #FFFFFF !important; border: 1px solid rgba(0,0,0,0.15) !important;
+    border-radius: 8px !important; padding: 12px 16px !important; font-size: 16px !important;
+    color: var(--color-text-main) !important; transition: border-color 0.2s ease;
+  }
+  input:focus, textarea:focus, select:focus { border-color: rgba(0,0,0,0.35) !important; outline: none !important; box-shadow: 0 0 0 3px rgba(0,0,0,0.06) !important; }
+
+  /* ── 14. TÉMOIGNAGES / CITATIONS ─────────────────────────── */
+  blockquote, [class*="testimonial"], [class*="quote"] {
+    font-size: 17px !important; line-height: 1.7 !important; color: var(--color-text-muted) !important;
+    border-left: 3px solid rgba(0,0,0,0.12) !important; padding-left: 1.25rem !important; font-style: italic;
+  }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,64 +145,64 @@
   ═══════════════════════════════════════════ -->
   <style>
     /* ── Hero S1 ── */
-    .hero-split { background:white; min-height:calc(100vh - 40px); display:flex; flex-direction:column; overflow:hidden; position:relative; }
-    .hero-split-inner { flex:1; display:flex; align-items:center; padding:96px 0 52px; }
-    .hero-split-grid { display:grid; grid-template-columns:1.05fr 0.95fr; gap:64px; align-items:center; }
+    .hero-split { background:white; display:flex; flex-direction:column; min-height:100vh; overflow:hidden; position:relative; }
 
-    /* Badge */
-    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(219,86,14,.08); color:var(--color-orange); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:7px 16px; border-radius:9999px; border:1px solid rgba(219,86,14,.2); margin-bottom:24px; }
+    /* Grille principale plein-bord */
+    .hero-main { display:grid; grid-template-columns:1fr 1fr; flex:1; min-height:78vh; }
 
-    /* H1 tricolor */
-    .hero-h1-navy { color:#1c2d4f; font-size:clamp(40px,6vw,72px); font-weight:900; line-height:1; letter-spacing:-.04em; display:block; margin-bottom:6px; }
-    .hero-h1-second-line { font-family:var(--font-display); font-size:clamp(30px,4.5vw,58px); font-weight:700; font-style:italic; line-height:1.1; display:block; margin-bottom:32px; }
-    .hero-h1-teal { color:var(--color-teal); }
-    .hero-h1-orange { color:var(--color-orange); }
+    /* Colonne gauche — alignée sur le container */
+    .hero-left { display:flex; flex-direction:column; justify-content:center; padding-top:90px; padding-bottom:36px; padding-right:52px; padding-left:max(32px, calc((100vw - 1280px) / 2 + 40px)); }
 
-    /* 4 Chips */
-    .hero-chips { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px; }
-    .hero-chip { display:inline-flex; align-items:center; gap:7px; padding:8px 15px; border-radius:9999px; font-size:13px; font-weight:600; }
-    .hero-chip--teal { background:rgba(26,155,151,.1); color:var(--color-teal); border:1px solid rgba(26,155,151,.2); }
-    .hero-chip--orange { background:rgba(219,86,14,.09); color:var(--color-orange); border:1px solid rgba(219,86,14,.18); }
-    .hero-chip--navy { background:rgba(28,45,79,.08); color:#1c2d4f; border:1px solid rgba(28,45,79,.15); }
+    /* Badge teal */
+    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(26,155,151,.08); color:var(--color-teal); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:7px 16px; border-radius:9999px; border:1px solid rgba(26,155,151,.2); margin-bottom:20px; width:fit-content; }
+
+    /* H1 trois lignes */
+    .hero-h1-bienvenue { display:block; color:var(--color-teal); font-size:clamp(48px,6.5vw,82px); font-weight:900; line-height:.95; letter-spacing:-.04em; }
+    .hero-h1-chez { display:block; color:var(--color-teal); font-size:clamp(32px,4.8vw,62px); font-weight:700; line-height:1; letter-spacing:-.03em; }
+    .hero-h1-evolia { display:block; font-family:var(--font-display); color:var(--color-orange); font-size:clamp(26px,4vw,52px); font-weight:700; font-style:italic; line-height:1.15; margin-bottom:16px; }
+
+    /* Sous-titre */
+    .hero-subtitle { font-size:15px; color:var(--color-mid); line-height:1.65; max-width:440px; margin-bottom:24px; }
+
+    /* 4 mini-blocs horizontaux */
+    .hero-mini-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:28px; }
+    .hero-mini-item { display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
+    .hero-mini-icon { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:2px; flex-shrink:0; }
+    .hero-mini-title { font-size:12px; font-weight:700; color:var(--color-dark); line-height:1.35; }
 
     /* CTAs */
     .hero-ctas { display:flex; gap:12px; flex-wrap:wrap; }
-    .btn-orange-solid { background:var(--color-orange); color:white; font-weight:700; border-radius:9999px; border:2px solid var(--color-orange); padding:13px 28px; font-size:15px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all .2s; cursor:pointer; }
+    .btn-orange-solid { background:var(--color-orange); color:white; font-weight:700; border-radius:9999px; border:2px solid var(--color-orange); padding:13px 24px; font-size:13px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all .2s; cursor:pointer; letter-spacing:.06em; text-transform:uppercase; }
     .btn-orange-solid:hover { background:#c04d0c; border-color:#c04d0c; color:white; }
-    .btn-navy-outline { background:transparent; color:#1c2d4f; font-weight:700; border-radius:9999px; border:2px solid #1c2d4f; padding:13px 28px; font-size:15px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all .2s; cursor:pointer; }
+    .btn-navy-outline { background:transparent; color:#1c2d4f; font-weight:700; border-radius:9999px; border:2px solid #1c2d4f; padding:13px 24px; font-size:13px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all .2s; cursor:pointer; letter-spacing:.06em; text-transform:uppercase; }
     .btn-navy-outline:hover { background:#1c2d4f; color:white; }
 
-    /* Right: half-oval image (rounded left, flush right) */
-    .hero-oval-wrap { position:relative; }
-    .hero-oval-img { height:540px; border-radius:280px 24px 24px 280px; overflow:hidden; box-shadow:0 32px 80px rgba(0,0,0,.18); position:relative; }
-    .hero-oval-img img { width:100%; height:100%; object-fit:cover; display:block; }
-    .hero-oval-img::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,transparent 45%,rgba(0,0,0,.48)); border-radius:inherit; }
+    /* Colonne droite — image plein-bord, bord gauche courbé */
+    .hero-right { position:relative; overflow:hidden; border-radius:300px 0 0 300px; }
+    .hero-right img { width:100%; height:100%; object-fit:cover; display:block; }
+    .hero-right::after { content:''; position:absolute; inset:0; background:linear-gradient(to bottom,transparent 42%,rgba(0,0,0,.52)); pointer-events:none; }
 
-    /* Teal quote card */
-    .hero-quote-card { position:absolute; bottom:28px; left:-20px; background:var(--color-teal); border-radius:16px; padding:18px 22px; box-shadow:0 16px 40px rgba(26,155,151,.35); max-width:260px; z-index:10; }
-    .hero-quote-stars { color:#fde68a; font-size:12px; margin-bottom:8px; letter-spacing:1px; }
-    .hero-quote-text { font-size:13px; color:white; line-height:1.65; margin-bottom:12px; font-style:italic; opacity:.92; }
-    .hero-quote-author { display:flex; align-items:center; gap:10px; }
-    .hero-quote-avatar { width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.22); color:white; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; flex-shrink:0; font-family:var(--font-display); }
-    .hero-quote-name { font-size:12px; font-weight:700; color:white; }
-    .hero-quote-role { font-size:11px; color:rgba(255,255,255,.72); margin-top:1px; }
+    /* Carte teal quote (bas-droite de l'image) */
+    .hero-quote-card { position:absolute; bottom:32px; right:28px; background:var(--color-teal); border-radius:16px; padding:22px 26px; max-width:236px; z-index:10; box-shadow:0 16px 40px rgba(26,155,151,.4); }
+    .hero-quote-icon { font-family:Georgia,serif; font-size:52px; color:rgba(255,255,255,.3); line-height:.75; margin-bottom:10px; display:block; }
+    .hero-quote-body { font-family:var(--font-display); font-size:15px; color:white; line-height:1.6; font-style:italic; font-weight:600; }
+    .hero-quote-line { width:32px; height:2px; background:rgba(255,255,255,.45); margin-top:14px; border-radius:2px; }
 
-    /* White floating feature card */
-    .hero-feature-card { background:white; border-radius:20px; padding:28px 40px; box-shadow:0 20px 60px rgba(0,0,0,.1); display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin:-44px auto 0; position:relative; z-index:5; }
-    .hero-feat-item { display:flex; align-items:center; gap:14px; padding:0 28px; border-right:1px solid var(--color-border); }
+    /* Carte features blanche flottante */
+    .hero-feature-card { background:white; border-radius:20px; padding:32px 40px; box-shadow:0 20px 64px rgba(0,0,0,.1); display:grid; grid-template-columns:repeat(4,1fr); gap:0; position:relative; z-index:5; margin-top:-48px; }
+    .hero-feat-item { display:flex; flex-direction:column; gap:10px; padding:0 28px; border-right:1px solid var(--color-border); }
     .hero-feat-item:first-child { padding-left:0; }
     .hero-feat-item:last-child { border-right:none; padding-right:0; }
-    .hero-feat-icon-wrap { width:40px; height:40px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .hero-feat-title { font-size:13px; font-weight:700; color:var(--color-dark); line-height:1.3; }
-    .hero-feat-sub { font-size:11px; color:var(--color-mid); margin-top:2px; }
+    .hero-feat-icon-wrap { width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .hero-feat-title { font-size:14px; font-weight:700; color:var(--color-teal); line-height:1.3; }
+    .hero-feat-desc { font-size:12px; color:var(--color-mid); line-height:1.65; }
 
-    /* Teal footer bar */
+    /* Barre teal (4 items) */
     .hero-teal-bar { background:var(--color-teal); padding:22px 0; flex-shrink:0; margin-top:48px; }
-    .hero-teal-grid { display:grid; grid-template-columns:repeat(3,1fr); }
+    .hero-teal-grid { display:grid; grid-template-columns:repeat(4,1fr); }
     .hero-teal-item { display:flex; align-items:center; gap:12px; padding:0 32px; border-right:1px solid rgba(255,255,255,.2); }
     .hero-teal-item:last-child { border-right:none; }
     .hero-teal-label { font-size:13px; font-weight:700; color:white; line-height:1.3; }
-    .hero-teal-sub { font-size:11px; color:rgba(255,255,255,.65); margin-top:2px; }
 
     /* Shared catalogue styles */
     .fcard { overflow:hidden; border-radius:12px; border:none; box-shadow:0 2px 20px rgba(0,0,0,.07); background:white; transition:box-shadow .25s,transform .25s; display:flex; flex-direction:column; }
@@ -128,97 +229,127 @@
     @media(max-width:900px){ .s5-grid{grid-template-columns:1fr !important; gap:48px !important;} }
 
     /* Responsive hero */
+    @media(max-width:1024px) {
+      .hero-left { padding-right:36px; }
+      .hero-mini-grid { grid-template-columns:repeat(2,1fr); }
+    }
     @media(max-width:960px) {
-      .hero-split-grid { grid-template-columns:1fr; gap:40px; }
-      .hero-split-inner { padding:88px 0 40px; }
-      .hero-oval-img { height:360px; border-radius:24px; }
-      .hero-quote-card { left:12px; bottom:16px; }
-      .hero-feature-card { grid-template-columns:repeat(2,1fr); padding:24px 28px; margin-top:32px; }
-      .hero-feat-item { padding:12px 16px; border-right:none; border-bottom:1px solid var(--color-border); }
-      .hero-feat-item:nth-child(odd) { padding-left:0; }
+      .hero-main { grid-template-columns:1fr; min-height:auto; }
+      .hero-left { padding:96px 32px 56px; padding-left:max(24px,calc((100vw - 1280px)/2 + 32px)); }
+      .hero-right { border-radius:24px; height:420px; margin:0 16px; }
+      .hero-quote-card { bottom:20px; right:20px; }
+      .hero-feature-card { grid-template-columns:repeat(2,1fr); padding:24px 28px; margin-top:24px; }
+      .hero-feat-item { border-right:none; border-bottom:1px solid var(--color-border); padding:14px 0; }
       .hero-feat-item:last-child,.hero-feat-item:nth-last-child(2) { border-bottom:none; }
-      .hero-teal-grid { grid-template-columns:repeat(3,1fr); }
-      .hero-teal-item { padding:14px 20px; }
+      .hero-teal-grid { grid-template-columns:repeat(2,1fr); }
+      .hero-teal-item { padding:14px 24px; border-right:none; border-bottom:1px solid rgba(255,255,255,.2); }
+      .hero-teal-item:nth-child(odd) { border-right:1px solid rgba(255,255,255,.2); }
     }
     @media(max-width:640px) {
-      .hero-split-inner { padding:80px 0 32px; }
-      .hero-oval-img { height:260px; border-radius:16px; }
+      .hero-left { padding:80px 20px 40px; }
+      .hero-right { height:300px; border-radius:16px; margin:0 12px; }
       .hero-quote-card { display:none; }
       .hero-ctas { flex-direction:column; }
-      .hero-feature-card { grid-template-columns:1fr; padding:20px 24px; }
-      .hero-feat-item { padding:12px 0; }
-      .hero-teal-grid { grid-template-columns:1fr; }
+      .hero-mini-grid { grid-template-columns:repeat(2,1fr); }
+      .hero-feature-card { grid-template-columns:1fr; padding:20px 20px; }
+      .hero-teal-grid { grid-template-columns:1fr 1fr; }
     }
+
+    /* ── Overrides : protection hero contre comfort CSS ── */
+    .hero-split { padding-top:0 !important; padding-bottom:0 !important; background-color:#ffffff !important; }
+    .hero-teal-bar { padding-top:22px !important; padding-bottom:22px !important; }
+    .hero-quote-card { background-color:var(--color-teal) !important; border:none !important; border-radius:16px !important; }
+    .hero-feature-card { background-color:#ffffff !important; border-radius:20px !important; border:none !important; box-shadow:0 20px 64px rgba(0,0,0,.1) !important; }
+    .hero-mini-item { background-color:transparent !important; border:none !important; border-radius:0 !important; }
+    .hero-mini-icon { background-color:inherit; border:none !important; border-radius:50% !important; }
+    .hero-feat-item { background-color:transparent !important; border:none !important; border-radius:0 !important; border-right:1px solid var(--color-border) !important; }
+    .hero-feat-item:last-child { border-right:none !important; }
+    .hero-teal-item { background-color:transparent !important; border:none !important; border-radius:0 !important; border-right:1px solid rgba(255,255,255,.2) !important; }
+    .hero-teal-item:last-child { border-right:none !important; }
+    a.btn-orange-solid { background-color:var(--color-orange) !important; border:2px solid var(--color-orange) !important; border-radius:9999px !important; color:white !important; font-size:13px !important; padding:13px 24px !important; }
+    a.btn-orange-solid:hover { background-color:#c04d0c !important; border-color:#c04d0c !important; opacity:1 !important; transform:none !important; }
+    a.btn-navy-outline { background-color:transparent !important; border:2px solid #1c2d4f !important; border-radius:9999px !important; color:#1c2d4f !important; font-size:13px !important; padding:13px 24px !important; }
+    a.btn-navy-outline:hover { background-color:#1c2d4f !important; color:white !important; opacity:1 !important; transform:none !important; }
+    .hero-h1-bienvenue { font-size:clamp(48px,6.5vw,82px) !important; color:var(--color-teal) !important; }
+    .hero-h1-chez { font-size:clamp(32px,4.8vw,62px) !important; color:var(--color-teal) !important; }
+    .hero-h1-evolia { font-size:clamp(26px,4vw,52px) !important; color:var(--color-orange) !important; }
+    .hero-subtitle { font-size:15px !important; line-height:1.65 !important; max-width:440px; }
+    .hero-badge { font-size:11px !important; }
   </style>
 
   <section class="hero-split" aria-labelledby="hero-heading">
-    <!-- Déco blob -->
-    <div style="position:absolute;top:-100px;right:-60px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(26,155,151,.06) 0%,transparent 68%);pointer-events:none;" aria-hidden="true"></div>
-    <div style="position:absolute;bottom:120px;left:-80px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(28,45,79,.04) 0%,transparent 70%);pointer-events:none;" aria-hidden="true"></div>
 
-    <!-- Contenu principal -->
-    <div class="hero-split-inner">
-      <div class="container" style="position:relative;z-index:1;">
-        <div class="hero-split-grid">
+    <!-- Grille principale plein-bord -->
+    <div class="hero-main">
 
-          <!-- ── GAUCHE ── -->
-          <div class="aos">
+      <!-- ── COLONNE GAUCHE ── -->
+      <div class="hero-left aos">
 
-            <!-- Badge -->
-            <div class="hero-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-              Organisme de formation certifié
+        <!-- Badge teal -->
+        <div class="hero-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Organisme de formation certifié
+        </div>
+
+        <!-- H1 trois lignes -->
+        <h1 id="hero-heading" style="margin:0 0 20px;">
+          <span class="hero-h1-bienvenue">Bienvenue</span>
+          <span class="hero-h1-chez">chez</span>
+          <span class="hero-h1-evolia">Evolia Institut</span>
+        </h1>
+
+        <!-- Sous-titre -->
+        <p class="hero-subtitle">Votre partenaire formation pour la restauration et l'hôtellerie CHR. Certifié Qualiopi — formations certifiantes, diplômantes et finançables à 100%.</p>
+
+        <!-- 4 mini-blocs icône + texte -->
+        <div class="hero-mini-grid">
+          <div class="hero-mini-item">
+            <div class="hero-mini-icon" style="background:rgba(26,155,151,.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             </div>
-
-            <!-- H1 Tricolor -->
-            <h1 id="hero-heading" style="margin:0;">
-              <span class="hero-h1-navy">Bienvenue</span>
-              <span class="hero-h1-second-line">
-                <span class="hero-h1-teal">chez </span><span class="hero-h1-orange">Evolia Institut</span>
-              </span>
-            </h1>
-
-            <!-- 4 chips -->
-            <div class="hero-chips">
-              <span class="hero-chip hero-chip--teal">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                Formations CHR
-              </span>
-              <span class="hero-chip hero-chip--orange">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-                Accompagnement
-              </span>
-              <span class="hero-chip hero-chip--teal">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="10" width="20" height="10" rx="2"/><path d="M5 10V8a7 7 0 0114 0v2"/></svg>
-                Financement 100%
-              </span>
-              <span class="hero-chip hero-chip--navy">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Qualiopi certifié
-              </span>
-            </div>
-
-            <!-- CTA buttons -->
-            <div class="hero-ctas">
-              <a href="contact/index.html" class="btn-orange-solid">Dépôt de candidature →</a>
-              <a href="formations/index.html" class="btn-navy-outline">Nos formations →</a>
-            </div>
-
+            <div class="hero-mini-title">Formations<br>certifiantes</div>
           </div>
-
-          <!-- ── DROITE : demi-ovale + carte teal ── -->
-          <div class="aos" data-delay="1">
-            <div class="hero-oval-wrap">
-              <div class="hero-oval-img">
-                <img src="https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Formation restauration CHR — cuisine professionnelle">
-              </div>
-
+          <div class="hero-mini-item">
+            <div class="hero-mini-icon" style="background:rgba(219,86,14,.09);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
+            <div class="hero-mini-title">Accompagnement<br>personnalisé</div>
           </div>
+          <div class="hero-mini-item">
+            <div class="hero-mini-icon" style="background:rgba(26,155,151,.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="10" width="20" height="10" rx="2"/><path d="M5 10V8a7 7 0 0114 0v2"/><circle cx="12" cy="15" r="2"/></svg>
+            </div>
+            <div class="hero-mini-title">Financement<br>100%</div>
+          </div>
+          <div class="hero-mini-item">
+            <div class="hero-mini-icon" style="background:rgba(28,45,79,.08);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c2d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="hero-mini-title">Qualiopi<br>certifié</div>
+          </div>
+        </div>
 
+        <!-- CTAs -->
+        <div class="hero-ctas">
+          <a href="formations/index.html" class="btn-orange-solid">Découvrir nos formations →</a>
+          <a href="contact/index.html" class="btn-navy-outline">Dépôt de candidature →</a>
+        </div>
+
+      </div>
+
+      <!-- ── COLONNE DROITE : image plein-bord ── -->
+      <div class="hero-right aos" data-delay="1">
+        <img src="https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Formation restauration CHR — cuisine professionnelle">
+
+        <!-- Carte teal — bas droite -->
+        <div class="hero-quote-card">
+          <span class="hero-quote-icon">"</span>
+          <p class="hero-quote-body">Apprendre aujourd'hui,<br><em>réussir demain.</em></p>
+          <div class="hero-quote-line"></div>
         </div>
       </div>
-    </div>
+
+    </div><!-- /hero-main -->
 
     <!-- Carte features blanche flottante -->
     <div class="container" style="position:relative;z-index:5;">
@@ -226,79 +357,68 @@
 
         <div class="hero-feat-item">
           <div class="hero-feat-icon-wrap" style="background:rgba(26,155,151,.1);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
-          <div>
-            <div class="hero-feat-title">Formations certifiantes</div>
-            <div class="hero-feat-sub">RNCP, diplômantes &amp; sur mesure</div>
-          </div>
+          <div class="hero-feat-title">Des formations adaptées au marché</div>
+          <p class="hero-feat-desc">Des parcours conçus avec les professionnels CHR pour répondre aux besoins du terrain.</p>
         </div>
 
         <div class="hero-feat-item">
           <div class="hero-feat-icon-wrap" style="background:rgba(219,86,14,.09);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <div>
-            <div class="hero-feat-title">Accompagnement humain</div>
-            <div class="hero-feat-sub">Conseiller dédié · Réponse 48h</div>
-          </div>
+          <div class="hero-feat-title">Un accompagnement à chaque étape</div>
+          <p class="hero-feat-desc">De l'inscription à l'emploi, un conseiller dédié vous guide tout au long du parcours.</p>
         </div>
 
         <div class="hero-feat-item">
           <div class="hero-feat-icon-wrap" style="background:rgba(26,155,151,.1);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="10" width="20" height="10" rx="2"/><path d="M5 10V8a7 7 0 0114 0v2"/><circle cx="12" cy="15" r="2"/></svg>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="10" width="20" height="10" rx="2"/><path d="M5 10V8a7 7 0 0114 0v2"/><circle cx="12" cy="15" r="2"/></svg>
           </div>
-          <div>
-            <div class="hero-feat-title">Financement facilité</div>
-            <div class="hero-feat-sub">OPCO · France Travail · 100%</div>
-          </div>
+          <div class="hero-feat-title">Financements facilités</div>
+          <p class="hero-feat-desc">Nous vous aidons à trouver la solution de financement la plus adaptée à votre situation.</p>
         </div>
 
         <div class="hero-feat-item">
-          <div class="hero-feat-icon-wrap" style="background:rgba(28,45,79,.08);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1c2d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <div class="hero-feat-icon-wrap" style="background:rgba(219,86,14,.09);">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <div>
-            <div class="hero-feat-title">Réussite garantie</div>
-            <div class="hero-feat-sub">★ 4.9/5 · +1 200 apprenants</div>
-          </div>
+          <div class="hero-feat-title">Votre réussite, notre priorité</div>
+          <p class="hero-feat-desc">Notre engagement : vous fournir les clés pour atteindre vos ambitions professionnelles.</p>
         </div>
 
       </div>
     </div>
 
-    <!-- Barre teal footer -->
+    <!-- Barre teal 4 items -->
     <div class="hero-teal-bar">
       <div class="container">
         <div class="hero-teal-grid">
 
           <div class="hero-teal-item">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            <div>
-              <div class="hero-teal-label">Certifié Qualiopi</div>
-              <div class="hero-teal-sub">N° QNW0211</div>
-            </div>
+            <div class="hero-teal-label">Organisme certifié</div>
           </div>
 
           <div class="hero-teal-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="10" width="20" height="10" rx="2"/><path d="M5 10V8a7 7 0 0114 0v2"/><circle cx="12" cy="15" r="2"/></svg>
-            <div>
-              <div class="hero-teal-label">Financement 100% possible</div>
-              <div class="hero-teal-sub">OPCO · France Travail</div>
-            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <div class="hero-teal-label">Formateurs experts</div>
+          </div>
+
+          <div class="hero-teal-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            <div class="hero-teal-label">Pédagogie active</div>
           </div>
 
           <div class="hero-teal-item">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <div>
-              <div class="hero-teal-label">Réponse sous 48h</div>
-              <div class="hero-teal-sub">Conseiller dédié</div>
-            </div>
+            <div class="hero-teal-label">Suivi personnalisé</div>
           </div>
 
         </div>
       </div>
     </div>
+
   </section>
 
   <!-- ═══════════════════════════════════════════
