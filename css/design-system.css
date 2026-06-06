@@ -359,31 +359,6 @@ small, .text-sm { font-size: 14px; }
   margin: 16px 0 24px;
 }
 
-/* ── Section arrows ── */
-.section-arrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0 0;
-  pointer-events: none;
-}
-.section-arrow-chevron {
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-right: 2px solid var(--color-teal);
-  border-bottom: 2px solid var(--color-teal);
-  transform: rotate(45deg);
-  animation: section-arrow-bounce 1.8s ease-in-out infinite;
-  opacity: .5;
-}
-@keyframes section-arrow-bounce {
-  0%, 100% { transform: rotate(45deg) translateY(0); opacity: .4; }
-  50%       { transform: rotate(45deg) translateY(5px); opacity: .85; }
-}
-@media (max-width: 768px) {
-  .section-arrow { display: none; }
-}
 
 /* ── Accordion ── */
 .accordion {
@@ -986,13 +961,13 @@ a.btn-lg, button.btn-lg { padding: 17px 44px !important; font-size: 14px !import
 .mq-band--cream { background: #f8f5f1; }
 .mq-label {
   text-align: center;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 700;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--color-mid);
-  margin-bottom: 14px;
-  opacity: .55;
+  margin-bottom: 18px;
+  opacity: .75;
 }
 .mq-track-wrap { overflow: hidden; }
 .mq-track {
@@ -1013,13 +988,13 @@ a.btn-lg, button.btn-lg { padding: 17px 44px !important; font-size: 14px !import
   flex-shrink: 0;
 }
 .mq-item img {
-  height: 40px;
+  height: 54px;
   width: auto;
-  max-width: 120px;
+  max-width: 160px;
   object-fit: contain;
   mix-blend-mode: multiply;
   filter: grayscale(15%);
-  opacity: .7;
+  opacity: .75;
   transition: opacity .25s ease, filter .25s ease;
 }
 .mq-item img:hover { opacity: 1; filter: grayscale(0%); }
@@ -1036,15 +1011,15 @@ a.btn-lg, button.btn-lg { padding: 17px 44px !important; font-size: 14px !import
   background: white;
   border: 1px solid var(--color-border);
   border-radius: 9999px;
-  padding: 6px 16px;
-  font-size: 12px;
+  padding: 8px 20px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--color-dark);
   white-space: nowrap;
   flex-shrink: 0;
 }
 .mq-pill img {
-  height: 18px;
+  height: 22px;
   width: auto;
   object-fit: contain;
   mix-blend-mode: multiply;

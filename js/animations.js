@@ -80,21 +80,6 @@
     }, { passive: true });
   }
 
-  /* ── Section transition arrows ── */
-  function initSectionArrows() {
-    var main = document.querySelector('main');
-    if (!main) return;
-    var sections = main.querySelectorAll('section.section, .section--white, .section--alt, .section--dark');
-    sections.forEach(function(section, i) {
-      if (i < sections.length - 1) {
-        var arrow = document.createElement('div');
-        arrow.className = 'section-arrow';
-        arrow.setAttribute('aria-hidden', 'true');
-        arrow.innerHTML = '<span class="section-arrow-chevron"></span>';
-        section.appendChild(arrow);
-      }
-    });
-  }
 
   /* ── Parallax hero image (subtle) ── */
   function initParallax() {
@@ -157,7 +142,6 @@
     initStickyHeader();
     initParallax();
     initBlogFilter();
-    initSectionArrows();
     initMarquees();
   });
 })();
