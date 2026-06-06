@@ -838,6 +838,137 @@ small, .text-sm { font-size: 14px; }
   .btn-lg { padding: 14px 32px; font-size: 13px; }
 }
 
+/* ============================================================
+   EVOLIA INSTITUT — CSS Confort Visuel & Anti-Fatigue Oculaire
+============================================================ */
+
+/* ── Variables (override/extend :root) ── */
+:root {
+  --color-bg:          #F8F6F2;
+  --color-surface:     #F2F0EB;
+  --color-text-main:   #2D2D2D;
+  --color-text-muted:  #4A4A4A;
+  --color-text-light:  #6B6B6B;
+  --color-border:      rgba(0,0,0,0.09);
+  --font-size-body:    17px;
+  --line-height-body:  1.70;
+  --max-prose-width:   65ch;
+}
+
+/* ── 2. Fond de page ── */
+html, body { background-color: var(--color-bg) !important; color: var(--color-text-main) !important; }
+
+/* ── 3. Typographie corps ── */
+body, p, li, td, th, label, input, textarea, select {
+  font-size: var(--font-size-body) !important;
+  line-height: var(--line-height-body) !important;
+  color: var(--color-text-main);
+}
+.card-body, .caption, small, figcaption, .text-muted,
+[class*="subtitle"], [class*="description"] {
+  font-size: 15px !important; color: var(--color-text-muted) !important; line-height: 1.65 !important;
+}
+.badge, .tag, .label, time, [class*="meta"] {
+  font-size: 13px !important; color: var(--color-text-light) !important;
+}
+
+/* ── 4. Titres ── */
+h1 { font-size: clamp(36px,5vw,54px) !important; line-height: 1.15 !important; color: var(--color-text-main) !important; font-weight: 700; letter-spacing: -0.02em; }
+h2 { font-size: clamp(26px,3.5vw,34px) !important; line-height: 1.25 !important; color: var(--color-text-main) !important; font-weight: 600; letter-spacing: -0.015em; }
+h3 { font-size: clamp(20px,2.5vw,24px) !important; line-height: 1.35 !important; color: var(--color-text-main) !important; font-weight: 600; }
+h4 { font-size: 19px !important; line-height: 1.4 !important; color: var(--color-text-main) !important; font-weight: 600; }
+h5, h6 { font-size: 17px !important; line-height: 1.5 !important; color: var(--color-text-muted) !important; font-weight: 600; }
+
+/* ── 5. Largeur prose ── */
+p, .prose, [class*="content"] p, [class*="text-block"], article p, .description, .entry-content p { max-width: var(--max-prose-width); }
+
+/* ── 6. Espacement sections ── */
+section, .section, [class*="block"], [class*="row"] {
+  padding-top:    clamp(48px,8vw,96px) !important;
+  padding-bottom: clamp(48px,8vw,96px) !important;
+}
+p + p { margin-top: 1.1em; }
+
+/* ── 7. Cartes & surfaces ── */
+.card, [class*="card"], [class*="item"], [class*="tile"], [class*="box"] {
+  background-color: #FFFFFF !important;
+  border: 0.5px solid var(--color-border) !important;
+  border-radius: 12px !important;
+}
+
+/* ── 8. Boutons ── */
+a[class*="btn"], button[class*="btn"], .button, [class*="cta"] {
+  letter-spacing: 0.01em; font-size: 16px !important; font-weight: 600 !important;
+  padding: 14px 28px !important; border-radius: 8px !important;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+a[class*="btn"]:hover, button[class*="btn"]:hover, .button:hover { opacity: 0.88; transform: translateY(-1px); }
+
+/* ── 9. Liens ── */
+a { text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+/* ── 10. Images ── */
+img:not([class*="logo"]):not([class*="icon"]):not([class*="partner"]) { border-radius: 10px; filter: brightness(0.97) saturate(0.95); }
+
+/* ── 11. Header / nav ── */
+header, nav, [class*="header"], [class*="navbar"] {
+  background-color: rgba(248,246,242,0.95) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 0.5px solid var(--color-border) !important;
+}
+nav a, [class*="nav"] a { font-size: 15px !important; font-weight: 500 !important; color: var(--color-text-main) !important; }
+
+/* ── 12. Footer ── */
+footer, [class*="footer"] { background-color: #EDEAE4 !important; color: var(--color-text-muted) !important; }
+footer p, footer li, footer a, [class*="footer"] p, [class*="footer"] a { font-size: 14px !important; color: var(--color-text-muted) !important; }
+
+/* ── 13. Formulaires ── */
+input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+  background-color: #FFFFFF !important; border: 1px solid rgba(0,0,0,0.15) !important;
+  border-radius: 8px !important; padding: 12px 16px !important; font-size: 16px !important;
+  color: var(--color-text-main) !important; transition: border-color 0.2s ease;
+}
+input:focus, textarea:focus, select:focus { border-color: rgba(0,0,0,0.35) !important; outline: none !important; box-shadow: 0 0 0 3px rgba(0,0,0,0.06) !important; }
+
+/* ── 14. Citations ── */
+blockquote, [class*="testimonial"], [class*="quote"] {
+  font-size: 17px !important; line-height: 1.7 !important; color: var(--color-text-muted) !important;
+  border-left: 3px solid rgba(0,0,0,0.12) !important; padding-left: 1.25rem !important; font-style: italic;
+}
+
+/* ── Protection : variants design-system contra comfort CSS ── */
+
+/* Cartes colorées — ne pas devenir blanches */
+.card--teal  { background: var(--gradient-teal) !important; border-color: transparent !important; color: white !important; }
+.card--orange{ background: var(--gradient-orange) !important; border-color: transparent !important; color: white !important; }
+.card--dark  { background: var(--gradient-dark) !important; border-color: transparent !important; color: white !important; }
+.glass-card  { background: rgba(255,255,255,.12) !important; border-color: rgba(255,255,255,.22) !important; }
+
+/* Badges catégories */
+.badge--diplome { background: var(--color-teal-light) !important; color: var(--color-teal-dark) !important; border: none !important; border-radius: 2px !important; font-size: 11px !important; }
+.badge--certif  { background: var(--color-orange-light) !important; color: var(--color-orange-dark) !important; border: none !important; border-radius: 2px !important; font-size: 11px !important; }
+.badge--cat     { background: var(--color-light) !important; color: var(--color-mid) !important; border: none !important; border-radius: 2px !important; font-size: 11px !important; }
+.badge-qualiopi { background: rgba(255,255,255,.12) !important; border: 1.5px solid rgba(255,255,255,.45) !important; color: white !important; border-radius: 2px !important; font-size: 11px !important; }
+.badge-qualiopi--inverted { background: var(--gradient-teal) !important; border-color: transparent !important; }
+
+/* Cartes blog & testimonials */
+.blog-card          { border-radius: 16px !important; }
+.testimonial-card   { border: 1px solid var(--color-border) !important; border-left: 1px solid var(--color-border) !important; padding: 40px 36px 32px !important; font-style: normal !important; color: var(--color-dark) !important; border-radius: 16px !important; }
+.blog-card-cat      { background: var(--color-teal-light) !important; color: var(--color-teal-dark) !important; border: none !important; border-radius: 2px !important; font-size: 10px !important; }
+.blog-card-cat--orange { background: var(--color-orange-light) !important; color: var(--color-orange-dark) !important; }
+
+/* Marquee */
+.mq-item { background-color: transparent !important; border: none !important; border-radius: 0 !important; }
+.mq-pill { background: white !important; border: 1px solid var(--color-border) !important; border-radius: 9999px !important; padding: 6px 16px !important; }
+
+/* Tailles btn */
+a.btn-sm, button.btn-sm { padding: 10px 22px !important; font-size: 11px !important; }
+a.btn-lg, button.btn-lg { padding: 17px 44px !important; font-size: 14px !important; }
+
+/* Sections spéciales */
+.hero-teal-bar { padding-top: 22px !important; padding-bottom: 22px !important; }
+.info-banner   { padding-top: 10px !important; padding-bottom: 10px !important; }
+
 /* ── Marquee bande déroulante ── */
 @keyframes mq-scroll {
   from { transform: translateX(0); }
