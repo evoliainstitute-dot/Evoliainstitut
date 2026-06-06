@@ -174,6 +174,11 @@
     .hero-h1-evolia { font-size:clamp(26px,4vw,52px) !important; color:var(--color-orange) !important; }
     .hero-subtitle { font-size:15px !important; line-height:1.65 !important; max-width:440px; }
     .hero-badge { font-size:11px !important; }
+
+    /* ── Dispositifs financement : harmonie avec comfort CSS ── */
+    .section--teal h4 { font-size:20px !important; color:white !important; line-height:1.2 !important; }
+    .section--teal p { font-size:16px !important; color:rgba(255,255,255,.85) !important; line-height:1.7 !important; max-width:none !important; }
+    .section--teal .section-label { color:rgba(255,255,255,.7) !important; }
   </style>
 
   <section class="hero-split" aria-labelledby="hero-heading">
@@ -858,22 +863,50 @@
         </div>
         <p style="color:rgba(255,255,255,.8);margin-top:12px;">Ne laissez pas le budget bloquer votre développement. Nous trouvons la solution avec vous.</p>
       </div>
-      <div class="grid-3" style="margin-bottom: 48px; max-width: 900px; margin-left: auto; margin-right: auto;">
-        <div style="background: rgba(255,255,255,.12); border-radius: 4px; padding: 28px 20px; text-align: center; border: 1px solid rgba(255,255,255,.15);" class="aos">
-          <div style="margin-bottom:12px;display:flex;justify-content:center;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="2" y="10" width="20" height="10" rx="2" fill="rgba(255,255,255,.25)" stroke="rgba(255,255,255,.7)" stroke-width="1.5"/><path d="M5 10V8a7 7 0 0114 0v2" stroke="rgba(255,255,255,.7)" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="15" r="2" fill="rgba(255,255,255,.6)"/></svg></div>
-          <h4 style="color: white; margin-bottom: 8px; font-size: 17px;">OPCO</h4>
-          <p style="font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.6;">Financement jusqu'à 100% via votre opérateur de compétences</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px;max-width:1040px;margin-left:auto;margin-right:auto;">
+
+        <!-- OPCO -->
+        <div style="background:rgba(255,255,255,.13);border-radius:20px;padding:40px 32px;text-align:center;border:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;align-items:center;gap:0;" class="aos">
+          <div style="width:72px;height:72px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;flex-shrink:0;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="7" width="20" height="14" rx="2"/>
+              <path d="M16 7V5a2 2 0 0 0-4 0v2M8 7V5a2 2 0 0 0-4 0v2"/>
+              <line x1="12" y1="12" x2="12" y2="16"/>
+              <line x1="10" y1="14" x2="14" y2="14"/>
+            </svg>
+          </div>
+          <h4 style="color:white;font-size:20px;font-weight:700;margin-bottom:12px;line-height:1.2;">OPCO</h4>
+          <p style="color:rgba(255,255,255,.85);line-height:1.7;margin:0;max-width:none;">Financement jusqu'à 100 % via votre opérateur de compétences. Evolia gère le dossier à votre place.</p>
         </div>
-        <div style="background: rgba(255,255,255,.12); border-radius: 4px; padding: 28px 20px; text-align: center; border: 1px solid rgba(255,255,255,.15);" class="aos" data-delay="1">
-          <div style="margin-bottom:12px;display:flex;justify-content:center;"><img src="img/partenaires/france-travail.webp" alt="France Travail" style="height:36px;width:auto;filter:brightness(0) invert(1) opacity(.85);"></div>
-          <h4 style="color: white; margin-bottom: 8px; font-size: 17px;">France Travail</h4>
-          <p style="font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.6;">Formation finançable à 100% pour les demandeurs d'emploi</p>
+
+        <!-- France Travail -->
+        <div style="background:rgba(255,255,255,.13);border-radius:20px;padding:40px 32px;text-align:center;border:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;align-items:center;gap:0;" class="aos" data-delay="1">
+          <div style="width:72px;height:72px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;flex-shrink:0;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h4 style="color:white;font-size:20px;font-weight:700;margin-bottom:12px;line-height:1.2;">France Travail</h4>
+          <p style="color:rgba(255,255,255,.85);line-height:1.7;margin:0;max-width:none;">Formation finançable à 100 % pour les demandeurs d'emploi inscrits. Dispositif POEI disponible.</p>
         </div>
-        <div style="background: rgba(255,255,255,.12); border-radius: 4px; padding: 28px 20px; text-align: center; border: 1px solid rgba(255,255,255,.15);" class="aos" data-delay="2">
-          <div style="margin-bottom:12px;display:flex;justify-content:center;"><svg width="40" height="40" viewBox="0 0 24 24" fill="none"><rect x="4" y="2" width="16" height="20" rx="2" fill="rgba(255,255,255,.2)" stroke="rgba(255,255,255,.7)" stroke-width="1.5"/><path d="M8 8h8M8 12h8M8 16h5" stroke="rgba(255,255,255,.7)" stroke-width="1.5" stroke-linecap="round"/></svg></div>
-          <h4 style="color: white; margin-bottom: 8px; font-size: 17px;">Plan formation</h4>
-          <p style="font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.6;">Intégrez nos formations à votre plan annuel — déductible de la taxe</p>
+
+        <!-- Plan de formation -->
+        <div style="background:rgba(255,255,255,.13);border-radius:20px;padding:40px 32px;text-align:center;border:1px solid rgba(255,255,255,.2);display:flex;flex-direction:column;align-items:center;gap:0;" class="aos" data-delay="2">
+          <div style="width:72px;height:72px;background:rgba(255,255,255,.18);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px;flex-shrink:0;">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="8" y1="13" x2="16" y2="13"/>
+              <line x1="8" y1="17" x2="13" y2="17"/>
+            </svg>
+          </div>
+          <h4 style="color:white;font-size:20px;font-weight:700;margin-bottom:12px;line-height:1.2;">Plan de formation</h4>
+          <p style="color:rgba(255,255,255,.85);line-height:1.7;margin:0;max-width:none;">Intégrez nos formations dans votre plan annuel — déductible de la taxe d'apprentissage.</p>
         </div>
+
       </div>
       <div style="text-align: center; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
         <a href="financement/index.html" class="btn btn-white">Explorer les financements</a>
