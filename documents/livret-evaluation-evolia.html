@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Livret de Suivi & d'Évaluation — Evolia Institut</title>
+<title>Livret de Suivi &amp; d'Évaluation — Evolia Institut</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap');
 
@@ -18,41 +18,37 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
 @media print{body{background:#fff;}.page{margin:0;box-shadow:none;}}
 @page{size:A4;margin:0;}
 
-/* ── COVER ── */
-.cover{display:grid;grid-template-columns:55% 45%;min-height:297mm;}
-.cover-left{background:var(--dark);padding:48px 40px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;}
-.cover-left::before{content:'ÉVALUATION';position:absolute;bottom:-20px;right:-20px;font-family:'Cormorant Garamond',serif;font-size:80px;font-weight:700;color:rgba(255,255,255,.04);line-height:1;writing-mode:vertical-rl;}
-.cover-right{background:var(--cream);padding:48px 32px;display:flex;flex-direction:column;justify-content:space-between;}
-.cover-logo img{height:64px;width:auto;object-fit:contain;filter:brightness(0) invert(1) opacity(.9);}
-.cover-title{flex:1;display:flex;flex-direction:column;justify-content:center;padding:32px 0;}
-.cover-eyebrow{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(26,155,151,.9);margin-bottom:10px;}
-.cover-title h1{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:700;line-height:1.1;color:#fff;}
-.cover-title h1 em{font-style:italic;color:var(--teal);filter:brightness(1.3);}
-.cover-title .sub{font-size:13px;color:rgba(255,255,255,.55);line-height:1.6;margin-top:14px;}
-.cover-badges{display:flex;flex-direction:column;gap:10px;margin-top:28px;}
-.cover-badge{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:12px 16px;display:flex;align-items:center;gap:12px;}
-.cover-badge .val{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#fff;min-width:56px;}
-.cover-badge .val.orange{color:#ffb899;}
-.cover-badge .info{font-size:10px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.06em;}
-.cover-footer{font-size:9px;color:rgba(255,255,255,.3);font-weight:600;letter-spacing:.1em;text-transform:uppercase;}
-/* right side */
-.cover-right-logo{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
-.cover-right-title{flex:1;display:flex;flex-direction:column;justify-content:center;}
-.cover-right-title h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--dark);margin-bottom:12px;line-height:1.2;}
-.cover-right-stats{display:flex;flex-direction:column;gap:10px;margin-top:20px;}
-.stat-item{display:flex;align-items:center;gap:10px;padding:10px 12px;background:#fff;border-radius:4px;border-left:3px solid var(--teal);}
-.stat-item.orange{border-left-color:var(--orange);}
-.stat-item strong{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--teal);min-width:50px;}
-.stat-item.orange strong{color:var(--orange);}
-.stat-item span{font-size:10px;color:var(--mid);text-transform:uppercase;letter-spacing:.06em;}
-.cover-right-tag{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);}
-.apprenant-field{margin-top:20px;background:var(--cream);border-radius:4px;padding:14px;}
-.apprenant-field label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:6px;}
-.apprenant-field .line{height:1.5px;background:var(--border);margin-top:20px;}
+/* ── SVG ICONS ── */
+.icon{display:inline-block;vertical-align:middle;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.icon--xs{width:12px;height:12px;}
+.icon--sm{width:16px;height:16px;}
+.icon--md{width:20px;height:20px;}
+.icon--lg{width:28px;height:28px;}
+.icon--xl{width:40px;height:40px;}
+
+/* ── COVER (full page, centered, no split) ── */
+.cover{min-height:297mm;display:flex;flex-direction:column;align-items:center;justify-content:space-between;background:var(--cream);position:relative;}
+.cover-stripe{width:100%;height:6px;background:linear-gradient(90deg,var(--teal) 0%,#0ecfcb 45%,var(--orange) 100%);flex-shrink:0;}
+.cover-logo-zone{padding:32px 0 0;display:flex;justify-content:center;}
+.cover-logo-zone img{height:110px;width:auto;object-fit:contain;mix-blend-mode:multiply;}
+.cover-hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 48px;}
+.cover-eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--orange);display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+.cover-eyebrow-line{flex:1;max-width:48px;height:1px;background:var(--orange);opacity:.5;}
+.cover-main-title{font-family:'Jost',sans-serif;font-size:clamp(64px,13vw,88px);font-weight:800;color:var(--teal);line-height:.95;letter-spacing:-.04em;text-transform:uppercase;}
+.cover-italic-title{font-family:'Cormorant Garamond',serif;font-size:clamp(56px,11vw,76px);font-style:italic;font-weight:700;color:var(--orange);line-height:1;display:block;}
+.cover-divider{width:48px;height:3px;background:linear-gradient(90deg,var(--teal),var(--orange));border-radius:2px;margin:18px auto;}
+.cover-desc{font-size:12px;color:var(--mid);line-height:1.7;max-width:340px;text-align:center;}
+.cover-stats-band{width:100%;background:#fff;border-top:1px solid var(--border);padding:20px 48px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.cover-stat-pill{display:flex;flex-direction:column;align-items:center;gap:3px;padding:10px 18px;background:var(--teal-light);border-radius:4px;min-width:90px;}
+.cover-stat-pill strong{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--teal);}
+.cover-stat-pill span{font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);}
+.cover-stat-pill.orange{background:var(--orange-light);}
+.cover-stat-pill.orange strong{color:var(--orange);}
+.cover-bottom-band{width:100%;background:var(--dark);color:rgba(255,255,255,.5);font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:13px 24px;}
 
 /* ── PAGE HEADER ── */
 .doc-header{display:flex;align-items:center;justify-content:space-between;padding:14px 32px 12px;border-bottom:1px solid var(--border);}
-.doc-header img{height:40px;width:auto;object-fit:contain;}
+.doc-header img{height:40px;width:auto;object-fit:contain;mix-blend-mode:multiply;}
 .doc-header-tag{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);}
 .doc-header-accent{height:3px;background:linear-gradient(90deg,var(--teal) 0%,#0ecfcb 50%,transparent 100%);}
 .doc-footer{margin-top:auto;padding:10px 32px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:9px;color:var(--mid);}
@@ -91,7 +87,6 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
 .programme-box ul li{font-size:11px;color:var(--dark);padding:3px 0 3px 14px;position:relative;line-height:1.6;}
 .programme-box ul li::before{content:'›';position:absolute;left:0;color:var(--teal);font-weight:700;}
 
-.eval-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
 .eval-section-label{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--border);}
 
 .auto-eval-grid{background:#fafafa;border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:14px;}
@@ -113,51 +108,54 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
 .sig-box .sig-line{height:1px;background:var(--border);margin-top:28px;}
 .sig-box p{font-size:10px;color:var(--mid);margin-top:4px;}
 
-.textarea-mock{background:var(--cream);border-radius:4px;padding:10px;min-height:56px;border:1px solid var(--border);font-size:11px;color:var(--mid);}
-
 .divider{height:1px;background:var(--border);margin:14px 0;}
 </style>
 </head>
 <body>
 
+<!-- SVG ICON SPRITE -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+  <symbol id="i-clip" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></symbol>
+  <symbol id="i-bar" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  <symbol id="i-check-c" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></symbol>
+  <symbol id="i-grad" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></symbol>
+</svg>
+
 <!-- ══════════════ PAGE 1 : COUVERTURE ══════════════ -->
 <div class="page">
   <div class="cover">
-    <div class="cover-left">
-      <div class="cover-logo"><img src="../img/evolia-logo.png" alt="Evolia Institut"></div>
-      <div class="cover-title">
-        <div class="cover-eyebrow">Certification Qualiopi · Formation professionnelle</div>
-        <h1>Livret de suivi<br><em>&amp; d'évaluation</em></h1>
-        <p class="sub">Service à la clientèle dans un restaurant<br>Restauration CHR · Parcours AFEST</p>
-        <div class="cover-badges">
-          <div class="cover-badge"><div class="val">175h</div><div class="info">de formation totale</div></div>
-          <div class="cover-badge"><div class="val">5</div><div class="info">semaines de parcours AFEST</div></div>
-          <div class="cover-badge"><div class="val orange">80%</div><div class="info">score minimum requis</div></div>
-        </div>
-      </div>
-      <div class="cover-footer">✓ Qualiopi · NDA 11757542775 · SIRET 99918809700011</div>
+    <div class="cover-stripe"></div>
+    <div class="cover-logo-zone">
+      <img src="../img/evolia-logo.png" alt="Evolia Institut">
     </div>
-    <div class="cover-right">
-      <div class="cover-right-logo">Evolia Institut</div>
-      <div class="cover-right-title">
-        <h2>Parcours pédagogique<br><em>apprenant</em></h2>
-        <p style="font-size:11px;color:var(--mid);line-height:1.7;margin-top:10px;">Ce livret accompagne votre progression tout au long des 5 semaines de formation. Il sert de fil rouge entre l'apprenant, le tuteur AFEST et l'équipe pédagogique.</p>
-        <div class="cover-right-stats">
-          <div class="stat-item"><strong>35h</strong><span>par semaine</span></div>
-          <div class="stat-item orange"><strong>45'</strong><span>suivi à mi-parcours</span></div>
-          <div class="stat-item"><strong>+1</strong><span>mois post-AFEST</span></div>
-        </div>
-        <div class="apprenant-field" style="margin-top:20px;">
-          <label>Nom &amp; Prénom de l'apprenant</label>
-          <div class="line"></div>
-          <label style="margin-top:14px;">Date de début de formation</label>
-          <div class="line"></div>
-          <label style="margin-top:14px;">Tuteur AFEST référent</label>
-          <div class="line"></div>
-        </div>
+    <div class="cover-hero">
+      <div class="cover-eyebrow">
+        <span class="cover-eyebrow-line"></span>
+        Livret de suivi apprenant
+        <span class="cover-eyebrow-line"></span>
       </div>
-      <div class="cover-right-tag">À compléter par l'apprenant</div>
+      <div class="cover-main-title">LIVRET</div>
+      <span class="cover-italic-title">d'Évaluation</span>
+      <div class="cover-divider"></div>
+      <p class="cover-desc">Ce livret accompagne votre progression tout au long des 5 semaines de formation. Il sert de fil rouge entre l'apprenant, le tuteur AFEST et l'équipe pédagogique.</p>
     </div>
+    <div class="cover-stats-band">
+      <div class="cover-stat-pill"><strong>200h</strong><span>de formation</span></div>
+      <div class="cover-stat-pill"><strong>5 sem.</strong><span>de parcours AFEST</span></div>
+      <div class="cover-stat-pill orange"><strong>80 %</strong><span>score minimum</span></div>
+      <div class="cover-stat-pill"><strong>45'</strong><span>suivi mi-parcours</span></div>
+    </div>
+    <div class="cover-bottom-band">Certification Qualiopi · NDA 11757542775 · Evolia Institut</div>
   </div>
 </div>
 
@@ -169,7 +167,7 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
   </div>
   <div class="doc-header-accent"></div>
   <div class="page-content">
-    <div class="section-tag">📋 En bref</div>
+    <div class="section-tag"><svg class="icon icon--xs"><use href="#i-clip"/></svg> En bref</div>
     <h2 class="section-h2">Déroulement du <em>parcours</em></h2>
     <p class="intro">Votre formation se déroule en trois phases complémentaires, conçues pour alterner apprentissage théorique et mise en pratique professionnelle.</p>
 
@@ -192,13 +190,13 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
         <div class="eval-num">C</div>
         <div class="eval-text">
           <h4>Phase AFEST — Présentiel en situation de travail</h4>
-          <p>Organisée pendant le temps de travail au sein du restaurant. 5 semaines × 35h = 175h total.</p>
+          <p>Organisée pendant le temps de travail au sein du restaurant. 5 semaines × 40h = 200h de formation total.</p>
         </div>
       </div>
     </div>
 
     <div class="divider"></div>
-    <div class="section-tag">📊 Déroulement des évaluations</div>
+    <div class="section-tag"><svg class="icon icon--xs"><use href="#i-bar"/></svg> Déroulement des évaluations</div>
     <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px;">
       <div class="eval-block">
         <div class="eval-num" style="background:linear-gradient(135deg,#4b5563,#374151);font-size:12px;">1</div>
@@ -237,7 +235,7 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
   </div>
   <div class="doc-footer">
     <span>Evolia Institut · contact@evoliainstitut.com</span>
-    <span class="q">✓ Qualiopi</span>
+    <span class="q"><svg class="icon icon--xs" style="color:var(--teal)"><use href="#i-check"/></svg> Qualiopi</span>
     <span>Page 2</span>
   </div>
 </div>
@@ -250,7 +248,7 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
   </div>
   <div class="doc-header-accent"></div>
   <div class="page-content">
-    <div class="section-tag orange">📍 Suivi pédagogique à mi-parcours</div>
+    <div class="section-tag orange"><svg class="icon icon--xs"><use href="#i-pin"/></svg> Suivi pédagogique à mi-parcours</div>
     <h2 class="section-h2">Point de suivi — <em>45 minutes</em></h2>
     <p class="intro">À compléter en entretien de suivi avec l'équipe pédagogique et l'apprenant, à mi-chemin de la partie théorique.</p>
 
@@ -303,12 +301,10 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
   </div>
   <div class="doc-footer">
     <span>Evolia Institut · contact@evoliainstitut.com</span>
-    <span class="q">✓ Qualiopi</span>
+    <span class="q"><svg class="icon icon--xs" style="color:var(--teal)"><use href="#i-check"/></svg> Qualiopi</span>
     <span>Page 3</span>
   </div>
 </div>
-
-<!-- ══════════════ SEMAINES 1–5 (template répété) ══════════════ -->
 
 <!-- SEMAINE 1 -->
 <div class="page">
@@ -319,11 +315,11 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
   <div class="doc-header-accent"></div>
   <div class="page-content">
     <div class="semaine-header">
-      <div class="semaine-num">Semaine 1 · 35 heures</div>
+      <div class="semaine-num">Semaine 1 · 40 heures</div>
       <div class="semaine-title">Rôle &amp; <em>Environnement</em></div>
       <div class="semaine-info">
         <div class="semaine-pill">E-learning 12,5h</div>
-        <div class="semaine-pill">AFEST 22,5h</div>
+        <div class="semaine-pill">AFEST 27,5h</div>
       </div>
     </div>
     <div class="programme-box">
@@ -361,7 +357,7 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
       <div class="sig-box"><label>Signature apprenant</label><div class="sig-line" style="margin-top:44px;"></div></div>
     </div>
   </div>
-  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 4</span></div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q"><svg class="icon icon--xs" style="color:var(--teal)"><use href="#i-check"/></svg> Qualiopi</span><span>Page 4</span></div>
 </div>
 
 <!-- SEMAINE 2 -->
@@ -370,9 +366,9 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
   <div class="doc-header-accent"></div>
   <div class="page-content">
     <div class="semaine-header s2">
-      <div class="semaine-num">Semaine 2 · 35 heures</div>
+      <div class="semaine-num">Semaine 2 · 40 heures</div>
       <div class="semaine-title">Service à la <em>clientèle</em></div>
-      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 22,5h</div></div>
+      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 27,5h</div></div>
     </div>
     <div class="programme-box">
       <h4>Programme des mises en situation</h4>
@@ -408,7 +404,7 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
       <div class="sig-box"><label>Signature apprenant</label><div class="sig-line" style="margin-top:44px;"></div></div>
     </div>
   </div>
-  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 5</span></div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q"><svg class="icon icon--xs" style="color:var(--teal)"><use href="#i-check"/></svg> Qualiopi</span><span>Page 5</span></div>
 </div>
 
 <!-- SEMAINE 3 -->
@@ -417,9 +413,9 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
   <div class="doc-header-accent"></div>
   <div class="page-content">
     <div class="semaine-header s3">
-      <div class="semaine-num">Semaine 3 · 35 heures</div>
+      <div class="semaine-num">Semaine 3 · 40 heures</div>
       <div class="semaine-title">Gestion de la <em>caisse</em></div>
-      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 22,5h</div></div>
+      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 27,5h</div></div>
     </div>
     <div class="programme-box">
       <h4>Programme des mises en situation</h4>
@@ -456,7 +452,7 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
       <div class="sig-box"><label>Signature apprenant</label><div class="sig-line" style="margin-top:44px;"></div></div>
     </div>
   </div>
-  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 6</span></div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q"><svg class="icon icon--xs" style="color:var(--teal)"><use href="#i-check"/></svg> Qualiopi</span><span>Page 6</span></div>
 </div>
 
 <!-- SEMAINE 4 -->
@@ -465,9 +461,9 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
   <div class="doc-header-accent"></div>
   <div class="page-content">
     <div class="semaine-header s4">
-      <div class="semaine-num">Semaine 4 · 35 heures</div>
+      <div class="semaine-num">Semaine 4 · 40 heures</div>
       <div class="semaine-title">Gestion des <em>stocks</em></div>
-      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 22,5h</div></div>
+      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 27,5h</div></div>
     </div>
     <div class="programme-box">
       <h4>Programme des mises en situation</h4>
@@ -503,7 +499,7 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
       <div class="sig-box"><label>Signature apprenant</label><div class="sig-line" style="margin-top:44px;"></div></div>
     </div>
   </div>
-  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 7</span></div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q"><svg class="icon icon--xs" style="color:var(--teal)"><use href="#i-check"/></svg> Qualiopi</span><span>Page 7</span></div>
 </div>
 
 <!-- SEMAINE 5 -->
@@ -512,9 +508,9 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
   <div class="doc-header-accent"></div>
   <div class="page-content">
     <div class="semaine-header s5">
-      <div class="semaine-num">Semaine 5 · 35 heures</div>
+      <div class="semaine-num">Semaine 5 · 40 heures</div>
       <div class="semaine-title">Hygiène &amp; <em>Marketing</em></div>
-      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 22,5h</div></div>
+      <div class="semaine-info"><div class="semaine-pill">E-learning 12,5h</div><div class="semaine-pill">AFEST 27,5h</div></div>
     </div>
     <div class="programme-box">
       <h4>Programme des mises en situation</h4>
@@ -551,7 +547,7 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
       <div class="sig-box"><label>Signature apprenant</label><div class="sig-line" style="margin-top:44px;"></div></div>
     </div>
   </div>
-  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q">✓ Qualiopi</span><span>Page 8</span></div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com</span><span class="q"><svg class="icon icon--xs" style="color:var(--teal)"><use href="#i-check"/></svg> Qualiopi</span><span>Page 8</span></div>
 </div>
 
 <!-- ══════════════ PAGE : POINT +1 MOIS ══════════════ -->
@@ -559,7 +555,7 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
   <div class="doc-header"><img src="../img/evolia-logo.png" alt="Evolia Institut"><span class="doc-header-tag">Livret de suivi · Point +1 mois</span></div>
   <div class="doc-header-accent"></div>
   <div class="page-content">
-    <div class="section-tag orange">📅 Après la formation</div>
+    <div class="section-tag orange"><svg class="icon icon--xs"><use href="#i-cal"/></svg> Après la formation</div>
     <h2 class="section-h2">Point +1 mois post-<em>AFEST</em></h2>
     <p class="intro">Auto-évaluation à mener avant le point de suivi à +1 mois. Il n'y a pas de bonne ou mauvaise réponse — c'est une réflexion personnelle pour appréhender au mieux la suite du parcours.</p>
 
@@ -599,7 +595,7 @@ body{font-family:'Jost',sans-serif;background:#d4d4d4;color:var(--dark);-webkit-
       </div>
     </div>
   </div>
-  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com · 26 rue du Maroc, 75019 Paris</span><span class="q">✓ Qualiopi</span><span>Page 9</span></div>
+  <div class="doc-footer"><span>Evolia Institut · contact@evoliainstitut.com · 26 rue du Maroc, 75019 Paris</span><span class="q"><svg class="icon icon--xs" style="color:var(--teal)"><use href="#i-check"/></svg> Qualiopi</span><span>Page 9</span></div>
 </div>
 
 </body>

@@ -11,8 +11,23 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
     X-XSS-Protection = "1; mode=block"
 
+# Redirect legacy GitHub Pages paths
 [[redirects]]
   from = "/Evoliainstitut/*"
   to = "/:splat"
+  status = 301
+  force = true
+
+# Pretty URLs: remove .html suffix
+[[redirects]]
+  from = "/*.html"
+  to = "/:splat"
+  status = 301
+  force = true
+
+# www → non-www (HTTPS enforced by Netlify automatically)
+[[redirects]]
+  from = "https://www.evoliainstitut.com/*"
+  to = "https://evoliainstitut.com/:splat"
   status = 301
   force = true

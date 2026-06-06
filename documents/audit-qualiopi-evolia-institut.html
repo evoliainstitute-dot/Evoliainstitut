@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Audit Qualiopi — Evolia Institut</title>
+<style>
+  /* ── Reset & base ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --teal: #1a9b97;
+    --orange: #DB560E;
+    --dark: #1c1c1c;
+    --mid: #555;
+    --light: #f4f0ea;
+    --border: #ddd;
+    --green: #2d6a4f;
+    --red: #b91c1c;
+    --amber: #b45309;
+  }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+    color: var(--dark);
+    line-height: 1.6;
+    background: white;
+  }
+
+  /* ── Page layout ── */
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 48px;
+  }
+
+  /* ── Cover header ── */
+  .cover {
+    border-bottom: 4px solid var(--teal);
+    padding-bottom: 28px;
+    margin-bottom: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .cover-left h1 {
+    font-size: 22pt;
+    font-weight: 800;
+    color: var(--teal);
+    letter-spacing: -.02em;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .cover-left h2 {
+    font-size: 13pt;
+    font-weight: 400;
+    color: var(--mid);
+    margin-bottom: 14px;
+  }
+  .cover-meta {
+    font-size: 9pt;
+    color: var(--mid);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .cover-right {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .cover-right .badge-qualiopi {
+    display: inline-block;
+    background: var(--teal);
+    color: white;
+    font-size: 9pt;
+    font-weight: 700;
+    letter-spacing: .08em;
+    padding: 5px 14px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .cover-right .nda {
+    font-size: 8.5pt;
+    color: var(--mid);
+  }
+
+  /* ── Score banner ── */
+  .score-banner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    background: var(--light);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 32px;
+  }
+  .score-item {
+    text-align: center;
+  }
+  .score-item .num {
+    font-size: 22pt;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .score-item .lbl {
+    font-size: 8pt;
+    color: var(--mid);
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+  .score-item.green .num { color: var(--green); }
+  .score-item.amber .num { color: var(--amber); }
+  .score-item.red   .num { color: var(--red); }
+  .score-item.teal  .num { color: var(--teal); }
+
+  /* ── Section headings ── */
+  h2.section-head {
+    font-size: 13pt;
+    font-weight: 700;
+    color: var(--teal);
+    border-left: 4px solid var(--teal);
+    padding-left: 12px;
+    margin: 28px 0 14px;
+    page-break-after: avoid;
+  }
+  h2.section-head.orange {
+    color: var(--orange);
+    border-color: var(--orange);
+  }
+  h2.section-head.amber-h {
+    color: var(--amber);
+    border-color: var(--amber);
+  }
+  h2.section-head.red-h {
+    color: var(--red);
+    border-color: var(--red);
+  }
+
+  /* ── Check list ── */
+  .check-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 8px;
+  }
+  .check-list li {
+    display: flex;
+    gap: 10px;
+    font-size: 10.5pt;
+    align-items: flex-start;
+  }
+  .check-list li .icon {
+    flex-shrink: 0;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* ── Critical items ── */
+  .critical-item {
+    border: 1.5px solid var(--red);
+    border-left: 5px solid var(--red);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+  .critical-item h3 {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: var(--red);
+    margin-bottom: 5px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .critical-item .indic {
+    font-size: 8.5pt;
+    background: var(--red);
+    color: white;
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .critical-item p {
+    font-size: 10pt;
+    color: var(--mid);
+    margin-bottom: 8px;
+    line-height: 1.55;
+  }
+  .critical-item .action {
+    font-size: 9.5pt;
+    color: var(--dark);
+    background: #fff5f5;
+    border-radius: 4px;
+    padding: 6px 10px;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  .critical-item .action strong { color: var(--red); flex-shrink:0; }
+
+  /* ── Amber items ── */
+  .amber-item {
+    border: 1.5px solid #fbbf24;
+    border-left: 5px solid var(--amber);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    page-break-inside: avoid;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .amber-item .icon { font-size: 14pt; flex-shrink:0; margin-top:1px; }
+  .amber-item .body h4 { font-size: 10pt; font-weight: 700; color: var(--amber); margin-bottom: 3px; }
+  .amber-item .body p  { font-size: 9.5pt; color: var(--mid); line-height:1.5; margin:0; }
+
+  /* ── Criteria table ── */
+  .criteria-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 28px;
+    font-size: 10pt;
+  }
+  .criteria-table th {
+    background: var(--teal);
+    color: white;
+    padding: 8px 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 9pt;
+    letter-spacing: .04em;
+  }
+  .criteria-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+  }
+  .criteria-table tr:nth-child(even) td { background: #f9f9f9; }
+  .status { font-size: 9pt; font-weight: 700; border-radius: 3px; padding: 2px 8px; white-space: nowrap; }
+  .status.ok     { background: #dcfce7; color: #15803d; }
+  .status.partial{ background: #fef3c7; color: var(--amber); }
+  .status.nok    { background: #fee2e2; color: var(--red); }
+
+  /* ── Priority action table ── */
+  .action-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    margin-bottom: 24px;
+  }
+  .action-table th {
+    background: var(--dark);
+    color: white;
+    padding: 7px 10px;
+    text-align: left;
+    font-size: 8.5pt;
+    letter-spacing: .04em;
+  }
+  .action-table td { padding: 7px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .action-table tr:nth-child(even) td { background: #f9f9f9; }
+  .prio { font-weight: 700; border-radius: 3px; padding: 1px 7px; font-size: 8.5pt; white-space: nowrap; }
+  .prio.p1 { background: #fee2e2; color: var(--red); }
+  .prio.p2 { background: #fef3c7; color: var(--amber); }
+  .prio.p3 { background: #dcfce7; color: #15803d; }
+
+  /* ── Footer ── */
+  .doc-footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 2px solid var(--teal);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 8.5pt;
+    color: var(--mid);
+  }
+  .doc-footer strong { color: var(--teal); }
+
+  /* ── Divider ── */
+  hr.divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
+
+  /* ── Print ── */
+  @media print {
+    body { font-size: 10pt; }
+    .page { padding: 20px 28px; max-width: 100%; }
+    h2.section-head { margin-top: 20px; }
+    .critical-item, .amber-item { page-break-inside: avoid; }
+    .score-banner { page-break-inside: avoid; }
+  }
+  @page {
+    size: A4;
+    margin: 18mm 15mm;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER -->
+  <div class="cover">
+    <div class="cover-left">
+      <h1>Audit Qualité Qualiopi</h1>
+      <h2>Évaluation site web — Evolia Institut</h2>
+      <div class="cover-meta">
+        <span>Organisme : <strong>Evolia Institut</strong></span>
+        <span>NDA : 11757542775 &nbsp;·&nbsp; SIRET : 99918809700011</span>
+        <span>Certificat : QNW0211 &nbsp;·&nbsp; Valide jusqu'au 13/05/2029</span>
+        <span>Référentiel : RNQ — 7 critères / 32 indicateurs</span>
+        <span>Date d'audit : Juin 2026</span>
+      </div>
+    </div>
+    <div class="cover-right">
+      <div class="badge-qualiopi">✓ Certifié Qualiopi</div><br>
+      <div class="nda">COFRAC n° 5-0681<br>QUALIPRO CERTIFICATION</div>
+    </div>
+  </div>
+
+  <!-- SCORE SUMMARY -->
+  <div class="score-banner">
+    <div class="score-item green">
+      <div class="num">2</div>
+      <div class="lbl">Critères<br>conformes</div>
+    </div>
+    <div class="score-item amber">
+      <div class="num">3</div>
+      <div class="lbl">Critères<br>partiels</div>
+    </div>
+    <div class="score-item red">
+      <div class="num">2</div>
+      <div class="lbl">Critères<br>insuffisants</div>
+    </div>
+    <div class="score-item red">
+      <div class="num">6</div>
+      <div class="lbl">Lacunes<br>critiques</div>
+    </div>
+  </div>
+
+  <!-- SECTION 1 — CONFORMES -->
+  <h2 class="section-head">✅ Points conformes</h2>
+
+  <ul class="check-list">
+    <li><span class="icon" style="color:#15803d;">✓</span> <span><strong>Critère 1 — Identification de l'organisme</strong> : Nom, NDA, numéro Qualiopi et COFRAC affichés. Mentions légales, politique de confidentialité et CGF présents et accessibles.</span></li>
+    <li><span class="icon" style="color:#15803d;">✓</span> <span><strong>Critère 1 — Certifications RNCP référencées</strong> : Liens vers France Compétences sur chaque fiche formation (RNCP #38663, #38575, #40907, #37717).</span></li>
+    <li><span class="icon" style="color:#15803d;">✓</span> <span><strong>Critère 1 — Financement</strong> : Page financement complète avec OPCO AKTO, France Travail (POEI), Plan de développement des compétences.</span></li>
+    <li><span class="icon" style="color:#15803d;">✓</span> <span><strong>Critère 2 — Objectifs pédagogiques</strong> : Objectifs, blocs de compétences RNCP et programmes détaillés par modules présents sur chaque fiche formation.</span></li>
+    <li><span class="icon" style="color:#15803d;">✓</span> <span><strong>Critère 2 — Modalités pédagogiques</strong> : Répartition pratique/théorie affichée. Modalité alternance précisée. Durée en heures mentionnée.</span></li>
+    <li><span class="icon" style="color:#15803d;">✓</span> <span><strong>Critère 3 — Accessibilité PSH</strong> : Page dédiée, référente handicap Mme CAMARA nommée. Adaptations PMR, supports, allongement durées d'examen documentées.</span></li>
+    <li><span class="icon" style="color:#15803d;">✓</span> <span><strong>Critère 5 — Qualification des formateurs</strong> : Section "Formateurs issus du terrain" présente. 3 profils (Cuisine, Salle, Management) décrits.</span></li>
+    <li><span class="icon" style="color:#15803d;">✓</span> <span><strong>Critère 6 — Veille sectorielle</strong> : Blog actif (articles tendances CHR, OPCO, management, HACCP, ouverture restaurant).</span></li>
+    <li><span class="icon" style="color:#15803d;">✓</span> <span><strong>Critère 6 — Partenariats</strong> : OPCO AKTO et France Travail identifiés comme partenaires financeurs. Références entreprises partenaires CHR présentes.</span></li>
+  </ul>
+
+  <hr class="divider">
+
+  <!-- SECTION 2 — LACUNES CRITIQUES -->
+  <h2 class="section-head red-h">🔴 Lacunes critiques — Risque de non-conformité</h2>
+
+  <div class="critical-item">
+    <h3>
+      <span class="indic">Indicateur 1</span>
+      Tarifs non publiés
+    </h3>
+    <p>Le Référentiel National Qualité exige que les prix des formations soient accessibles et vérifiables par le public. Aucun tarif HT ne figure sur les fiches formation ni sur les pages du site.</p>
+    <div class="action"><strong>→ Action :</strong> Ajouter le tarif HT (ou fourchette tarifaire) sur chaque fiche formation. Mentionner la prise en charge OPCO avec montant plafond applicable.</div>
+  </div>
+
+  <div class="critical-item">
+    <h3>
+      <span class="indic">Indicateur 2</span>
+      Délais d'accès absents
+    </h3>
+    <p>L'indicateur 2 impose d'informer le public des délais entre la demande d'inscription et le démarrage effectif de la formation. Cette information est absente de toutes les fiches.</p>
+    <div class="action"><strong>→ Action :</strong> Ajouter sur chaque fiche : ex. <em>"Démarrage possible dans un délai de 4 à 8 semaines selon disponibilités et accord de financement."</em></div>
+  </div>
+
+  <div class="critical-item">
+    <h3>
+      <span class="indic">Indicateur 6</span>
+      Taux de réussite et d'insertion absents
+    </h3>
+    <p>Le site affiche une note ★ 4.9/5 sans source, date, méthodologie ni taux de réussite aux certifications. Qualiopi impose la publication des indicateurs de résultats (taux de réussite, taux d'insertion 6 mois, taux de satisfaction sourcé).</p>
+    <div class="action"><strong>→ Action :</strong> Créer une page "Résultats et indicateurs" avec : taux de réussite par formation, taux d'insertion à 6 mois, note satisfaction avec période et nombre de répondants.</div>
+  </div>
+
+  <div class="critical-item">
+    <h3>
+      <span class="indic">Indicateur 4</span>
+      Modalités d'évaluation et de certification non décrites
+    </h3>
+    <p>Les jurys, épreuves de certification et mises en situation professionnelle (MSP) obligatoires pour les titres professionnels RNCP ne sont pas décrits sur les fiches formation.</p>
+    <div class="action"><strong>→ Action :</strong> Ajouter sur chaque fiche TP : description du passage de certification (jury, MSP, durée, conditions de réussite).</div>
+  </div>
+
+  <div class="critical-item">
+    <h3>
+      <span class="indic">Indicateur 9</span>
+      Tests de positionnement non mentionnés
+    </h3>
+    <p>Qualiopi exige de documenter le processus d'analyse du besoin et de positionnement du candidat avant l'entrée en formation. Ce process n'est pas décrit sur le site.</p>
+    <div class="action"><strong>→ Action :</strong> Décrire le processus d'admission : entretien de positionnement, test de niveau le cas échéant, fiche d'analyse des besoins.</div>
+  </div>
+
+  <div class="critical-item">
+    <h3>
+      <span class="indic">Indicateur 1</span>
+      Règlement intérieur absent
+    </h3>
+    <p>Le règlement intérieur est un document obligatoire pour tout organisme de formation (Code du travail, Art. R.6352-1). Il doit être remis à chaque stagiaire et accessible publiquement. Aucun lien ne figure sur le site.</p>
+    <div class="action"><strong>→ Action :</strong> Créer et publier le règlement intérieur (horaires, absences, réclamations, sanctions disciplinaires) et le lier depuis chaque fiche formation.</div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 3 — POINTS À AMÉLIORER -->
+  <h2 class="section-head amber-h">🟡 Points à améliorer</h2>
+
+  <div class="amber-item">
+    <span class="icon">⚙️</span>
+    <div class="body">
+      <h4>Suivi pédagogique individuel — Indicateur 13</h4>
+      <p>Le suivi en cours de formation (livret de suivi, points réguliers tuteur/formateur) n'est pas décrit. L'indicateur 13 exige de préciser les modalités de suivi des stagiaires.</p>
+    </div>
+  </div>
+
+  <div class="amber-item">
+    <span class="icon">📋</span>
+    <div class="body">
+      <h4>Gestion des abandons — Indicateur 12</h4>
+      <p>La procédure en cas d'abandon ou de difficultés (signalement, accompagnement, report) n'est pas mentionnée. Point de vigilance lors des audits de renouvellement.</p>
+    </div>
+  </div>
+
+  <div class="amber-item">
+    <span class="icon">👥</span>
+    <div class="body">
+      <h4>Formation continue des formateurs — Indicateur 18</h4>
+      <p>Qualiopi demande de justifier du développement des compétences des personnels pédagogiques. La mention "formateurs terrain" ne suffit pas : un plan de formation interne doit exister.</p>
+    </div>
+  </div>
+
+  <div class="amber-item">
+    <span class="icon">📞</span>
+    <div class="body">
+      <h4>Procédure de réclamation — Indicateur 25</h4>
+      <p>Un canal de réclamation formalisé (formulaire dédié, email spécifique, délai de réponse garanti) doit être accessible au public. La page contact actuelle ne l'identifie pas clairement.</p>
+    </div>
+  </div>
+
+  <div class="amber-item">
+    <span class="icon">📈</span>
+    <div class="body">
+      <h4>Exploitation des enquêtes de satisfaction — Indicateurs 26-32</h4>
+      <p>La démarche d'amélioration continue (analyse des résultats d'évaluation, actions correctives) doit être documentée même sommairement sur le site ou dans les documents remis aux stagiaires.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- SECTION 4 — BILAN PAR CRITÈRE -->
+  <h2 class="section-head">📊 Bilan par critère Qualiopi</h2>
+
+  <table class="criteria-table">
+    <thead>
+      <tr>
+        <th style="width:44%;">Critère RNQ</th>
+        <th style="width:32%;">État constaté sur le site</th>
+        <th style="width:24%;">Statut</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1 — Information du public</strong> (Ind. 1-6)</td>
+        <td>Organisme identifié, financement OK. Manquent : tarifs, délais d'accès, taux de résultats, règlement intérieur</td>
+        <td><span class="status partial">🟡 Partiel 4/6</span></td>
+      </tr>
+      <tr>
+        <td><strong>2 — Objectifs de la formation</strong> (Ind. 7-9)</td>
+        <td>Objectifs et blocs de compétences bien décrits. Manque : positionnement candidat</td>
+        <td><span class="status partial">🟡 Partiel 2/3</span></td>
+      </tr>
+      <tr>
+        <td><strong>3 — Adaptation aux publics</strong> (Ind. 10-13)</td>
+        <td>PSH conforme. Manquent : suivi individuel, procédure abandons</td>
+        <td><span class="status partial">🟡 Partiel 2/4</span></td>
+      </tr>
+      <tr>
+        <td><strong>4 — Moyens pédagogiques</strong> (Ind. 14-16)</td>
+        <td>Répartition pratique/théorie visible. Modalités d'évaluation/certification manquantes</td>
+        <td><span class="status partial">🟡 Partiel</span></td>
+      </tr>
+      <tr>
+        <td><strong>5 — Qualification du personnel</strong> (Ind. 17-18)</td>
+        <td>Profils formateurs décrits. Plan de formation continue des formateurs absent</td>
+        <td><span class="status partial">🟡 Partiel</span></td>
+      </tr>
+      <tr>
+        <td><strong>6 — Veille & environnement</strong> (Ind. 19-23)</td>
+        <td>Blog actif. Partenariats OPCO. Pas de veille réglementaire documentée explicitement</td>
+        <td><span class="status ok">✅ Conforme</span></td>
+      </tr>
+      <tr>
+        <td><strong>7 — Appréciations & amélioration</strong> (Ind. 24-32)</td>
+        <td>Note 4.9/5 sans source. Pas de procédure réclamation ni démarche amélioration visible</td>
+        <td><span class="status nok">🔴 Insuffisant</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 5 — PLAN D'ACTION -->
+  <h2 class="section-head">🚀 Plan d'action priorisé</h2>
+
+  <table class="action-table">
+    <thead>
+      <tr>
+        <th>Priorité</th>
+        <th>Action</th>
+        <th>Indicateur</th>
+        <th>Délai suggéré</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="prio p1">P1 Urgent</span></td>
+        <td>Publier les tarifs HT sur chaque fiche formation</td>
+        <td>Ind. 1</td>
+        <td>Immédiat</td>
+      </tr>
+      <tr>
+        <td><span class="prio p1">P1 Urgent</span></td>
+        <td>Créer et publier le règlement intérieur (PDF + lien)</td>
+        <td>Ind. 1</td>
+        <td>Immédiat</td>
+      </tr>
+      <tr>
+        <td><span class="prio p1">P1 Urgent</span></td>
+        <td>Ajouter les délais d'accès sur chaque fiche</td>
+        <td>Ind. 2</td>
+        <td>Immédiat</td>
+      </tr>
+      <tr>
+        <td><span class="prio p1">P1 Urgent</span></td>
+        <td>Publier une page "Résultats & Indicateurs" (taux réussite, insertion, satisfaction sourcée)</td>
+        <td>Ind. 6</td>
+        <td>&lt; 1 mois</td>
+      </tr>
+      <tr>
+        <td><span class="prio p1">P1 Urgent</span></td>
+        <td>Décrire les modalités de certification sur les fiches TP RNCP</td>
+        <td>Ind. 4</td>
+        <td>&lt; 1 mois</td>
+      </tr>
+      <tr>
+        <td><span class="prio p2">P2 Important</span></td>
+        <td>Décrire le processus de positionnement/entretien d'admission</td>
+        <td>Ind. 9</td>
+        <td>&lt; 2 mois</td>
+      </tr>
+      <tr>
+        <td><span class="prio p2">P2 Important</span></td>
+        <td>Ajouter une procédure de réclamation formalisée</td>
+        <td>Ind. 25</td>
+        <td>&lt; 2 mois</td>
+      </tr>
+      <tr>
+        <td><span class="prio p2">P2 Important</span></td>
+        <td>Décrire le suivi pédagogique individuel</td>
+        <td>Ind. 13</td>
+        <td>&lt; 2 mois</td>
+      </tr>
+      <tr>
+        <td><span class="prio p3">P3 Recommandé</span></td>
+        <td>Documenter la formation continue des formateurs</td>
+        <td>Ind. 18</td>
+        <td>&lt; 3 mois</td>
+      </tr>
+      <tr>
+        <td><span class="prio p3">P3 Recommandé</span></td>
+        <td>Publier la démarche d'amélioration continue</td>
+        <td>Ind. 26-32</td>
+        <td>&lt; 3 mois</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div>
+      <strong>Evolia Institut</strong> — NDA 11757542775 — SIRET 99918809700011<br>
+      26 rue du Maroc, 75019 Paris · contact@evoliainstitut.com
+    </div>
+    <div style="text-align:right;">
+      Document confidentiel — Usage interne<br>
+      Audit site web Qualiopi · Juin 2026
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
