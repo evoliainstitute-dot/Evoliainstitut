@@ -76,7 +76,7 @@
         <div class="footer-brand" style="display:flex;align-items:center;">
           <img src="/img/evolia-logo-transparent.png" alt="Evolia Institut" style="height:88px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:1;" loading="lazy">
         </div>
-        <p class="footer-tagline">Former mieux. Performer durablement.<br>Spécialiste formation CHR.</p>
+        <p class="footer-tagline">Former mieux. Performer durablement.<br><span style="color:#fff;">Spécialiste formation CHR.</span></p>
         <a href="/documents/certificat-qualiopi-evolia-institut.pdf" target="_blank" rel="noopener" class="badge-qualiopi badge-qualiopi--inverted" style="cursor:pointer;text-decoration:none;" title="Télécharger le certificat Qualiopi">✓ Certification Qualiopi · PDF</a>
       </div>
       <div class="footer-col">
