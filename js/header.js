@@ -11,6 +11,8 @@
     return `
 <div class="site-topbar">
   <div class="container">
+    <a href="tel:+33689417517">📞 06 89 41 75 17</a>
+    <span>·</span>
     <a href="mailto:contact@evoliainstitut.com">✉ contact@evoliainstitut.com</a>
     <span>·</span>
     <span>Lun–Ven 9h–18h · Réponse sous 48h</span>
@@ -19,7 +21,7 @@
 <nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="container">
     <a href="/index.html" class="nav-logo" aria-label="Evolia Institut — Accueil" style="gap:0;">
-      <img src="/img/evolia-logo-transparent.png" alt="Evolia Institut" style="height:160px;width:auto;object-fit:contain;flex-shrink:0;" loading="eager">
+      <img src="/img/evolia-logo-transparent.png" alt="Evolia Institut" style="height:56px;width:auto;object-fit:contain;flex-shrink:0;" loading="eager">
     </a>
     <ul class="nav-links" role="list" id="nav-links">
       <li>
@@ -72,7 +74,7 @@
     <div class="footer-top">
       <div>
         <div class="footer-brand" style="display:flex;align-items:center;">
-          <img src="/img/evolia-logo-transparent.png" alt="Evolia Institut" style="height:72px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:.82;" loading="lazy">
+          <img src="/img/evolia-logo-transparent.png" alt="Evolia Institut" style="height:88px;width:auto;object-fit:contain;filter:brightness(0) invert(1);opacity:1;" loading="lazy">
         </div>
         <p class="footer-tagline">Former mieux. Performer durablement.<br>Spécialiste formation CHR.</p>
         <a href="/documents/certificat-qualiopi-evolia-institut.pdf" target="_blank" rel="noopener" class="badge-qualiopi badge-qualiopi--inverted" style="cursor:pointer;text-decoration:none;" title="Télécharger le certificat Qualiopi">✓ Certification Qualiopi · PDF</a>
@@ -103,6 +105,7 @@
       </div>
       <div class="footer-col">
         <h4>Contact</h4>
+        <div class="footer-contact-item">📞 <a href="tel:+33689417517" style="color:rgba(255,255,255,.75);">06 89 41 75 17</a></div>
         <div class="footer-contact-item">✉ <a href="mailto:contact@evoliainstitut.com" style="color:rgba(255,255,255,.75);">contact@evoliainstitut.com</a></div>
         <div class="footer-contact-item" style="font-size:12px;color:rgba(255,255,255,.45);">♿ Référente handicap : <a href="mailto:referent-handicap@evoliainstitut.com" style="color:rgba(255,255,255,.55);">Mme CAMARA</a></div>
         <div class="footer-contact-item" style="margin-top:4px;font-size:12px;color:rgba(255,255,255,.4);">Lun–Ven · 9h–18h · Réponse garantie sous 48h</div>
