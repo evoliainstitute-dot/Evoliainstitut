@@ -48,21 +48,27 @@
 
     /* Grille principale — pleine largeur, photo en fond */
     .hero-main { position:relative; flex:1; min-height:100vh; display:flex; align-items:center; overflow:hidden; }
-    .hero-main > img.hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.18; z-index:0; }
+    .hero-main > img.hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:1; z-index:0; }
+    .hero-main > .hero-overlay { position:absolute; inset:0; background:rgba(255,255,255,.6); z-index:1; }
 
     /* Colonne gauche — centrée sur le container */
-    .hero-left { position:relative; z-index:1; display:flex; flex-direction:column; gap:2.5rem; justify-content:center; padding-top:90px; padding-bottom:56px; padding-right:52px; padding-left:max(32px, calc((100vw - 1280px) / 2 + 40px)); max-width:60%; }
+    .hero-left { position:relative; z-index:2; display:flex; flex-direction:column; gap:2.5rem; justify-content:center; padding-top:90px; padding-bottom:56px; padding-right:52px; padding-left:max(32px, calc((100vw - 1280px) / 2 + 40px)); max-width:60%; }
 
     /* Badge teal */
     .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(26,155,151,.08); color:var(--color-teal); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:7px 16px; border-radius:9999px; border:1px solid rgba(26,155,151,.2); margin-bottom:20px; width:fit-content; }
 
     /* H1 trois lignes */
-    .hero-h1-bienvenue { display:block; color:var(--color-teal); font-size:clamp(36px,5vw,64px); font-weight:400; line-height:1.15; letter-spacing:-.01em; }
-    .hero-h1-chez { display:block; color:var(--color-teal); font-size:clamp(36px,5vw,64px); font-weight:400; line-height:1.15; letter-spacing:-.01em; }
-    .hero-h1-evolia { display:block; font-family:var(--font-display); color:var(--color-orange); font-size:clamp(72px,9vw,112px); font-weight:700; font-style:italic; line-height:1.05; margin-bottom:16px; }
+    .hero-h1-bienvenue { display:block; color:var(--color-teal); font-size:clamp(40px,6vw,80px); font-weight:700; line-height:1.1; letter-spacing:-.01em; }
+    .hero-h1-chez { display:block; color:var(--color-teal); font-size:clamp(40px,6vw,80px); font-weight:700; line-height:1.1; letter-spacing:-.01em; }
+    .hero-h1-evolia { display:block; font-family:var(--font-display); color:var(--color-orange); font-size:clamp(88px,11vw,144px); font-weight:800; font-style:normal; text-transform:uppercase; line-height:1.02; margin-bottom:16px; }
 
     /* Sous-titre */
     .hero-subtitle { font-size:15px; color:var(--color-mid); line-height:1.65; max-width:640px; margin-bottom:24px; }
+
+    /* Ligne de réassurance */
+    .hero-trust-row { display:flex; flex-wrap:wrap; gap:32px; }
+    .hero-trust-item { display:flex; align-items:center; gap:10px; font-size:13px; font-weight:700; color:var(--color-dark); }
+    .hero-trust-item .hero-trust-icon { width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
 
     /* 4 mini-blocs horizontaux */
     .hero-mini-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:28px; }
@@ -72,9 +78,9 @@
 
     /* CTAs */
     .hero-ctas { display:flex; gap:16px; flex-wrap:wrap; }
-    .btn-orange-solid { background:var(--color-orange); color:white; font-weight:700; border-radius:9999px; border:2px solid var(--color-orange); padding:13px 24px; font-size:13px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all .2s; cursor:pointer; letter-spacing:.06em; text-transform:uppercase; }
+    .btn-orange-solid { background:var(--color-orange); color:white; font-weight:700; border-radius:6px; border:2px solid var(--color-orange); padding:18px 56px; font-size:13px; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; transition:all .2s; cursor:pointer; letter-spacing:.06em; text-transform:uppercase; }
     .btn-orange-solid:hover { background:#c04d0c; border-color:#c04d0c; color:white; }
-    .btn-navy-outline { background:transparent; color:#1c2d4f; font-weight:700; border-radius:9999px; border:2px solid #1c2d4f; padding:13px 24px; font-size:13px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:all .2s; cursor:pointer; letter-spacing:.06em; text-transform:uppercase; }
+    .btn-navy-outline { background:transparent; color:#1c2d4f; font-weight:700; border-radius:6px; border:2px solid #1c2d4f; padding:18px 56px; font-size:13px; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; transition:all .2s; cursor:pointer; letter-spacing:.06em; text-transform:uppercase; }
     .btn-navy-outline:hover { background:#1c2d4f; color:white; }
 
     /* Colonne droite — image plein-bord, bord gauche courbé */
@@ -148,6 +154,8 @@
     @media(max-width:640px) {
       .hero-left { padding:80px 20px 40px; }
       .hero-ctas { flex-wrap:wrap; }
+      .hero-ctas a.btn-orange-solid, .hero-ctas a.btn-navy-outline { padding:16px 32px !important; flex:1 1 auto; text-align:center; }
+      .hero-trust-row { gap:16px 24px; }
       .hero-mini-grid { grid-template-columns:repeat(2,1fr); }
       .hero-feature-card { grid-template-columns:1fr; padding:20px 20px; }
       .hero-teal-grid { grid-template-columns:1fr 1fr; }
@@ -164,13 +172,13 @@
     .hero-feat-item:last-child { border-right:none !important; }
     .hero-teal-item { background-color:transparent !important; border:none !important; border-radius:0 !important; border-right:1px solid rgba(255,255,255,.2) !important; }
     .hero-teal-item:last-child { border-right:none !important; }
-    a.btn-orange-solid { background-color:var(--color-orange) !important; border:2px solid var(--color-orange) !important; border-radius:9999px !important; color:white !important; font-size:13px !important; padding:13px 24px !important; }
+    a.btn-orange-solid { background-color:var(--color-orange) !important; border:2px solid var(--color-orange) !important; border-radius:6px !important; color:white !important; font-size:13px !important; padding:18px 56px !important; }
     a.btn-orange-solid:hover { background-color:#c04d0c !important; border-color:#c04d0c !important; opacity:1 !important; transform:none !important; }
-    a.btn-navy-outline { background-color:transparent !important; border:2px solid #1c2d4f !important; border-radius:9999px !important; color:#1c2d4f !important; font-size:13px !important; padding:13px 24px !important; }
+    a.btn-navy-outline { background-color:transparent !important; border:2px solid #1c2d4f !important; border-radius:6px !important; color:#1c2d4f !important; font-size:13px !important; padding:18px 56px !important; }
     a.btn-navy-outline:hover { background-color:#1c2d4f !important; color:white !important; opacity:1 !important; transform:none !important; }
-    .hero-h1-bienvenue { font-size:clamp(36px,5vw,64px) !important; color:var(--color-teal) !important; }
-    .hero-h1-chez { font-size:clamp(36px,5vw,64px) !important; color:var(--color-teal) !important; }
-    .hero-h1-evolia { font-size:clamp(72px,9vw,112px) !important; color:var(--color-orange) !important; }
+    .hero-h1-bienvenue { font-size:clamp(40px,6vw,80px) !important; color:var(--color-teal) !important; font-weight:700 !important; }
+    .hero-h1-chez { font-size:clamp(40px,6vw,80px) !important; color:var(--color-teal) !important; font-weight:700 !important; }
+    .hero-h1-evolia { font-size:clamp(88px,11vw,144px) !important; color:var(--color-orange) !important; font-style:normal !important; text-transform:uppercase !important; }
     .hero-subtitle { font-size:15px !important; line-height:1.65 !important; max-width:640px; }
     .hero-badge { font-size:11px !important; }
 
@@ -185,6 +193,7 @@
     <!-- Grille principale plein-bord -->
     <div class="hero-main">
       <img src="https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" class="hero-bg" aria-hidden="true">
+      <div class="hero-overlay" aria-hidden="true"></div>
 
       <!-- ── CONTENU PRINCIPAL ── -->
       <div class="hero-left aos">
@@ -207,8 +216,30 @@
 
         <!-- CTAs -->
         <div class="hero-ctas">
-          <a href="formations/index.html" class="btn-orange-solid" style="padding:14px 32px;font-size:14px;white-space:nowrap;">Découvrir les formations →</a>
-          <a href="contact/index.html" class="btn-navy-outline" style="padding:14px 32px;font-size:14px;white-space:nowrap;">Nous contacter →</a>
+          <a href="formations/index.html" class="btn-orange-solid" style="white-space:nowrap;">Découvrir les formations →</a>
+          <a href="contact/index.html" class="btn-navy-outline" style="white-space:nowrap;">Nous contacter →</a>
+        </div>
+
+        <!-- Ligne de réassurance -->
+        <div class="hero-trust-row">
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon" style="background:rgba(26,155,151,.1);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-teal)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+            Certifications reconnues
+          </div>
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon" style="background:rgba(219,86,14,.09);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--color-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            Alternance
+          </div>
+          <div class="hero-trust-item">
+            <div class="hero-trust-icon" style="background:rgba(28,45,79,.08);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c2d4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="10" width="20" height="10" rx="2"/><path d="M5 10V8a7 7 0 0114 0v2"/><circle cx="12" cy="15" r="2"/></svg>
+            </div>
+            OPCO
+          </div>
         </div>
 
         <!-- 4 mini-blocs icône + texte -->
