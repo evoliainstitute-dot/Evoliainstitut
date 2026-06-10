@@ -51,18 +51,18 @@
     .hero-main > img.hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.18; z-index:0; }
 
     /* Colonne gauche — centrée sur le container */
-    .hero-left { position:relative; z-index:1; display:flex; flex-direction:column; gap:2rem; justify-content:center; padding-top:90px; padding-bottom:36px; padding-right:52px; padding-left:max(32px, calc((100vw - 1280px) / 2 + 40px)); max-width:720px; }
+    .hero-left { position:relative; z-index:1; display:flex; flex-direction:column; gap:2.5rem; justify-content:center; padding-top:90px; padding-bottom:56px; padding-right:52px; padding-left:max(32px, calc((100vw - 1280px) / 2 + 40px)); max-width:60%; }
 
     /* Badge teal */
     .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(26,155,151,.08); color:var(--color-teal); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:7px 16px; border-radius:9999px; border:1px solid rgba(26,155,151,.2); margin-bottom:20px; width:fit-content; }
 
     /* H1 trois lignes */
-    .hero-h1-bienvenue { display:block; color:var(--color-teal); font-size:32px; font-weight:400; line-height:1.2; letter-spacing:-.01em; }
-    .hero-h1-chez { display:block; color:var(--color-teal); font-size:32px; font-weight:400; line-height:1.2; letter-spacing:-.01em; }
-    .hero-h1-evolia { display:block; font-family:var(--font-display); color:var(--color-orange); font-size:clamp(52px,4.5vw,56px); font-weight:700; font-style:italic; line-height:1.1; margin-bottom:16px; }
+    .hero-h1-bienvenue { display:block; color:var(--color-teal); font-size:clamp(36px,5vw,64px); font-weight:400; line-height:1.15; letter-spacing:-.01em; }
+    .hero-h1-chez { display:block; color:var(--color-teal); font-size:clamp(36px,5vw,64px); font-weight:400; line-height:1.15; letter-spacing:-.01em; }
+    .hero-h1-evolia { display:block; font-family:var(--font-display); color:var(--color-orange); font-size:clamp(72px,9vw,112px); font-weight:700; font-style:italic; line-height:1.05; margin-bottom:16px; }
 
     /* Sous-titre */
-    .hero-subtitle { font-size:15px; color:var(--color-mid); line-height:1.65; max-width:440px; margin-bottom:24px; }
+    .hero-subtitle { font-size:15px; color:var(--color-mid); line-height:1.65; max-width:640px; margin-bottom:24px; }
 
     /* 4 mini-blocs horizontaux */
     .hero-mini-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:28px; }
@@ -98,7 +98,7 @@
     .hero-feat-desc { font-size:12px; color:var(--color-mid); line-height:1.65; }
 
     /* Barre teal (4 items) */
-    .hero-teal-bar { background:var(--color-teal); padding:22px 0; flex-shrink:0; margin-top:48px; }
+    .hero-teal-bar { background:var(--color-teal); padding:22px 0; flex-shrink:0; margin-top:80px; }
     .hero-teal-grid { display:grid; grid-template-columns:repeat(4,1fr); }
     .hero-teal-item { display:flex; align-items:center; gap:12px; padding:0 32px; border-right:1px solid rgba(255,255,255,.2); }
     .hero-teal-item:last-child { border-right:none; }
@@ -130,12 +130,12 @@
 
     /* Responsive hero */
     @media(max-width:1024px) {
-      .hero-left { padding-right:36px; }
+      .hero-left { padding-right:36px; max-width:80%; }
       .hero-mini-grid { grid-template-columns:repeat(2,1fr); }
     }
     @media(max-width:960px) {
       .hero-main { grid-template-columns:1fr; min-height:auto; }
-      .hero-left { padding:96px 32px 56px; padding-left:max(24px,calc((100vw - 1280px)/2 + 32px)); }
+      .hero-left { padding:96px 32px 56px; padding-left:max(24px,calc((100vw - 1280px)/2 + 32px)); max-width:100%; }
       .hero-right { border-radius:24px; height:420px; margin:0 16px; }
       .hero-quote-card { bottom:20px; right:20px; }
       .hero-feature-card { grid-template-columns:repeat(2,1fr); padding:24px 28px; margin-top:24px; }
@@ -168,10 +168,10 @@
     a.btn-orange-solid:hover { background-color:#c04d0c !important; border-color:#c04d0c !important; opacity:1 !important; transform:none !important; }
     a.btn-navy-outline { background-color:transparent !important; border:2px solid #1c2d4f !important; border-radius:9999px !important; color:#1c2d4f !important; font-size:13px !important; padding:13px 24px !important; }
     a.btn-navy-outline:hover { background-color:#1c2d4f !important; color:white !important; opacity:1 !important; transform:none !important; }
-    .hero-h1-bienvenue { font-size:clamp(48px,6.5vw,82px) !important; color:var(--color-teal) !important; }
-    .hero-h1-chez { font-size:clamp(32px,4.8vw,62px) !important; color:var(--color-teal) !important; }
-    .hero-h1-evolia { font-size:clamp(26px,4vw,52px) !important; color:var(--color-orange) !important; }
-    .hero-subtitle { font-size:15px !important; line-height:1.65 !important; max-width:440px; }
+    .hero-h1-bienvenue { font-size:clamp(36px,5vw,64px) !important; color:var(--color-teal) !important; }
+    .hero-h1-chez { font-size:clamp(36px,5vw,64px) !important; color:var(--color-teal) !important; }
+    .hero-h1-evolia { font-size:clamp(72px,9vw,112px) !important; color:var(--color-orange) !important; }
+    .hero-subtitle { font-size:15px !important; line-height:1.65 !important; max-width:640px; }
     .hero-badge { font-size:11px !important; }
 
     /* ── Dispositifs financement : harmonie avec comfort CSS ── */
@@ -205,6 +205,12 @@
         <!-- Sous-titre -->
         <p class="hero-subtitle">Votre partenaire formation pour la restauration et l'hôtellerie CHR. Certifié Qualiopi — formations certifiantes, diplômantes et finançables à 100%.</p>
 
+        <!-- CTAs -->
+        <div class="hero-ctas">
+          <a href="formations/index.html" class="btn-orange-solid" style="padding:14px 32px;font-size:14px;white-space:nowrap;">Découvrir les formations →</a>
+          <a href="contact/index.html" class="btn-navy-outline" style="padding:14px 32px;font-size:14px;white-space:nowrap;">Nous contacter →</a>
+        </div>
+
         <!-- 4 mini-blocs icône + texte -->
         <div class="hero-mini-grid">
           <div class="hero-mini-item">
@@ -231,12 +237,6 @@
             </div>
             <div class="hero-mini-title">Qualiopi<br>certifié</div>
           </div>
-        </div>
-
-        <!-- CTAs -->
-        <div class="hero-ctas">
-          <a href="formations/index.html" class="btn-orange-solid" style="padding:14px 32px;font-size:14px;white-space:nowrap;">Découvrir nos formations →</a>
-          <a href="contact/index.html" class="btn-navy-outline" style="padding:14px 32px;font-size:14px;white-space:nowrap;">Dépôt de candidature →</a>
         </div>
 
       </div>
