@@ -76,34 +76,6 @@
     }
     .access-conditions-box strong { color: var(--color-dark); }
 
-    /* ── CONSEIL CARD HEADER ── */
-    .conseil-card-header {
-      padding: 28px 24px 20px;
-      position: relative; overflow: hidden;
-    }
-    .conseil-card-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3.5rem; font-weight: 700;
-      color: rgba(255,255,255,.15);
-      line-height: 1; margin-bottom: 6px;
-    }
-    .conseil-card-sector {
-      font-size: 9px; font-weight: 700;
-      letter-spacing: .15em; text-transform: uppercase;
-      color: rgba(255,255,255,.65); margin-bottom: 8px;
-    }
-    .conseil-card-title {
-      font-size: 19px; font-weight: 700;
-      color: white; margin-bottom: 6px; line-height: 1.3;
-    }
-    .conseil-card-desc { font-size: 12px; color: rgba(255,255,255,.7); line-height: 1.6; }
-    .conseil-card-body { padding: 20px 24px; }
-    .conseil-card-points {
-      list-style: none; display: flex; flex-direction: column;
-      gap: 7px; margin-bottom: 16px;
-      font-size: 13px; color: var(--color-mid);
-    }
-
     @media (max-width: 768px) {
       .ftab-btn { font-size: 11px; padding: 14px 8px; gap: 4px; }
       .tab-footer-bar { flex-direction: column; text-align: center; }
@@ -525,70 +497,64 @@
         <div class="grid-3" style="gap:28px;">
 
           <!-- Ouverture Restaurant -->
-          <article class="card" style="padding:0;overflow:hidden;">
-            <div class="conseil-card-header" style="background:var(--color-teal);">
-              <div class="conseil-card-num">01</div>
-              <div class="conseil-card-sector">Mission complète</div>
-              <div class="conseil-card-title">Ouverture Restaurant De A à Z</div>
-              <p class="conseil-card-desc">Consulting complet · 5 semaines d'accompagnement · Du cadrage au service blanc</p>
+          <article class="card aos" style="border-radius:14px;display:flex;flex-direction:column;">
+            <div style="width:72px;height:72px;border-radius:18px;background:var(--color-teal);color:white;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1-5h16l1 5"/><path d="M3 9a2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0 2 2 0 0 0 4 0"/><path d="M5 9v10h14V9"/><path d="M9 21v-6h6v6"/></svg>
             </div>
-            <div class="conseil-card-body">
-              <ul class="conseil-card-points">
-                <li>1. Audit &amp; cadrage du projet</li>
-                <li>2. Recrutement des équipes</li>
-                <li>3. Formation &amp; process opérationnels</li>
-                <li>4. Service blanc &amp; ouverture officielle</li>
-              </ul>
-              <div style="display:flex;gap:8px;margin-bottom:16px;">
-                <span class="badge badge--cat">5 semaines</span>
-                <span class="badge badge--cat">Sur devis</span>
-              </div>
-              <a href="../consulting-ouverture/index.html" class="btn btn-secondary" style="display:block;text-align:center;padding:10px 20px;font-size:12px;">En savoir plus →</a>
+            <p style="font-size:13px;color:var(--color-teal);font-weight:600;margin-bottom:6px;">Mission complète</p>
+            <h3 style="color:var(--color-dark);font-size:19px;margin-bottom:8px;">Ouverture Restaurant De A à Z</h3>
+            <p style="font-size:13px;color:var(--color-mid);line-height:1.6;margin-bottom:16px;">Consulting complet · 5 semaines d'accompagnement · Du cadrage au service blanc</p>
+            <ul style="list-style:none;font-size:13px;color:var(--color-dark);display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
+              <li>1. Audit &amp; cadrage du projet</li>
+              <li>2. Recrutement des équipes</li>
+              <li>3. Formation &amp; process opérationnels</li>
+              <li>4. Service blanc &amp; ouverture officielle</li>
+            </ul>
+            <div style="display:flex;gap:8px;margin-bottom:16px;">
+              <span class="badge badge--cat">5 semaines</span>
+              <span class="badge badge--cat">Sur devis</span>
             </div>
+            <a href="../consulting-ouverture/index.html" class="btn btn-secondary" style="margin-top:auto;display:block;text-align:center;padding:10px 20px;font-size:12px;">En savoir plus →</a>
           </article>
 
           <!-- Recrutement CHR -->
-          <article class="card" style="padding:0;overflow:hidden;">
-            <div class="conseil-card-header" style="background:var(--color-orange);">
-              <div class="conseil-card-num">02</div>
-              <div class="conseil-card-sector">Expertise RH</div>
-              <div class="conseil-card-title">Recrutement CHR</div>
-              <p class="conseil-card-desc">Sourcing multi-canal · Fiches de poste · Onboarding structuré</p>
+          <article class="card aos" data-delay="1" style="border-radius:14px;display:flex;flex-direction:column;">
+            <div style="width:72px;height:72px;border-radius:18px;background:var(--color-orange);color:white;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <div class="conseil-card-body">
-              <ul class="conseil-card-points">
-                <li>→ Définition des fiches de poste</li>
-                <li>→ Sourcing multi-canal (jobboards, réseaux)</li>
-                <li>→ Entretiens &amp; onboarding structuré</li>
-                <li>→ Partenariat France Travail</li>
-              </ul>
-              <div style="display:flex;gap:8px;margin-bottom:16px;">
-                <span class="badge badge--cat">Sur mesure</span>
-              </div>
-              <a href="../consulting-ouverture/index.html" class="btn btn-secondary" style="display:block;text-align:center;padding:10px 20px;font-size:12px;">En savoir plus →</a>
+            <p style="font-size:13px;color:var(--color-teal);font-weight:600;margin-bottom:6px;">Expertise RH</p>
+            <h3 style="color:var(--color-dark);font-size:19px;margin-bottom:8px;">Recrutement CHR</h3>
+            <p style="font-size:13px;color:var(--color-mid);line-height:1.6;margin-bottom:16px;">Sourcing multi-canal · Fiches de poste · Onboarding structuré</p>
+            <ul style="list-style:none;font-size:13px;color:var(--color-dark);display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
+              <li>→ Définition des fiches de poste</li>
+              <li>→ Sourcing multi-canal (jobboards, réseaux)</li>
+              <li>→ Entretiens &amp; onboarding structuré</li>
+              <li>→ Partenariat France Travail</li>
+            </ul>
+            <div style="display:flex;gap:8px;margin-bottom:16px;">
+              <span class="badge badge--cat">Sur mesure</span>
             </div>
+            <a href="../consulting-ouverture/index.html" class="btn btn-secondary" style="margin-top:auto;display:block;text-align:center;padding:10px 20px;font-size:12px;">En savoir plus →</a>
           </article>
 
           <!-- Audit & Optimisation -->
-          <article class="card" style="padding:0;overflow:hidden;">
-            <div class="conseil-card-header" style="background:var(--color-dark);">
-              <div class="conseil-card-num">03</div>
-              <div class="conseil-card-sector">Process · Opérations</div>
-              <div class="conseil-card-title">Audit &amp; Optimisation Opérationnelle</div>
-              <p class="conseil-card-desc">Procédures · Check-lists · KPIs · Tableaux de bord opérationnels</p>
+          <article class="card aos" data-delay="2" style="border-radius:14px;display:flex;flex-direction:column;">
+            <div style="width:72px;height:72px;border-radius:18px;background:var(--color-dark);color:white;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             </div>
-            <div class="conseil-card-body">
-              <ul class="conseil-card-points">
-                <li>→ Manuel de procédures &amp; fiches techniques</li>
-                <li>→ Check-lists &amp; KPIs de pilotage</li>
-                <li>→ Tableaux de bord opérationnels</li>
-                <li>→ Formation équipes incluse</li>
-              </ul>
-              <div style="display:flex;gap:8px;margin-bottom:16px;">
-                <span class="badge badge--cat">Sur devis</span>
-              </div>
-              <a href="../consulting-ouverture/index.html" class="btn btn-secondary" style="display:block;text-align:center;padding:10px 20px;font-size:12px;">En savoir plus →</a>
+            <p style="font-size:13px;color:var(--color-teal);font-weight:600;margin-bottom:6px;">Process · Opérations</p>
+            <h3 style="color:var(--color-dark);font-size:19px;margin-bottom:8px;">Audit &amp; Optimisation Opérationnelle</h3>
+            <p style="font-size:13px;color:var(--color-mid);line-height:1.6;margin-bottom:16px;">Procédures · Check-lists · KPIs · Tableaux de bord opérationnels</p>
+            <ul style="list-style:none;font-size:13px;color:var(--color-dark);display:flex;flex-direction:column;gap:8px;margin-bottom:16px;">
+              <li>→ Manuel de procédures &amp; fiches techniques</li>
+              <li>→ Check-lists &amp; KPIs de pilotage</li>
+              <li>→ Tableaux de bord opérationnels</li>
+              <li>→ Formation équipes incluse</li>
+            </ul>
+            <div style="display:flex;gap:8px;margin-bottom:16px;">
+              <span class="badge badge--cat">Sur devis</span>
             </div>
+            <a href="../consulting-ouverture/index.html" class="btn btn-secondary" style="margin-top:auto;display:block;text-align:center;padding:10px 20px;font-size:12px;">En savoir plus →</a>
           </article>
 
         </div>
