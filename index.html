@@ -46,37 +46,34 @@
     /* ── Hero S1 ── */
     .hero-split { background:white; display:flex; flex-direction:column; min-height:100vh; overflow:hidden; position:relative; }
 
-    /* Grille principale — pleine largeur, photo en fond */
-    .hero-main { position:relative; flex:1; min-height:100vh; display:flex; align-items:center; overflow:hidden; }
-    .hero-main > img.hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:1; z-index:0; }
-    .hero-main > .hero-overlay { position:absolute; inset:0; background:rgba(255,255,255,.6); z-index:1; }
+    /* Grille principale — pleine largeur, fond uni */
+    .hero-main { position:relative; flex:1; min-height:100vh; display:flex; align-items:center; overflow:hidden; background:#f5f2ed; }
 
     /* Colonne gauche — centrée sur le container */
-    .hero-left { position:relative; z-index:2; display:flex; flex-direction:column; gap:1.75rem; justify-content:center; padding-top:63px; padding-bottom:39px; padding-right:36px; padding-left:max(32px, calc((100vw - 1280px) / 2 + 40px)); max-width:60%; }
+    .hero-left { position:relative; z-index:2; display:flex; flex-direction:column; gap:1.225rem; justify-content:center; padding-top:44px; padding-bottom:27px; padding-right:25px; padding-left:max(32px, calc((100vw - 1280px) / 2 + 40px)); max-width:60%; }
 
     /* Badge teal */
-    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(26,155,151,.08); color:var(--color-teal); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:7px 16px; border-radius:9999px; border:1px solid rgba(26,155,151,.2); margin-bottom:14px; width:fit-content; }
+    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(26,155,151,.08); color:var(--color-teal); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:7px 16px; border-radius:9999px; border:1px solid rgba(26,155,151,.2); margin-bottom:10px; width:fit-content; }
 
     /* H1 trois lignes */
-    .hero-h1-bienvenue { display:block; color:var(--color-teal); font-size:clamp(40px,6vw,80px); font-weight:700; line-height:1.1; letter-spacing:-.01em; }
-    .hero-h1-chez { display:block; color:var(--color-teal); font-size:clamp(40px,6vw,80px); font-weight:700; line-height:1.1; letter-spacing:-.01em; }
-    .hero-h1-evolia { display:inline-flex; align-items:center; gap:12px; font-family:var(--font-display); color:var(--color-orange); font-size:40px; font-weight:800; font-style:normal; text-transform:uppercase; line-height:1.1; margin-bottom:11px; }
-    .hero-h1-evolia img { height:40px; width:auto; vertical-align:middle; }
+    .hero-h1-bienvenue { display:block; color:var(--color-teal); font-size:22px; font-weight:400; line-height:1.2; letter-spacing:-.01em; }
+    .hero-h1-chez { display:block; color:var(--color-teal); font-size:22px; font-weight:400; line-height:1.2; letter-spacing:-.01em; }
+    .hero-h1-evolia { display:block; font-family:var(--font-display); color:var(--color-orange); font-size:52px; font-weight:700; font-style:italic; line-height:1.1; margin-bottom:8px; }
 
     /* Sous-titre */
-    .hero-subtitle { font-size:18px; color:var(--color-mid); line-height:1.7; max-width:640px; margin-bottom:17px; }
+    .hero-subtitle { font-size:18px; color:var(--color-mid); line-height:1.7; max-width:640px; margin-bottom:12px; }
 
     /* 4 mini-blocs horizontaux */
-    .hero-mini-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:20px; }
+    .hero-mini-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:14px; }
     .hero-mini-item { display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
     .hero-mini-icon { width:68px; height:68px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:2px; flex-shrink:0; }
     .hero-mini-title { font-size:13px; font-weight:700; color:var(--color-dark); line-height:1.35; }
 
     /* CTAs */
     .hero-ctas { display:flex; gap:16px; flex-wrap:wrap; }
-    .btn-orange-solid { background:var(--color-orange); color:white; font-weight:700; border-radius:6px; border:2px solid var(--color-orange); padding:18px 56px; font-size:13px; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; transition:all .2s; cursor:pointer; letter-spacing:.06em; text-transform:uppercase; }
+    .btn-orange-solid { background:var(--color-orange); color:white; font-weight:700; border-radius:6px; border:2px solid var(--color-orange); padding:14px 32px; font-size:14px; white-space:nowrap; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; transition:all .2s; cursor:pointer; letter-spacing:.06em; text-transform:uppercase; }
     .btn-orange-solid:hover { background:#c04d0c; border-color:#c04d0c; color:white; }
-    .btn-navy-outline { background:transparent; color:#1c2d4f; font-weight:700; border-radius:6px; border:2px solid #1c2d4f; padding:18px 56px; font-size:13px; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; transition:all .2s; cursor:pointer; letter-spacing:.06em; text-transform:uppercase; }
+    .btn-navy-outline { background:transparent; color:#1c2d4f; font-weight:700; border-radius:6px; border:2px solid #1c2d4f; padding:14px 32px; font-size:14px; white-space:nowrap; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; transition:all .2s; cursor:pointer; letter-spacing:.06em; text-transform:uppercase; }
     .btn-navy-outline:hover { background:#1c2d4f; color:white; }
 
     /* Colonne droite — image plein-bord, bord gauche courbé */
@@ -137,7 +134,7 @@
     }
     @media(max-width:960px) {
       .hero-main { grid-template-columns:1fr; min-height:auto; }
-      .hero-left { padding:67px 32px 39px; padding-left:max(24px,calc((100vw - 1280px)/2 + 32px)); max-width:100%; }
+      .hero-left { padding:47px 32px 27px; padding-left:max(24px,calc((100vw - 1280px)/2 + 32px)); max-width:100%; }
       .hero-right { border-radius:24px; height:420px; margin:0 16px; }
       .hero-quote-card { bottom:20px; right:20px; }
       .hero-feature-card { grid-template-columns:repeat(2,1fr); padding:24px 28px; margin-top:24px; }
@@ -148,7 +145,7 @@
       .hero-teal-item:nth-child(odd) { border-right:1px solid rgba(255,255,255,.2); }
     }
     @media(max-width:640px) {
-      .hero-left { padding:56px 20px 28px; }
+      .hero-left { padding:39px 20px 20px; }
       .hero-ctas { flex-wrap:wrap; }
       .hero-ctas a.btn-orange-solid, .hero-ctas a.btn-navy-outline { padding:16px 32px !important; flex:1 1 auto; text-align:center; }
       .hero-mini-grid { grid-template-columns:repeat(2,1fr); }
@@ -167,13 +164,13 @@
     .hero-feat-item:last-child { border-right:none !important; }
     .hero-teal-item { background-color:transparent !important; border:none !important; border-radius:0 !important; border-right:1px solid rgba(255,255,255,.2) !important; }
     .hero-teal-item:last-child { border-right:none !important; }
-    a.btn-orange-solid { background-color:var(--color-orange) !important; border:2px solid var(--color-orange) !important; border-radius:6px !important; color:white !important; font-size:13px !important; padding:18px 56px !important; }
+    a.btn-orange-solid { background-color:var(--color-orange) !important; border:2px solid var(--color-orange) !important; border-radius:6px !important; color:white !important; font-size:14px !important; padding:14px 32px !important; white-space:nowrap !important; }
     a.btn-orange-solid:hover { background-color:#c04d0c !important; border-color:#c04d0c !important; opacity:1 !important; transform:none !important; }
-    a.btn-navy-outline { background-color:transparent !important; border:2px solid #1c2d4f !important; border-radius:6px !important; color:#1c2d4f !important; font-size:13px !important; padding:18px 56px !important; }
+    a.btn-navy-outline { background-color:transparent !important; border:2px solid #1c2d4f !important; border-radius:6px !important; color:#1c2d4f !important; font-size:14px !important; padding:14px 32px !important; white-space:nowrap !important; }
     a.btn-navy-outline:hover { background-color:#1c2d4f !important; color:white !important; opacity:1 !important; transform:none !important; }
-    .hero-h1-bienvenue { font-size:clamp(40px,6vw,80px) !important; color:var(--color-teal) !important; font-weight:700 !important; }
-    .hero-h1-chez { font-size:clamp(40px,6vw,80px) !important; color:var(--color-teal) !important; font-weight:700 !important; }
-    .hero-h1-evolia { font-size:40px !important; color:var(--color-orange) !important; font-style:normal !important; text-transform:uppercase !important; }
+    .hero-h1-bienvenue { font-size:22px !important; color:var(--color-teal) !important; font-weight:400 !important; }
+    .hero-h1-chez { font-size:22px !important; color:var(--color-teal) !important; font-weight:400 !important; }
+    .hero-h1-evolia { font-size:52px !important; color:var(--color-orange) !important; font-style:italic !important; font-weight:700 !important; text-transform:none !important; }
     .hero-subtitle { font-size:18px !important; line-height:1.7 !important; max-width:640px; }
     .hero-badge { font-size:11px !important; }
 
@@ -187,8 +184,6 @@
 
     <!-- Grille principale plein-bord -->
     <div class="hero-main">
-      <img src="https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" class="hero-bg" aria-hidden="true">
-      <div class="hero-overlay" aria-hidden="true"></div>
 
       <!-- ── CONTENU PRINCIPAL ── -->
       <div class="hero-left aos">
@@ -200,10 +195,10 @@
         </div>
 
         <!-- H1 trois lignes -->
-        <h1 id="hero-heading" style="margin:0 0 14px;">
+        <h1 id="hero-heading" style="margin:0 0 10px;">
           <span class="hero-h1-bienvenue">Bienvenue</span>
           <span class="hero-h1-chez">chez</span>
-          <span class="hero-h1-evolia"><img src="/img/evolia-logo-transparent.png" alt="">Evolia Institut</span>
+          <span class="hero-h1-evolia">Evolia Institut</span>
         </h1>
 
         <!-- Sous-titre -->
@@ -211,8 +206,8 @@
 
         <!-- CTAs -->
         <div class="hero-ctas">
-          <a href="formations/index.html" class="btn-orange-solid" style="white-space:nowrap;">Découvrir les formations →</a>
-          <a href="contact/index.html" class="btn-navy-outline" style="white-space:nowrap;">Nous contacter →</a>
+          <a href="formations/index.html" class="btn-orange-solid">Découvrir les formations →</a>
+          <a href="contact/index.html" class="btn-navy-outline">Nous contacter →</a>
         </div>
 
         <!-- 4 mini-blocs icône + texte -->
@@ -895,8 +890,8 @@
 
       </div>
       <div style="text-align: center; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="financement/index.html" class="btn btn-primary">Explorer les financements</a>
-        <a href="contact/index.html" class="btn btn-secondary">Étudier mon financement</a>
+        <a href="financement/index.html" class="btn btn-primary" style="font-size:13px;white-space:nowrap;padding:10px 16px;">Explorer les financements</a>
+        <a href="contact/index.html" class="btn btn-secondary" style="white-space:nowrap;padding:12px 24px;min-width:fit-content;">Étudier mon financement</a>
       </div>
     </div>
   </section>
