@@ -49,26 +49,25 @@
     /* Grille principale — image plein fond */
     .hero-main { position:relative; flex:1; min-height:100vh; display:flex; align-items:center; overflow:hidden; }
     .hero-main > img.hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; z-index:0; }
-    .hero-img-overlay { position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, rgba(15,15,20,.62) 0%, rgba(15,15,20,.4) 45%, rgba(15,15,20,.05) 75%); }
 
-    /* Colonne gauche — centrée sur le container */
-    .hero-left { position:relative; z-index:2; display:flex; flex-direction:column; gap:1.225rem; justify-content:center; padding-top:44px; padding-bottom:27px; padding-right:25px; padding-left:max(32px, calc((100vw - 1280px) / 2 + 40px)); max-width:60%; }
+    /* Colonne gauche — fond blanc sur la photo */
+    .hero-left { position:relative; z-index:2; display:flex; flex-direction:column; gap:1.225rem; justify-content:center; background-color:#ffffff; padding-top:44px; padding-bottom:27px; padding-right:25px; padding-left:max(32px, calc((100vw - 1280px) / 2 + 40px)); max-width:60%; }
 
     /* Badge teal */
-    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.1); color:#fff; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:7px 16px; border-radius:9999px; border:1px solid rgba(255,255,255,.25); margin-bottom:10px; width:fit-content; }
+    .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(26,155,151,.08); color:var(--color-teal); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:7px 16px; border-radius:9999px; border:1px solid rgba(26,155,151,.2); margin-bottom:10px; width:fit-content; }
 
-    /* H1 deux lignes */
-    .hero-h1-bienvenue { display:block; color:#fff; font-size:40px; font-weight:400; line-height:1.2; letter-spacing:-.01em; }
-    .hero-h1-evolia { display:block; font-family:var(--font-display); color:#fff; font-size:68px; font-weight:700; line-height:1.1; margin-bottom:4px; }
+    /* H1 deux lignes — grand et bold */
+    .hero-h1-bienvenue { display:block; color:var(--color-dark); font-size:clamp(28px,3.5vw,44px); font-weight:700; line-height:1.2; letter-spacing:-.01em; }
+    .hero-h1-evolia { display:block; font-family:var(--font-display); color:var(--color-orange); font-size:clamp(48px,6vw,84px); font-weight:800; line-height:1.1; margin-bottom:4px; }
 
     /* Sous-titre */
-    .hero-subtitle { font-size:18px; color:rgba(255,255,255,.85); line-height:1.7; max-width:640px; margin-bottom:12px; }
+    .hero-subtitle { font-size:18px; color:var(--color-mid); line-height:1.7; max-width:640px; margin-bottom:12px; }
 
     /* 4 mini-blocs horizontaux */
     .hero-mini-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:14px; }
     .hero-mini-item { display:flex; flex-direction:column; align-items:flex-start; gap:6px; }
     .hero-mini-icon { width:68px; height:68px; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:2px; flex-shrink:0; }
-    .hero-mini-title { font-size:13px; font-weight:700; color:#fff; line-height:1.35; }
+    .hero-mini-title { font-size:13px; font-weight:700; color:#000; line-height:1.35; }
 
     /* CTAs */
     .hero-ctas { display:flex; gap:16px; flex-wrap:wrap; }
@@ -136,7 +135,6 @@
     @media(max-width:960px) {
       .hero-main { grid-template-columns:1fr; min-height:auto; }
       .hero-left { padding:47px 32px 27px; padding-left:max(24px,calc((100vw - 1280px)/2 + 32px)); max-width:100%; }
-      .hero-img-overlay { background:linear-gradient(180deg, rgba(15,15,20,.55) 0%, rgba(15,15,20,.72) 100%); }
       .hero-right { border-radius:24px; height:420px; margin:0 16px; }
       .hero-quote-card { bottom:20px; right:20px; }
       .hero-feature-card { grid-template-columns:repeat(2,1fr); padding:24px 28px; margin-top:24px; }
@@ -158,7 +156,7 @@
     /* ── Overrides : protection hero contre comfort CSS ── */
     .hero-split { padding-top:0 !important; padding-bottom:0 !important; background-color:#ffffff !important; }
     .hero-main { background-color:transparent !important; }
-    .hero-left { background-color:transparent !important; }
+    .hero-left { background-color:#ffffff !important; }
     img.hero-bg { border-radius:0 !important; filter:none !important; object-position:right center !important; }
     .hero-teal-bar { padding-top:22px !important; padding-bottom:22px !important; }
     .hero-quote-card { background-color:var(--color-teal) !important; border:none !important; border-radius:16px !important; }
@@ -173,11 +171,11 @@
     a.btn-orange-solid:hover { background-color:#c04d0c !important; border-color:#c04d0c !important; opacity:1 !important; transform:none !important; }
     a.btn-navy-outline { background-color:transparent !important; border:2px solid #1c2d4f !important; border-radius:6px !important; color:#1c2d4f !important; font-size:14px !important; padding:14px 32px !important; white-space:nowrap !important; }
     a.btn-navy-outline:hover { background-color:#1c2d4f !important; color:white !important; opacity:1 !important; transform:none !important; }
-    .hero-h1-bienvenue { font-size:40px !important; color:#fff !important; font-weight:400 !important; }
-    .hero-h1-evolia { font-size:68px !important; color:#fff !important; font-style:normal !important; font-weight:700 !important; text-transform:none !important; }
+    .hero-h1-bienvenue { font-size:clamp(28px,3.5vw,44px) !important; color:var(--color-dark) !important; font-weight:700 !important; }
+    .hero-h1-evolia { font-size:clamp(48px,6vw,84px) !important; color:var(--color-orange) !important; font-style:normal !important; font-weight:800 !important; text-transform:none !important; }
     .hero-subtitle { font-size:18px !important; line-height:1.7 !important; max-width:640px; }
     .hero-badge { font-size:11px !important; }
-    .hero-mini-title { color:#fff !important; }
+    .hero-mini-title { color:#000 !important; }
 
     /* ── Dispositifs financement : harmonie avec comfort CSS ── */
     .section--teal h4 { font-size:20px !important; color:white !important; line-height:1.2 !important; }
@@ -191,8 +189,6 @@
     <div class="hero-main">
 
       <img src="https://images.pexels.com/photos/1640773/pexels-photo-1640773.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="" class="hero-bg" aria-hidden="true">
-
-      <div class="hero-img-overlay" aria-hidden="true"></div>
 
       <!-- ── CONTENU PRINCIPAL ── -->
       <div class="hero-left aos">
