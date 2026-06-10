@@ -436,7 +436,16 @@
   gap: 10px;
   align-items: center;
 }
-.mobile-cta-floating .btn { flex: 1; text-align: center; }
+.mobile-cta-floating .btn {
+  text-align: center;
+  font-size: 11px !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+  padding: 12px 4px !important;
+  white-space: nowrap;
+}
+.mobile-cta-floating .btn-secondary { flex: 0.7; }
+.mobile-cta-floating .btn-primary { flex: 1.5; }
 
 /* ── Back to top ── */
 .back-to-top {
