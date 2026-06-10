@@ -48,7 +48,7 @@
 
     /* Grille principale — image plein fond */
     .hero-main { position:relative; flex:1; min-height:100vh; display:flex; align-items:center; overflow:hidden; }
-    .hero-main > img.hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; }
+    .hero-main > img.hero-bg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:right center; z-index:0; }
 
     /* Colonne gauche — centrée sur le container */
     .hero-left { position:relative; z-index:2; display:flex; flex-direction:column; gap:1.225rem; justify-content:center; padding-top:44px; padding-bottom:27px; padding-right:25px; padding-left:max(32px, calc((100vw - 1280px) / 2 + 40px)); max-width:60%; }
@@ -57,8 +57,8 @@
     .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(26,155,151,.08); color:var(--color-teal); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:7px 16px; border-radius:9999px; border:1px solid rgba(26,155,151,.2); margin-bottom:10px; width:fit-content; }
 
     /* H1 deux lignes */
-    .hero-h1-bienvenue { display:block; color:var(--color-teal); font-size:32px; font-weight:400; line-height:1.2; letter-spacing:-.01em; }
-    .hero-h1-evolia { display:block; font-family:var(--font-display); color:var(--color-orange); font-size:52px; font-weight:700; line-height:1.1; margin-bottom:8px; }
+    .hero-h1-bienvenue { display:block; color:#fff; font-size:40px; font-weight:400; line-height:1.2; letter-spacing:-.01em; }
+    .hero-h1-evolia { display:block; font-family:var(--font-display); color:#fff; font-size:68px; font-weight:700; line-height:1.1; margin-bottom:4px; }
 
     /* Sous-titre */
     .hero-subtitle { font-size:18px; color:var(--color-mid); line-height:1.7; max-width:640px; margin-bottom:12px; }
@@ -157,7 +157,7 @@
     .hero-split { padding-top:0 !important; padding-bottom:0 !important; background-color:#ffffff !important; }
     .hero-main { background-color:transparent !important; }
     .hero-left { background-color:transparent !important; }
-    img.hero-bg { border-radius:0 !important; filter:none !important; }
+    img.hero-bg { border-radius:0 !important; filter:none !important; object-position:right center !important; }
     .hero-teal-bar { padding-top:22px !important; padding-bottom:22px !important; }
     .hero-quote-card { background-color:var(--color-teal) !important; border:none !important; border-radius:16px !important; }
     .hero-feature-card { background-color:#ffffff !important; border-radius:20px !important; border:none !important; box-shadow:0 20px 64px rgba(0,0,0,.1) !important; }
@@ -171,8 +171,8 @@
     a.btn-orange-solid:hover { background-color:#c04d0c !important; border-color:#c04d0c !important; opacity:1 !important; transform:none !important; }
     a.btn-navy-outline { background-color:transparent !important; border:2px solid #1c2d4f !important; border-radius:6px !important; color:#1c2d4f !important; font-size:14px !important; padding:14px 32px !important; white-space:nowrap !important; }
     a.btn-navy-outline:hover { background-color:#1c2d4f !important; color:white !important; opacity:1 !important; transform:none !important; }
-    .hero-h1-bienvenue { font-size:32px !important; color:var(--color-teal) !important; font-weight:400 !important; }
-    .hero-h1-evolia { font-size:52px !important; color:var(--color-orange) !important; font-style:normal !important; font-weight:700 !important; text-transform:none !important; }
+    .hero-h1-bienvenue { font-size:40px !important; color:#fff !important; font-weight:400 !important; }
+    .hero-h1-evolia { font-size:68px !important; color:#fff !important; font-style:normal !important; font-weight:700 !important; text-transform:none !important; }
     .hero-subtitle { font-size:18px !important; line-height:1.7 !important; max-width:640px; }
     .hero-badge { font-size:11px !important; }
     .hero-mini-title { color:#000 !important; }
@@ -200,7 +200,7 @@
         </div>
 
         <!-- H1 deux lignes -->
-        <h1 id="hero-heading" style="margin:0 0 10px;">
+        <h1 id="hero-heading" style="margin:0 0 4px;">
           <span class="hero-h1-bienvenue">Bienvenue chez</span>
           <span class="hero-h1-evolia">Evolia Institut</span>
         </h1>
@@ -894,7 +894,7 @@
 
       </div>
       <div style="text-align: center; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-        <a href="financement/index.html" class="btn btn-primary" style="font-size:13px;white-space:nowrap;padding:10px 16px;">Explorer les financements</a>
+        <a href="financement/index.html" class="btn btn-primary" style="font-size:11px;white-space:nowrap;padding:8px 12px;">Explorer les financements</a>
         <a href="contact/index.html" class="btn btn-secondary" style="white-space:nowrap;padding:12px 24px;min-width:fit-content;">Étudier mon financement</a>
       </div>
     </div>
