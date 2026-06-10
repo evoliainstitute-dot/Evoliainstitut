@@ -247,8 +247,8 @@
     var bar = document.createElement('div');
     bar.className = 'mobile-cta-floating';
     bar.setAttribute('role', 'complementary');
-    bar.innerHTML = '<a href="tel:+33689417517" class="btn btn-primary">📞 06 89 41 75 17</a>' +
-      '<a href="/contact/index.html" class="btn btn-secondary">Nous contacter</a>';
+    bar.innerHTML = '<a href="tel:+33689417517" class="btn btn-secondary">📞 Appeler</a>' +
+      '<a href="/contact/index.html" class="btn btn-primary">Déposer ma candidature</a>';
     document.body.appendChild(bar);
   }
 })();
