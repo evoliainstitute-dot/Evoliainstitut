@@ -208,7 +208,7 @@
       '        <label for="m-formation">Formation souhaitée *</label>',
       '        <select id="m-formation" name="m-formation" required>',
       '          <option value="nc">Je ne sais pas encore</option>',
-      '          <optgroup label="Alternance / Diplômantes"><option value="employe-polyvalent">Employé Polyvalent (RNCP #38663)</option><option value="responsable-pme">Responsable PME/PMI (RNCP #38575)</option><option value="community-manager">Community Manager (RNCP #40907)</option><option value="conseiller-commercial">Conseiller Commercial (RNCP #37717)</option></optgroup>',
+      '          <optgroup label="Alternance / Diplômantes"><option value="employe-polyvalent">Employé Polyvalent (RNCP #38663)</option><option value="responsable-pme">Responsable PME/PMI (RNCP #38575)</option><option value="conseiller-commercial">Conseiller Commercial (RNCP #37717)</option></optgroup>',
       '          <optgroup label="Certifiantes"><option value="haccp">Hygiène HACCP</option><option value="gestion-conflits">Gestion des Conflits</option><option value="gestes-postures">Gestes et Postures</option><option value="prevention-harcelement">Prévention Harcèlement</option><option value="eco-responsable">Démarche Éco-Responsable</option><option value="intra">Formation Intra-Entreprise</option></optgroup>',
       '          <option value="poei">Dispositif POEI</option>',
       '          <option value="consulting">Consulting Ouverture</option>',

@@ -40,7 +40,6 @@
           <div class="dropdown-label">Alternance</div>
           <a href="/formations/employe-polyvalent.html">Employé Polyvalent (RNCP #38663)</a>
           <a href="/formations/responsable-pme.html">Responsable de Petite ou Moyenne Structure (RNCP #38575)</a>
-          <a href="/formations/community-manager.html">Community Manager (RNCP #40907)</a>
           <a href="/formations/conseiller-commercial.html">Conseiller Commercial (RNCP #37717)</a>
           <div class="dropdown-divider"></div>
           <div class="dropdown-label">Certifiantes</div>
@@ -97,7 +96,6 @@
         <ul>
           <li><a href="/formations/employe-polyvalent.html">Employé Polyvalent</a></li>
           <li><a href="/formations/responsable-pme.html">Responsable de Petite ou Moyenne Structure</a></li>
-          <li><a href="/formations/community-manager.html">Community Manager</a></li>
           <li><a href="/formations/conseiller-commercial.html">Conseiller Commercial</a></li>
           <li><a href="/formations/haccp.html">Hygiène HACCP</a></li>
           <li><a href="/formations/gestion-conflits.html">Gestion des Conflits</a></li>
